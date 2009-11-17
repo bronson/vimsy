@@ -1,0 +1,54 @@
+Yet another vim-based Rails development environment.  This one is based
+on http://www.akitaonrails.com/2009/04/27/the-best-environment-for-rails-on-windows-part-2
+but a lot simpler.
+
+
+:help rails
+:help matchit
+:help surround
+
+
+TODO:
+nerd tree
+show matching begin/else/end/etc when moving the cursor
+git? at least display branch and file status?
+snippets?  would I use them?
+folding?   never been happy with folding in the past.  http://eigenclass.org/hiki.rb?simplefold+plugin+0.4.0
+
+
+B -- convert block between {} and do/end
+C-^ -- edit previous file (vim builtin, worth mentioning though)
+
+Rails:
+gf -- if you're over a class or symbol, try gf.  It should take you.
+:A -- go to alternate file (usually test file)
+  AS -- split, AV -- vertical split, AT -- tab, AD -- replace current buffer
+:R -- got to related file (model/schema, controller/template)
+:Rmodel (name) -- go to the named model
+  :Rcontroller, :Rview, :Rjavascript, :Rlayout, etc.
+:Rake (targets) -- run rake, open errors in quickfix window
+  with no targets, tries to figure out from current file
+:Rextract -- extract a partial
+:Rtree -- open nerdtree view of the Rails project
+
+
+
+surround: http://www.vim.org/scripts/script.php?script_id=1697
+ds"    -- delete surrounding "        "word" -> word
+dst    -- delete surrounding tag
+2dst   -- delete second innermost surrounding tag
+cs'"   -- change surrounding ' to "   'word' -> "word"
+ysw(   -- surround cursor to end of word in ( )        word -> ( word )
+ysiw(   -- surround word in ( )        word -> ( word )
+
+ds -- delete surrounding text object
+      text object: [{(<>)}]'"` w (word) W (non-blank chars) s (sentence) p (paragraph) b=) B=} r=] a=>
+cs -- change surrounding text object to supplied new delim
+(visual)s -- insert surrounding delims
+(visual)S -- insert surrounding delims always on separate lines
+
+"abc"
+  <hi><at>abc</at></hi>
+
+% jumps between matching begin/if/while/do/rescue/end/etc.  (matchit)
+
