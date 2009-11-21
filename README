@@ -9,11 +9,16 @@ but a lot simpler.
 
 
 TODO:
-nerd tree
+NERDtree, BufExplorer, FuzzyFinder
+endwise? http://www.vim.org/scripts/script.php?script_id=2386
+haml? http://www.vim.org/scripts/script.php?script_id=1433
+allml? http://www.vim.org/scripts/script.php?script_id=1896
 show matching begin/else/end/etc when moving the cursor
 git? at least display branch and file status?
 snippets?  would I use them?
 folding?   never been happy with folding in the past.  http://eigenclass.org/hiki.rb?simplefold+plugin+0.4.0
+vividchalk: http://www.vim.org/scripts/script.php?script_id=1891
+
 
 
 B -- convert block between {} and do/end
@@ -52,3 +57,12 @@ cs -- change surrounding text object to supplied new delim
 
 % jumps between matching begin/if/while/do/rescue/end/etc.  (matchit)
 
+
+
+
+Available Keys
+--------------
+^H -- just use h
+^J -- just use j
+^K -- who uses digraphs??
+^L -- that one time a year you want to redraw the screen, hit :redr
