@@ -6,7 +6,7 @@ Inspirations:
 
 
 TODO:
-NERDtree, BufExplorer
+BufExplorer
 is there any way to bundle the fuzzy_file_finder gem in this git repo?
 endwise? http://www.vim.org/scripts/script.php?script_id=2386
 haml? http://www.vim.org/scripts/script.php?script_id=1433
@@ -23,6 +23,7 @@ Keystrokes:
 B   -- when inside block, converts block between {} and do/end
 C-K -- fuzzy file finder
 C-^ -- edit previous file (vim builtin, worth mentioning though)
+,D  -- fire up the nerd tree
 
 
 :help rails

@@ -94,5 +94,10 @@ endfunction
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
+
+" http://got-ravings.blogspot.com/2009/02/vim-pr0n-jamis-buck-must-die.html
+" map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+nnoremap <leader>d :NERDTreeToggle<cr>
+
 " Use Control-K to bring up the fuzzy finder
 nnoremap <c-k> :FuzzyFinderTextMate<CR>
