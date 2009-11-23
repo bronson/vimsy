@@ -1,15 +1,13 @@
-Yet another vim-based Rails development environment.  This one is based
-on http://www.akitaonrails.com/2009/04/27/the-best-environment-for-rails-on-windows-part-2
-but a lot simpler.
+Yet another vim-based Rails development environment.
 
-
-:help rails
-:help matchit
-:help surround
+Inspirations:
+- http://www.akitaonrails.com/2009/04/27/the-best-environment-for-rails-on-windows-part-2
+- All the URLs found in comments in the vimrc file
 
 
 TODO:
-NERDtree, BufExplorer, FuzzyFinder
+NERDtree, BufExplorer
+is there any way to bundle the fuzzy_file_finder gem in this git repo?
 endwise? http://www.vim.org/scripts/script.php?script_id=2386
 haml? http://www.vim.org/scripts/script.php?script_id=1433
 allml? http://www.vim.org/scripts/script.php?script_id=1896
@@ -18,11 +16,19 @@ git? at least display branch and file status?
 snippets?  would I use them?
 folding?   never been happy with folding in the past.  http://eigenclass.org/hiki.rb?simplefold+plugin+0.4.0
 vividchalk: http://www.vim.org/scripts/script.php?script_id=1891
+sethbc-fuzzy_file_finder can use ff 2.22.3.  is it worth updating?
 
 
-
-B -- convert block between {} and do/end
+Keystrokes:
+B   -- when inside block, converts block between {} and do/end
+C-K -- fuzzy file finder
 C-^ -- edit previous file (vim builtin, worth mentioning though)
+
+
+:help rails
+:help matchit
+:help surround
+
 
 Rails:
 gf -- if you're over a class or symbol, try gf.  It should take you.
@@ -35,7 +41,6 @@ gf -- if you're over a class or symbol, try gf.  It should take you.
   with no targets, tries to figure out from current file
 :Rextract -- extract a partial
 :Rtree -- open nerdtree view of the Rails project
-
 
 
 surround: http://www.vim.org/scripts/script.php?script_id=1697
@@ -64,5 +69,4 @@ Available Keys
 --------------
 ^H -- just use h
 ^J -- just use j
-^K -- who uses digraphs??
 ^L -- that one time a year you want to redraw the screen, hit :redr

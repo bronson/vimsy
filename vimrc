@@ -93,3 +93,6 @@ endfunction
 
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
+
+" Use Control-K to bring up the fuzzy finder
+nnoremap <c-k> :FuzzyFinderTextMate<CR>
