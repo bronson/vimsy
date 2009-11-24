@@ -47,6 +47,21 @@ function s:EscapeBackSlash(str)
   return substitute(a:str, '\', '\\\\', 'g') 
 endfunction
 
+function s:RunCommand(cmd)
+  if g:rubytest_in_quickfix > 0
+    let s:oldefm = &efm
+    let &efm = s:efm . s:efm_backtrace . ',' . s:efm_ruby . ',' . s:oldefm . ',%-G%.%#'
+  
+    echo a:cmd
+    cex system(a:cmd)
+    cw
+  
+    let &efm = s:oldefm
+  else
+    exe "!echo '" . a:cmd . "' && " . a:cmd
+  endif
+endfunction
+
 function s:RunTest()
   if s:test_scope == 1
     let cmd = g:rubytest_cmd_testcase
@@ -58,13 +73,8 @@ function s:RunTest()
   if case != 'false'
     let case = substitute(case, "'\\|\"", '.', 'g')
     let cmd = substitute(cmd, '%c', case, '')
-    if @% =~ '^test'
-      let cmd = substitute(cmd, '%p', s:EscapeBackSlash(strpart(@%,5)), '')
-      exe "!echo '" . cmd . "' && cd test && " . cmd
-    else
-      let cmd = substitute(cmd, '%p', s:EscapeBackSlash(@%), '')
-      exe "!echo '" . cmd . "' && " . cmd
-    end
+    let cmd = substitute(cmd, '%p', s:EscapeBackSlash(@%), '')
+    call s:RunCommand(cmd)
   else
     echo 'No test case found.'
   endif
@@ -81,17 +91,7 @@ function s:RunSpec()
   if case != 'false'
     let cmd = substitute(cmd, '%c', case, '')
     let cmd = substitute(cmd, '%p', s:EscapeBackSlash(@%), '')
-    if g:rubytest_in_quickfix > 0
-      let s:oldefm = &efm
-      let &efm = s:efm . s:efm_backtrace . ',' . s:efm_ruby . ',' . s:oldefm . ',%-G%.%#'
-
-      cex system(cmd)
-      cw
-
-      let &efm = s:oldefm
-    else
-      exe "!echo '" . cmd . "' && " . cmd
-    endif
+    call s:RunCommand(cmd)
   else
     echo 'No spec found.'
   endif
