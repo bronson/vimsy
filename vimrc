@@ -71,6 +71,9 @@ source $HOME/.vim/ruby-block-conv.vim
 " (maybe we should just do this on every startup?)
 " :helptags ~/.vim/doc
 
+" search for a tags file recursively from cwd to /
+set tags=tags;/
+
 
 " Hm, xmllint kind of sucks.  And isn't there a reformat-entire-buffer command?
 " To reformat an XML buffer, hit :prettyxml
@@ -106,4 +109,7 @@ nnoremap <leader>d :NERDTreeToggle<cr>
 nnoremap <C-J> :BufExplorer<CR>
 " Use Control-K to bring up the fuzzy finder
 nnoremap <C-K> :FuzzyFinderTextMate<CR>
+" Use Control-/ to toggle comments
+nnoremap <C-_> :call NERDComment(0, "toggle")<CR>
+vnoremap <C-_> <ESC>:call NERDComment(1, "toggle")<CR>
 

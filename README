@@ -21,11 +21,14 @@ Keystrokes:
 B   -- when inside block, converts block between {} and do/end
 C-J -- bufexplorer
 C-K -- fuzzy file finder
-C-^ -- edit previous file (vim builtin, worth mentioning though.
-       The previous file is marked with # in the output of :ls)
+C-/ -- Toggle the comments on the selected lines or current line
 ,D  -- fire up the nerd tree
 
 
+Vim Builtins: (worth mentioning)
+C-^ -- edit previous file (file marked with # in the output of :ls), C-W C-^ -- split and switch
+:bd -- close current buffer
+C-W _ -- maximize current window (:on makes it even more maximal)
 
 :help rails
 :help matchit
