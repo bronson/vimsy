@@ -44,7 +44,10 @@ let mapleader = ","
 set mouse=a            " make the mouse work in consoles
 set ttymouse=xterm2    " console protocol to use
 set selectmode=mouse
-set visualbell         " no beep mess even if the os is set wrong
+
+" visualbell is bad because vim is frozen the whole time the bell is going.
+" it can cause 1/2 sec or more delays.
+" set visualbell         " no beep mess even if the os is set wrong
 
 set guioptions-=T      " hide toolbar
 " set guioptions-=m    " hide menu bar
@@ -99,5 +102,8 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 " map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 nnoremap <leader>d :NERDTreeToggle<cr>
 
+" Use Control-J to bring up the bufexplorer
+nnoremap <C-J> :BufExplorer<CR>
 " Use Control-K to bring up the fuzzy finder
-nnoremap <c-k> :FuzzyFinderTextMate<CR>
+nnoremap <C-K> :FuzzyFinderTextMate<CR>
+

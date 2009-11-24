@@ -6,11 +6,9 @@ Inspirations:
 
 
 TODO:
-BufExplorer
-is there any way to bundle the fuzzy_file_finder gem in this git repo?
 endwise? http://www.vim.org/scripts/script.php?script_id=2386
 haml? http://www.vim.org/scripts/script.php?script_id=1433
-allml? http://www.vim.org/scripts/script.php?script_id=1896
+do we even need bufexplorer?  why not always use fuzzyfinder?
 show matching begin/else/end/etc when moving the cursor
 git? at least display branch and file status?
 snippets?  would I use them?
@@ -21,9 +19,12 @@ sethbc-fuzzy_file_finder can use ff 2.22.3.  is it worth updating?
 
 Keystrokes:
 B   -- when inside block, converts block between {} and do/end
+C-J -- bufexplorer
 C-K -- fuzzy file finder
-C-^ -- edit previous file (vim builtin, worth mentioning though)
+C-^ -- edit previous file (vim builtin, worth mentioning though.
+       The previous file is marked with # in the output of :ls)
 ,D  -- fire up the nerd tree
+
 
 
 :help rails
@@ -71,3 +72,11 @@ Available Keys
 ^H -- just use h
 ^J -- just use j
 ^L -- that one time a year you want to redraw the screen, hit :redr
+
+
+Rejected
+--------
+
+allml: Looks like a bunch of obscure keybindings for editing XMLish files.
+       Not very exciting or useful.
+camelcasemotion: how often do you need to move in a camelcase word?
