@@ -72,7 +72,7 @@ source $HOME/.vim/ruby-block-conv.vim
 " :helptags ~/.vim/doc
 
 " search for a tags file recursively from cwd to /
-set tags=tags;/
+set tags=.tags,tags;/
 
 
 " Hm, xmllint kind of sucks.  And isn't there a reformat-entire-buffer command?

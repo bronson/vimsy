@@ -48,6 +48,7 @@ gf -- if you're over a class or symbol, try gf.  It should take you.
   with no targets, tries to figure out from current file
 :Rextract -- extract a partial
 :Rtree -- open nerdtree view of the Rails project
+C-X C-U -- complete current word from Rails keywords
 
 
 surround: http://www.vim.org/scripts/script.php?script_id=1697
