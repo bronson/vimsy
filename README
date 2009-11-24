@@ -10,11 +10,12 @@ endwise? http://www.vim.org/scripts/script.php?script_id=2386
 haml? http://www.vim.org/scripts/script.php?script_id=1433
 show matching begin/else/end/etc when moving the cursor
 tComment looks much tighter than NERD_commenter.  Faster too?
-git? at least display branch and file status?
+display git branch and file status?
 snippets?  would I use them?
 folding?   never been happy with folding in the past.  http://eigenclass.org/hiki.rb?simplefold+plugin+0.4.0
 vividchalk: http://www.vim.org/scripts/script.php?script_id=1891
 sethbc-fuzzy_file_finder can use ff 2.22.3.  is it worth updating?
+is it even worth using ff_textmate?  is it that much better than plain ff?
 
 
 Keystrokes:
