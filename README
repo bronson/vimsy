@@ -9,6 +9,7 @@ TODO:
 endwise? http://www.vim.org/scripts/script.php?script_id=2386
 haml? http://www.vim.org/scripts/script.php?script_id=1433
 show matching begin/else/end/etc when moving the cursor
+tComment looks much tighter than NERD_commenter.  Faster too?
 git? at least display branch and file status?
 snippets?  would I use them?
 folding?   never been happy with folding in the past.  http://eigenclass.org/hiki.rb?simplefold+plugin+0.4.0
@@ -24,6 +25,7 @@ C-/ -- Toggle the comments on the selected lines or current line
 ,D  -- fire up the nerd tree
 ,t  -- run the test containing the cursor (like :.Rake but much faster)
 ,T  -- run all tests in the current file (like :Rake but much faster)
+TlistToggle -- show/hide the tag list (updates every updatetime ms)
 
 
 Vim Builtins: (worth mentioning)
