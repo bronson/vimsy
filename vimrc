@@ -43,7 +43,8 @@ let mapleader = ","
 " hm, not sure if this is a good idea or not
 set mouse=a            " make the mouse work in consoles
 set ttymouse=xterm2    " console protocol to use
-set selectmode=mouse
+" this feels funky and everything seems to work fine without it
+" set selectmode=mouse
 
 " visualbell is bad because vim is frozen the whole time the bell is going.
 " it can cause 1/2 sec or more delays.
@@ -66,10 +67,6 @@ source $HOME/.vim/ruby-block-conv.vim
 " Not sure if these are a good idea...
 " set formatoptions-=o "dont continue comments when pushing o/O
 " let g:syntastic_enable_signs=1 "mark syntax errors with :signs
-
-" to rebuild help after installing a plugin
-" (maybe we should just do this on every startup?)
-" :helptags ~/.vim/doc
 
 " search for a tags file recursively from cwd to /
 set tags=.tags,tags;/
