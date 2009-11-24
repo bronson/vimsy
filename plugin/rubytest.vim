@@ -55,6 +55,7 @@ function s:RunCommand(cmd)
     echo a:cmd
     cex system(a:cmd)
     cw
+    echo "testing finished"
   
     let &efm = s:oldefm
   else
