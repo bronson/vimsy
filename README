@@ -8,7 +8,6 @@ Inspirations:
 TODO:
 endwise? http://www.vim.org/scripts/script.php?script_id=2386
 haml? http://www.vim.org/scripts/script.php?script_id=1433
-do we even need bufexplorer?  why not always use fuzzyfinder?
 show matching begin/else/end/etc when moving the cursor
 git? at least display branch and file status?
 snippets?  would I use them?
@@ -23,12 +22,15 @@ C-J -- bufexplorer
 C-K -- fuzzy file finder
 C-/ -- Toggle the comments on the selected lines or current line
 ,D  -- fire up the nerd tree
+,t  -- run the test containing the cursor (like :.Rake but much faster)
+,T  -- run all tests in the current file (like :Rake but much faster)
 
 
 Vim Builtins: (worth mentioning)
 C-^ -- edit previous file (file marked with # in the output of :ls), C-W C-^ -- split and switch
 :bd -- close current buffer
 C-W _ -- maximize current window (:on makes it even more maximal)
+C-W T -- open this window in a new tab
 
 :help rails
 :help matchit
