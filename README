@@ -27,6 +27,7 @@ C-/ -- Toggle the comments on the selected lines or current line
 ,t  -- run the test containing the cursor (like :.Rake but much faster)
 ,T  -- run all tests in the current file (like :Rake but much faster)
 TlistToggle -- show/hide the tag list (updates every updatetime ms)
+% jumps between matching begin/if/while/do/rescue/end/etc.  (matchit)
 
 
 Vim Builtins: (worth mentioning)
@@ -54,28 +55,6 @@ gf -- if you're over a class or symbol, try gf.  It should take you.
 C-X C-U -- complete current word from Rails keywords
 
 
-surround: http://www.vim.org/scripts/script.php?script_id=1697
-ds"    -- delete surrounding "        "word" -> word
-dst    -- delete surrounding tag
-2dst   -- delete second innermost surrounding tag
-cs'"   -- change surrounding ' to "   'word' -> "word"
-ysw(   -- surround cursor to end of word in ( )        word -> ( word )
-ysiw(   -- surround word in ( )        word -> ( word )
-
-ds -- delete surrounding text object
-      text object: [{(<>)}]'"` w (word) W (non-blank chars) s (sentence) p (paragraph) b=) B=} r=] a=>
-cs -- change surrounding text object to supplied new delim
-(visual)s -- insert surrounding delims
-(visual)S -- insert surrounding delims always on separate lines
-
-"abc"
-  <hi><at>abc</at></hi>
-
-% jumps between matching begin/if/while/do/rescue/end/etc.  (matchit)
-
-
-
-
 Available Keys
 --------------
 ^H -- just use h
@@ -89,3 +68,5 @@ Rejected
 allml: Looks like a bunch of obscure keybindings for editing XMLish files.
        Not very exciting or useful.
 camelcasemotion: how often do you need to move in a camelcase word?
+surround: screws up vi mode (hit v, select some text, then s.  boo!)
+
