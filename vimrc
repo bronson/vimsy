@@ -40,9 +40,9 @@ nnoremap ` '
 " \ is a pinky stretch and usually in weird places.  , is better.
 let mapleader = ","
 
-" hm, not sure if this is a good idea or not
-set mouse=a            " make the mouse work in consoles
-set ttymouse=xterm2    " console protocol to use
+" looks like this is not so good, it screws up the ability to cut and paste
+" set mouse=a            " make the mouse work in consoles
+" set ttymouse=xterm2    " console protocol to use
 " this feels funky and everything seems to work fine without it
 " set selectmode=mouse
 
