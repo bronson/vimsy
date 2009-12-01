@@ -6,11 +6,16 @@ Inspirations:
 
 
 TODO:
-endwise? http://www.vim.org/scripts/script.php?script_id=2386
+rubytest should save the file before running the tests.
+rubytest should not scan for valid tests if running with T.  Just run the file.
+rubytest definitely needs to present its quickfix better.  (crib from recent rails.vim?)
+NERDtree should support 'n' on a directory name to create and open a new file in a directory
 haml? http://www.vim.org/scripts/script.php?script_id=1433
+instead of railstest, http://www.vim.org/scripts/script.php?script_id=2869 ?
 show matching begin/else/end/etc when moving the cursor
 tComment looks much tighter than NERD_commenter.  Faster too?
-display git branch and file status?
+Better git binding?  display git branch and file status?
+  http://www.vim.org/scripts/script.php?script_id=2861
 snippets?  would I use them?
 folding?   never been happy with folding in the past.  http://eigenclass.org/hiki.rb?simplefold+plugin+0.4.0
 vividchalk: http://www.vim.org/scripts/script.php?script_id=1891
@@ -38,7 +43,6 @@ C-W T -- open this window in a new tab
 
 :help rails
 :help matchit
-:help surround
 
 
 Rails:
