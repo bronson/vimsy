@@ -114,3 +114,27 @@ nnoremap <C-K> :FuzzyFinderTextMate<CR>
 nnoremap <C-_> :call NERDComment(0, "toggle")<CR>
 vnoremap <C-_> <ESC>:call NERDComment(1, "toggle")<CR>
 
+
+" ------   rSpec stuff
+
+" Run rspec using a formatter meant for quickfix display
+" Uses ~/.vim/ruby/vim_spec_formatter.rb to populate the quickfix window
+" Slightly modified from https://wincent.com/blog/running-rspec-specs-from-inside-vim
+function! RunSpec(command)
+  if a:command == ''
+    let dir = 'spec'
+  else
+    let dir = a:command
+  endif
+  cexpr system("spec -r ~/.vim/ruby/vim_spec_formatter.rb -f Spec::Runner::Formatter::VimSpecFormatter " . dir)"a:command)
+  cw
+endfunction
+
+" have :Spec run rspecs (args with pathname completion, :Spec spec/views)
+command! -nargs=? -complete=file Spec call RunSpec(<q-args>)
+
+" Make ,s run Spec for ultra convenience
+map <leader>s :Spec<space>
+
+" -------
+
