@@ -10,8 +10,8 @@ set linebreak   "wrap lines at convenient points
 " make Y consistent with C and D
 nnoremap Y y$
 
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set autoindent
 set showmatch         " briefly jump to matching }] when typing
@@ -54,7 +54,11 @@ set guioptions-=T      " hide toolbar
 " set guioptions-=m    " hide menu bar
 " set guifont=Inconsolata\ Medium\ 10
 " set guifont=* to bring up a font selector, set guifont? to see result
-colorscheme desert
+" desert is too low contrast
+" slate is great except comments are horrible
+" adaryn is very close to the emacs I used a decade ago at OpenTV
+" nice: breeze, evening, navajo-night
+colorscheme evening
 
 
 " Just use PageUp and PageDown to scroll?
