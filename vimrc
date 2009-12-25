@@ -75,6 +75,9 @@ source $HOME/.vim/ruby-block-conv.vim
 " search for a tags file recursively from cwd to /
 set tags=.tags,tags;/
 
+" Make ,* search for the word under the cursor in all files
+map <leader>* :execute "noautocmd vimgrep /\\<" . expand("<cword>") . "\\>/gj **/*.*" <Bar> cw<CR> 5
+
 
 " Hm, xmllint kind of sucks.  And isn't there a reformat-entire-buffer command?
 " To reformat an XML buffer, hit :prettyxml
