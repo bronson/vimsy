@@ -115,6 +115,9 @@ nnoremap <C-_> :call NERDComment(0, "toggle")<CR>
 vnoremap <C-_> <ESC>:call NERDComment(1, "toggle")<CR>
 
 
+" Make the quickfix window wrap no matter the setting of nowrap
+au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
+
 " ------   rSpec stuff
 
 " Run rspec using a formatter meant for quickfix display

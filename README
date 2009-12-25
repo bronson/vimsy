@@ -6,7 +6,7 @@ Inspirations:
 
 
 TODO:
-How do I make the quickfix buffer wrap, but every other buffer nowrap?  Horizontal scrolling the quickfix buffer really stinks.
+Why does C-/ work in the terminal but not gvim?
 rubytest should save the file before running the tests.
 rubytest should not scan for valid tests if running with T.  Just run the file.
 rubytest definitely needs to present its quickfix better.  (crib from recent rails.vim?)
@@ -43,6 +43,8 @@ C-^ -- edit previous file (file marked with # in the output of :ls), C-W C-^ -- 
 :bd -- close current buffer
 C-W _ -- maximize current window (:on makes it even more maximal)
 C-W T -- open this window in a new tab
+H M L -- move cursor on screen to high, middle, low
+C-T / C-D -- (insert mode) insert tab / delete tab from beginning of line
 
 :help rails
 :help matchit
