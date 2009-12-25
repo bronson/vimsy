@@ -110,9 +110,16 @@ nnoremap <leader>d :NERDTreeToggle<cr>
 nnoremap <C-J> :BufExplorer<CR>
 " Use Control-K to bring up the fuzzy finder
 nnoremap <C-K> :FuzzyFinderTextMate<CR>
-" Use Control-/ to toggle comments
+" Use Control-/ to toggle comments (why the heck doesn't this work in gvim??)
+nnoremap <C-/> :call NERDComment(0, "toggle")<CR>
+vnoremap <C-/> <ESC>:call NERDComment(1, "toggle")<CR>
+" but that doesn't work in the terminal and, for some reason, this does:
 nnoremap <C-_> :call NERDComment(0, "toggle")<CR>
 vnoremap <C-_> <ESC>:call NERDComment(1, "toggle")<CR>
+" So make ,c toggle comments always.  Sigh
+map <leader>c  :call NERDComment(0, "toggle")<ESC>
+" Why on earth does ,c take forever to run but ,C goes instantly?
+map <leader>C  :call NERDComment(0, "toggle")<CR>
 
 
 " Make the quickfix window wrap no matter the setting of nowrap

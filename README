@@ -28,8 +28,8 @@ is it possible to extract rails.vim's rSpec functionality and use it instead of 
 
 Keystrokes:
 B   -- when inside block, converts block between {} and do/end
-C-J -- bufexplorer
-C-K -- fuzzy file finder
+C-J -- bufexplorer (orig C-J is same as j)
+C-K -- fuzzy file finder (orig C-K is same as k)
 C-/ -- Toggle the comments on the selected lines or current line
 ,D  -- fire up the nerd tree
 ,t  -- run the test containing the cursor (like :.Rake but much faster)
@@ -67,8 +67,9 @@ C-X C-U -- complete current word from Rails keywords
 Available Keys
 --------------
 ^H -- just use h
-^J -- just use j
 ^L -- that one time a year you want to redraw the screen, hit :redr
+^N -- just use j
+^P -- just use k
 
 
 Rejected
