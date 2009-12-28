@@ -7,10 +7,13 @@ Inspirations:
 
 TODO:
 Why does C-/ work in the terminal but not gvim?
+Add http://github.com/adamlogic/ack.vim/commit/850e83088e0a623390446ea88fc8740857777f25 ?
+Write a proper help file.  :help simvim should pull up our metadocs.
 rubytest should save the file before running the tests.
 rubytest should not scan for valid tests if running with T.  Just run the file.
 rubytest definitely needs to present its quickfix better.  (crib from recent rails.vim?)
 NERDtree should support 'n' on a directory name to create and open a new file in a directory
+NERDtree should support 's', 'h', 'v' top open a horiz/vert split with a file?
 haml? http://www.vim.org/scripts/script.php?script_id=1433
 instead of railstest, http://www.vim.org/scripts/script.php?script_id=2869 ?
 show matching begin/else/end/etc when moving the cursor
@@ -24,6 +27,11 @@ sethbc-fuzzy_file_finder can use ff 2.22.3.  is it worth updating?
 is it even worth using ff_textmate?  is it that much better than plain ff?
 get newest haml indent/syntax (2008 Sep 11) included in vim distro.  (just one regex change)
 is it possible to extract rails.vim's rSpec functionality and use it instead of current rSpec stuff?
+
+
+Changes:
+- Uses rails.vim, etc
+- Uses ack for :grep (includes ack, no need to install it separately)
 
 
 Keystrokes:
