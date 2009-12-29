@@ -61,10 +61,6 @@ set guioptions-=T      " hide toolbar
 colorscheme evening
 
 
-" Just use PageUp and PageDown to scroll?
-"nnoremap <C-B> :BufExplorer<cr>
-"nnoremap <C-F> :FuzzyFinderTextMate<CR>
-
 " http://eigenclass.org/hiki/Ruby+block+conversion+macros+for+Vim
 source $HOME/.vim/ruby-block-conv.vim
 
@@ -124,6 +120,9 @@ map <leader>c  :call NERDComment(0, "toggle")<ESC>
 " Why on earth does ,c take forever to run but ,C goes instantly?
 map <leader>C  :call NERDComment(0, "toggle")<CR>
 
+" Make Control-Space perform completion
+inoremap <Nul> <C-x><C-o>
+inoremap <C-Space> <C-x><C-o>
 
 " Make the quickfix window wrap no matter the setting of nowrap
 au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif

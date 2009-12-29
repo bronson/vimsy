@@ -7,6 +7,7 @@ Inspirations:
 
 TODO:
 Why does C-/ work in the terminal but not gvim?
+Make ,* use ack instead of the slow-as-molasses vimgrep.
 Add http://github.com/adamlogic/ack.vim/commit/850e83088e0a623390446ea88fc8740857777f25 ?
 Write a proper help file.  :help simvim should pull up our metadocs.
 rubytest should save the file before running the tests.
@@ -38,12 +39,13 @@ Keystrokes:
 B   -- when inside block, converts block between {} and do/end
 C-J -- bufexplorer (orig C-J is same as j)
 C-K -- fuzzy file finder (orig C-K is same as k)
-C-/ -- Toggle the comments on the selected lines or current line
+C-/ -- Toggle the comments on the selected lines or current line (console only?! ,c<Space> works in both)
 ,D  -- fire up the nerd tree
 ,t  -- run the test containing the cursor (like :.Rake but much faster)
 ,T  -- run all tests in the current file (like :Rake but much faster)
 TlistToggle -- show/hide the tag list (updates every updatetime ms)
 % jumps between matching begin/if/while/do/rescue/end/etc.  (matchit)
+C-Space -- complete word (same as C-X C-O)
 
 
 Vim Builtins: (worth mentioning)
@@ -53,6 +55,7 @@ C-W _ -- maximize current window (:on makes it even more maximal)
 C-W T -- open this window in a new tab
 H M L -- move cursor on screen to high, middle, low
 C-T / C-D -- (insert mode) insert tab / delete tab from beginning of line
+C-O / C-I -- go to older / newer cursor position (see |jump-motions|)
 
 :help rails
 :help matchit
