@@ -6,6 +6,7 @@ Inspirations:
 
 
 TODO:
+What is omnifunc and how is it different from C-X C-U
 Why does C-/ work in the terminal but not gvim?
 Make ,* use ack instead of the slow-as-molasses vimgrep.
 Add http://github.com/adamlogic/ack.vim/commit/850e83088e0a623390446ea88fc8740857777f25 ?
@@ -34,6 +35,10 @@ Changes:
 - Uses rails.vim, etc
 - Uses ack for :grep (includes ack, no need to install it separately)
 
+:help rails
+:help matchit
+
+
 
 Keystrokes:
 B   -- when inside block, converts block between {} and do/end
@@ -56,9 +61,14 @@ C-W T -- open this window in a new tab
 H M L -- move cursor on screen to high, middle, low
 C-T / C-D -- (insert mode) insert tab / delete tab from beginning of line
 C-O / C-I -- go to older / newer cursor position (see |jump-motions|)
+Tabs: :tabnew, :tabnext (gt), :tabprev (gT), :close
+When using gvim, :q might accidentally quit your whole session.
+  Use C-W C-C or :clo to close a window.
 
-:help rails
-:help matchit
+
+Hints
+- When using gvim, :q might accidentally quit your whole session.
+  Use C-W C-C or :clo to close a window.
 
 
 Rails:
@@ -71,7 +81,7 @@ gf -- if you're over a class or symbol, try gf.  It should take you.
 :Rake (targets) -- run rake, open errors in quickfix window
   with no targets, tries to figure out from current file
 :Rextract -- extract a partial
-:Rtree -- open nerdtree view of the Rails project
+:Rtree -- open nerdtree view of the Rails project (any diff from ,d?)
 C-X C-U -- complete current word from Rails keywords
 
 

@@ -20,6 +20,26 @@ set scrolloff=3       " lines to keep visible before and after cursor
 set sidescrolloff=7   " columns to keep visible before and after cursor
 set sidescroll=1      " continuous horizontal scroll rather than jumpy
 
+
+" \ is a pinky stretch and usually in weird places.  , is better.
+let mapleader = ","
+
+
+
+" Highlight EOL whitespace, http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+" the above flashes annoyingly while typing, be calmer in insert mode
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+
+
+" Remove end of line white space.  TODO: change this to :FixWhitespace?
+noremap <leader>r ma:%s/\s\+$//e<CR>`a
+
+
+
 filetype plugin on    " needed by matchit
 filetype indent on
 
@@ -36,9 +56,6 @@ set hidden " no need to save before hiding, http://items.sjbach.com/319/configur
 " http://items.sjbach.com/319/configuring-vim-right
 nnoremap ' `
 nnoremap ` '
-
-" \ is a pinky stretch and usually in weird places.  , is better.
-let mapleader = ","
 
 " looks like this is not so good, it screws up the ability to cut and paste
 " set mouse=a            " make the mouse work in consoles
