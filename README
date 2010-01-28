@@ -1,4 +1,4 @@
-Yet another vim-based Rails development environment.
+Yet another vim-based development environment.
 
 Inspirations:
 - http://www.akitaonrails.com/2009/04/27/the-best-environment-for-rails-on-windows-part-2
@@ -88,7 +88,6 @@ C-X C-U -- complete current word from Rails keywords
 Available Keys
 --------------
 ^H -- just use h
-^L -- that one time a year you want to redraw the screen, hit :redr
 ^N -- just use j
 ^P -- just use k
 
@@ -96,9 +95,8 @@ Available Keys
 Rejected
 --------
 
-allml: Looks like a bunch of obscure keybindings for editing XMLish files.
-       Not very exciting or useful.
-camelcasemotion: how often do you need to move in a camelcase word?
-surround: screws up vi mode (hit v, select some text, then s.  boo!)
+allml: Looks like a bunch of obscure keybindings for editing XMLish files.  Not very exciting or useful.
+camelcasemotion: how often do you need to move within a camelcase word?
+surround: screws up visual mode (hit v, select some text, then s.  boo!)
 specky: includes a bunch of non-rspec-related garbage.  It's hard enough to get vim scripts to coexist as it is, there's no need to insert unrelated stuff. http://www.vim.org/scripts/script.php?script_id=2286
 vim-rspec: relies on Ruby+hpricot/xsltproc parsing HTML?  Seems awfully overcomplex.
