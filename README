@@ -6,6 +6,8 @@ Inspirations:
 
 
 TODO:
+How do I cancel bufexplorer and to back to the file I was editing without changing the previous file (Control-6)?  Hitting esc doesn't work.
+Map http://vim.wikia.com/wiki/VimTip165 as :bc (why does vim make this so hard??)
 What is omnifunc and how is it different from C-X C-U
 Why does C-/ work in the terminal but not gvim?
 Make ,* use ack instead of the slow-as-molasses vimgrep.
@@ -14,8 +16,6 @@ Write a proper help file.  :help simvim should pull up our metadocs.
 rubytest should save the file before running the tests.
 rubytest should not scan for valid tests if running with T.  Just run the file.
 rubytest definitely needs to present its quickfix better.  (crib from recent rails.vim?)
-NERDtree should support 'n' on a directory name to create and open a new file in a directory
-NERDtree should support 's', 'h', 'v' top open a horiz/vert split with a file?
 haml? http://www.vim.org/scripts/script.php?script_id=1433
 instead of railstest, http://www.vim.org/scripts/script.php?script_id=2869 ?
 show matching begin/else/end/etc when moving the cursor
@@ -53,9 +53,15 @@ TlistToggle -- show/hide the tag list (updates every updatetime ms)
 C-Space -- complete word (same as C-X C-O)
 
 
+Tasks:
+Create a file or directory: ,d (open nerdtree), put the cursor on the directory to contain the new file, and hit m.
+Move or copy files: ,d (open nerdtree), put the cursor on the directory to contain the new file, and hit m.
+
+
 Vim Builtins: (worth mentioning)
 C-^ -- edit previous file (file marked with # in the output of :ls), C-W C-^ -- split and switch
 :bd -- close current buffer
+:wa -- write all buffers (Save All)
 C-W _ -- maximize current window (:on makes it even more maximal)
 C-W T -- open this window in a new tab
 H M L -- move cursor on screen to high, middle, low
@@ -80,7 +86,7 @@ gf -- if you're over a class or symbol, try gf.  It should take you.
   :Rcontroller, :Rview, :Rjavascript, :Rlayout, etc.
 :Rake (targets) -- run rake, open errors in quickfix window
   with no targets, tries to figure out from current file
-:Rextract -- extract a partial
+:Rextract -- extract a partial (in your view, use v to select the code to extract, hit :Rextract NAME (name of your partial), and out it comes
 :Rtree -- open nerdtree view of the Rails project (any diff from ,d?)
 C-X C-U -- complete current word from Rails keywords
 
