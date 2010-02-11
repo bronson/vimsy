@@ -1,0 +1,225 @@
+*vimsy.txt*                    Vimsy                     Version 0.1
+
+              A nice vim-based development environment          *vimsy*
+
+
+- Hardly changes vim's default behavior, just adds to it.
+- Always strives for simplicity and consistency.
+
+
+
+==============================================================================
+0. Table of Contents                                      *vimsy-contents*
+
+1. |vimsy-plugins|       List of Plugins
+2. |vimsy-keystrokes|    How to use Vimsy's features.
+3. |vimsy-todo|          A huge list of things to improve
+4. |vimsy-rejplugins|    Why good plugins might not be included
+5. |vimsy-changes|       List of user-visible changes
+6. |vimsy-about|         Download new versions, licensing, etc.
+
+
+
+==============================================================================
+1. Installed Plugins                                      *vimsy-plugins*
+
+These are the plugins that give vimsy all its functionality.  See
+|vimsy-rejected-plugins| for the plugins that didn't make the cut.
+These are listed in approximate order of significance.
+
+
+- NERD Tree        4.0.0    09 Oct 2009       |NERDTree-contents|
+  Navigate a nice outline view of your filesystem
+
+- Textmate Fuzzyfinder  2.13  04 Oct 2008
+  Open any file in your project with just a few keystrokes
+
+- Bufexplorer      7.2.2    19 Nov 2008       |buffer-explorer|
+  Quickly switch among your open buffers
+
+- Matchit          1.13.2   25 Jan 2008       |matchit|
+  Allows % to match if statements, html tags, just about anything.
+
+- Rails            4.0      04 Oct 2009       |rails-plugin-author|
+  Much brilliance for Rails developers by tpope.
+
+- Endwise          1.0      13 Dec 2009
+  Automatically closes blocks in Ruby and vimscript
+
+- Taglist                   24 May 2007
+  Easily list and navigate among the functions, vars, etc in a file.
+
+- IndexedSearch             21 Nov 2006
+  Shows the number of hits when searching with /,?,*,etc.
+
+- RubyTest                  13 May 2009
+  Quickly run Ruby Test::Unit tests, navigate failures in the quickfix window
+
+- RunSpec                   24 Jan 2009
+  Quickly run Ruby RSpec tests, navigate failures in the quickfix window
+
+- RubyBlockConv             2005
+  Easily convert Ruby blocks between {} and do/end
+
+- Cucumber indentation and syntax highlighting.
+
+
+
+=============================================================================
+2. Keystrokes                                          *vimsy-keystrokes*
+
+B   -- when inside block, converts block between {} and do/end
+C-J -- bufexplorer (orig C-J is same as j)
+C-K -- fuzzy file finder (orig C-K is same as k)
+C-/ -- Toggle the comments on the selected lines or current line (console only?! ,c<Space> works in both)
+,D  -- fire up the nerd tree
+,t  -- run the test containing the cursor (like :.Rake but much faster)
+,T  -- run all tests in the current file (like :Rake but much faster)
+TlistToggle -- show/hide the tag list (updates every updatetime ms)
+% jumps between matching begin/if/while/do/rescue/end/etc.  (matchit)
+C-Space -- complete word (same as C-X C-O)
+
+Tasks:
+Create a file or directory: ,d (open nerdtree), put the cursor on the directory to contain the new file, and hit m.
+Move or copy files: ,d (open nerdtree), put the cursor on the directory to contain the new file, and hit m.
+
+Vim Builtins: (worth mentioning)
+C-^ -- edit previous file (file marked with # in the output of :ls), C-W C-^ -- split and switch
+:bd / C-W c -- close current buffer
+:wa -- write all buffers (Save All)
+:wqa -- write all buffers and quit
+C-W _ -- maximize current window. :on (:only) makes it even more maximal.
+C-W T -- open this window in a new tab
+C-W KJHL -- move current window to the extreme border (J makes it full width at the bottom of the screen, etc)
+C-W rR -- rotate open windows clockwise / counterclockwise
+H M L -- move cursor on screen to high, middle, low
+C-T / C-D -- (insert mode) insert tab / delete tab from beginning of line
+C-O / C-I -- go to older / newer cursor position (see |jump-motions|)
+Tabs: :tabnew, :tabnext (gt), :tabprev (gT), :close
+When using gvim, :q might accidentally quit your whole session.
+  Use C-W C-C or :clo to close a window.
+
+Hints
+- When using gvim, :q might accidentally quit your whole session.
+  Use C-W C-C or :clo to close a window.
+
+Rails:
+gf -- if you're over a class or symbol, try gf.  It should take you.
+:A -- go to alternate file (usually test file)
+  AS -- split, AV -- vertical split, AT -- tab, AD -- replace current buffer
+:R -- got to related file (model/schema, controller/template)
+:Rmodel (name) -- go to the named model
+  :Rcontroller, :Rview, :Rjavascript, :Rlayout, etc.
+:Rake (targets) -- run rake, open errors in quickfix window
+  with no targets, tries to figure out from current file
+:Rextract -- extract a partial (in your view, use v to select the code to extract, hit :Rextract NAME (name of your partial), and out it comes
+:Rtree -- open nerdtree view of the Rails project (any diff from ,d?)
+C-X C-U -- complete current word from Rails keywords
+
+
+Available Keystrokes -- common keystrokes that are available for vimsy's use.
+^H -- just use h
+^N -- just use j (ex-emacs users might want this left alone)
+^P -- just use k (ex-emacs users might want this left alone)
+
+
+
+==============================================================================
+3. TODO                                                   *vimsy-todo*
+
+Nerdcommenter looks overcomplex, maybe switch to tcommenter
+Remove fugitive, it's doesn't look like it's useful to an end-user
+Try switching to fuzzyfinder
+Restore grep to its non-ack style, add ack keybindings or something
+Add a color switcher and some decent color themes.
+
+Organize this todo list by package and concept!
+Add tag closing: http://pastey.net/132688-2fb8 or http://github.com/mitechie/pyvim/blob/master/vim/ftplugin/xml.vim
+How to I make HTML tags auto-close?  Or can I make completion close tags?
+Can I join forces with http://github.com/mitechie/pyvim ?
+Integrate http://github.com/astashov/vim-ruby-debugger (how does one debug regular ruby apps, or generators?)
+Move the swapfiles somewhere else, it's a pain to .gitignore them.
+How do I cancel bufexplorer and to back to the file I was editing without changing the previous file (Control-6)?  Hitting esc doesn't work.
+Also make bufexplorer support s and v to open new buffer horiz or vertically split.
+Map http://vim.wikia.com/wiki/VimTip165 as :bc (why does vim make this so hard??)
+What is omnifunc and how is it different from C-X C-U
+Why does C-/ work in the terminal but not gvim?
+Make the bad whitespace detector use a dark red instead of the current annoying color.
+Add :ver N and :hor N commands to set the vertical and horizontal size of the current window
+NT: How do I display the currently edited file in the nerd tree?
+   i.e. I'm editing a file, I hit a key combo, and the cursor is placed on that file in the tree.
+NT: Should probably let ? be search backward, use h for help.
+Also make bufexplorer to use h for help.
+NT: Make a keystroke to fire off a grep/ack from that directory (or parent dir of curr file)
+NT: Add c/n to nerdtree for one-step file creation
+Make ,* use ack instead of the slow-as-molasses vimgrep.
+Add http://github.com/adamlogic/ack.vim/commit/850e83088e0a623390446ea88fc8740857777f25 ?
+Write a proper help file.  :help simvim should pull up our metadocs.
+rubytest should save the file before running the tests.
+rubytest should not scan for valid tests if running with T.  Just run the file.
+rubytest definitely needs to present its quickfix better.  (crib from recent rails.vim?)
+haml? http://www.vim.org/scripts/script.php?script_id=1433
+instead of railstest, http://www.vim.org/scripts/script.php?script_id=2869 ?
+show matching begin/else/end/etc when moving the cursor
+tComment looks much tighter than NERD_commenter.  Faster too?
+Better git binding?  display git branch and file status?
+  http://www.vim.org/scripts/script.php?script_id=2861
+snippets?  would I use them?
+folding?   never been happy with folding in the past.  http://eigenclass.org/hiki.rb?simplefold+plugin+0.4.0
+vividchalk: http://www.vim.org/scripts/script.php?script_id=1891
+sethbc-fuzzy_file_finder can use ff 2.22.3.  is it worth updating?
+is it even worth using ff_textmate?  is it that much better than plain ff?
+get newest haml indent/syntax (2008 Sep 11) included in vim distro.  (just one regex change)
+is it possible to extract rails.vim's rSpec functionality and use it instead of current rSpec stuff?
+Is it possible to unit test this mess?  http://www.vim.org/scripts/script.php?script_id=2565
+
+
+
+==============================================================================
+4. Rejected Plugins            *vimsy-rejplugins*  *vimsy-rejected-plugins*
+
+These are plugins that were considered but not used.  See
+|vimsy-plugins| for the list of currently installed plugins.
+
+
+allml        Looks like a bunch of obscure keybindings for editing XMLish
+             files -- a lot of memorization for a little benefit.
+
+camelcasemotion    How often do you need to move within a camelcase word?
+             Maybe once every few weeks?
+
+surround     Screws up visual mode (hit v, select some text, then s).
+             That's some pretty core functionality to mess up!
+
+specky       Includes a bunch of non-rspec-related garbage.  It's hard
+             enough to get vim scripts to reliably coexist as it is,
+             there's no need to bring along unrelated stuff!
+
+vim-rspec    relies on Ruby+hpricot/xsltproc parsing HTML?  Seems rather
+             overcomplex.  Glad I found a simpler alternative.
+
+
+
+==============================================================================
+5. Changes                                             *vimsy-changes*
+
+Once Vimsy stabilizes a little, all big, user-visible changes
+will be listed here.
+
+
+
+==============================================================================
+6. About                                               *vimsy-about*
+
+Vimsy was written by Scott Bronson, brons_vimsy@rinspin.com.
+It was written from scratch but it cribbed heavily from Akita's
+version of Scrooloose's vimfiles.
+
+Homepage:     http://github.com/bronson/vimsy
+
+                                                      *vimsy-license*
+Each plugin in vimsy is licensed individually by its author.
+All other content in Vimsy is distributable under the same
+terms as Vim itself.  See |license|.  No warranties, expressed
+or implied.
+

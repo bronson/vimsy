@@ -456,3 +456,14 @@ v_[%	matchit.txt	/*v_[%*
 v_]%	matchit.txt	/*v_]%*
 v_a%	matchit.txt	/*v_a%*
 v_g%	matchit.txt	/*v_g%*
+vimsy	vimsy.txt	/*vimsy*
+vimsy-about	vimsy.txt	/*vimsy-about*
+vimsy-changes	vimsy.txt	/*vimsy-changes*
+vimsy-contents	vimsy.txt	/*vimsy-contents*
+vimsy-keystrokes	vimsy.txt	/*vimsy-keystrokes*
+vimsy-license	vimsy.txt	/*vimsy-license*
+vimsy-plugins	vimsy.txt	/*vimsy-plugins*
+vimsy-rejected-plugins	vimsy.txt	/*vimsy-rejected-plugins*
+vimsy-rejplugins	vimsy.txt	/*vimsy-rejplugins*
+vimsy-todo	vimsy.txt	/*vimsy-todo*
+vimsy.txt	vimsy.txt	/*vimsy.txt*
