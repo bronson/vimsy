@@ -3,6 +3,7 @@
 "Subject to same licensing terms as Ruby.
 " requires matchit and friends 
 " since it uses the % and = bindings
+" http://eigenclass.org/hiki/Ruby+block+conversion+macros+for+Vim
 function! s:String_Strip(str)
     let s = substitute(a:str, '\v^\s*', '', '')
     return substitute(s, '\v\s*$', '', '')

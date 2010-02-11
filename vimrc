@@ -78,9 +78,6 @@ set guioptions-=T      " hide toolbar
 colorscheme evening
 
 
-" http://eigenclass.org/hiki/Ruby+block+conversion+macros+for+Vim
-source $HOME/.vim/ruby-block-conv.vim
-
 " Not sure if these are a good idea...
 " set formatoptions-=o "dont continue comments when pushing o/O
 " let g:syntastic_enable_signs=1 "mark syntax errors with :signs
