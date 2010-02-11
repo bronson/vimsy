@@ -61,7 +61,11 @@ These are listed in approximate order of significance.
 - RubyBlockConv             2005                    |vimsy-blockconv|
   Easily convert Ruby blocks between {} and do/end
 
+
+Features
+
 - Cucumber indentation and syntax highlighting.
+- Highlights erroneous trailing whitspace
 
 
 
@@ -127,6 +131,7 @@ Available Keystrokes -- common keystrokes that are available for vimsy's use.
 ==============================================================================
 3. TODO                                                   *vimsy-todo*
 
+Add http://www.vim.org/scripts/script.php?script_id=1147 to close buffer without also closing the window.
 Nerdcommenter looks overcomplex, maybe switch to tcommenter
 Remove fugitive, it's doesn't look like it's useful to an end-user
 Try switching to fuzzyfinder
@@ -144,7 +149,6 @@ Also make bufexplorer support s and v to open new buffer horiz or vertically spl
 Map http://vim.wikia.com/wiki/VimTip165 as :bc (why does vim make this so hard??)
 What is omnifunc and how is it different from C-X C-U
 Why does C-/ work in the terminal but not gvim?
-Make the bad whitespace detector use a dark red instead of the current annoying color.
 Add :ver N and :hor N commands to set the vertical and horizontal size of the current window
 NT: How do I display the currently edited file in the nerd tree?
    i.e. I'm editing a file, I hit a key combo, and the cursor is placed on that file in the tree.
@@ -172,6 +176,16 @@ is it even worth using ff_textmate?  is it that much better than plain ff?
 get newest haml indent/syntax (2008 Sep 11) included in vim distro.  (just one regex change)
 is it possible to extract rails.vim's rSpec functionality and use it instead of current rSpec stuff?
 Is it possible to unit test this mess?  http://www.vim.org/scripts/script.php?script_id=2565
+ruby indentation screws up when I type end_date, it unindents prematurely.  It should wait for the next character before doing that.
+
+Bug in ERb indentation:
+  <% semantic_form_for(:rep, report,
+               :html => { :method => :get },
+               :url => { :action => :output }
+              ) do |form| %>
+    <%= form.input :type, :as => :hidden, :value => 'groovy' %>
+  If you auto-indent this, everything ends up too far to the right.
+  But, if you put semantic_form_for all on one line, it gets it right.
 
 
 
