@@ -58,7 +58,7 @@ These are listed in approximate order of significance.
 - RunSpec                   24 Jan 2009
   Quickly run Ruby RSpec tests, navigate failures in the quickfix window
 
-- RubyBlockConv             2005
+- RubyBlockConv             2005                    |vimsy-blockconv|
   Easily convert Ruby blocks between {} and do/end
 
 - Cucumber indentation and syntax highlighting.
@@ -68,11 +68,11 @@ These are listed in approximate order of significance.
 =============================================================================
 2. Keystrokes                                          *vimsy-keystrokes*
 
-B   -- when inside block, converts block between {} and do/end
-C-J -- bufexplorer (orig C-J is same as j)
-C-K -- fuzzy file finder (orig C-K is same as k)
-C-/ -- Toggle the comments on the selected lines or current line (console only?! ,c<Space> works in both)
-,D  -- fire up the nerd tree
+,B  -- when you select a block in visual mode, ,B will convert between {} and do/end. *vimsy-blockconv*
+C-J -- bufexplorer (original C-J binding did the same thing as j)
+C-K -- fuzzy file finder (original C-K binding did the same thing as k)
+,c  -- Toggle the comments on the selected lines or current line
+,d  -- fire up the nerd tree
 ,t  -- run the test containing the cursor (like :.Rake but much faster)
 ,T  -- run all tests in the current file (like :Rake but much faster)
 TlistToggle -- show/hide the tag list (updates every updatetime ms)
@@ -198,6 +198,10 @@ specky       Includes a bunch of non-rspec-related garbage.  It's hard
 vim-rspec    relies on Ruby+hpricot/xsltproc parsing HTML?  Seems rather
              overcomplex.  Glad I found a simpler alternative.
 
+Control-/    This is the one keybinding that all IDEs use is Control-/ to
+             toggle comments.  Shockingly, it works in the console but
+             apparently it's impossible to capture in gvim!  Oh well.
+             Until this is fixed in vim core, get used to using ,c.
 
 
 ==============================================================================

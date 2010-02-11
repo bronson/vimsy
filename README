@@ -6,9 +6,13 @@
 TODO: write a description.
 
 See doc/vimsy.txt for more.
-Or, better yet, install vimsy
+Or, better yet, install vimsy and then :help vimsy
 
 
 INSTALL
+
+Prerequisites: Vim 7.2
+  Vimsy will probably work on older versions of Vim but who knows!
+
 
 TODO: write install directions
