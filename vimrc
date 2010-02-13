@@ -140,6 +140,8 @@ inoremap <C-Space> <C-x><C-o>
 
 " Make the quickfix window wrap no matter the setting of nowrap
 au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
+" Make ,w toggle wrapping on and off
+map <leader>w :set nowrap!<CR><CR>
 
 " ------   rSpec stuff
 
