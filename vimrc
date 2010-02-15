@@ -172,7 +172,8 @@ map <leader>s :Spec<space>
 
 " ------- replace vim's grep with ack
 " embed ack since most distros haven't caught up to the --column option
+" disabled because this behavior is just too different from regular grep
 
-set grepprg=$HOME/.vim/bin/ack-standalone\ --column
-set grepformat=%f:%l:%c:%m
+" set grepprg=$HOME/.vim/bin/ack-standalone\ --column
+" set grepformat=%f:%l:%c:%m
 
