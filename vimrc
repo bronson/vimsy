@@ -1,4 +1,5 @@
 " not sure what these do...?
+set nocompatible  " tends to make things work better
 set showcmd     "show incomplete cmds down the bottom
 set showmode    "show current mode down the bottom
 
@@ -14,12 +15,15 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set autoindent
+set nostartofline     " don't jump to start of line as a side effect (i.e. <<)
 set showmatch         " briefly jump to matching }] when typing
 
 set scrolloff=3       " lines to keep visible before and after cursor
 set sidescrolloff=7   " columns to keep visible before and after cursor
 set sidescroll=1      " continuous horizontal scroll rather than jumpy
 
+set laststatus=2      " always display status line even if only one window is visible.
+" set confirm         " prompt user what to do instead of just failing (i.e. unsaved files)
 
 " \ is a pinky stretch and usually in weird places.  , is better.
 let mapleader = ","
@@ -39,9 +43,11 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 noremap <leader>r ma:%s/\s\+$//e<CR>`a
 
 
+" Map <C-L> also turns off search highlighting until the next search
+nnoremap <C-L> :nohl<CR><C-L>
 
-filetype plugin on    " needed by matchit
-filetype indent on
+filetype indent plugin on
+syntax on
 
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
@@ -63,9 +69,8 @@ nnoremap ` '
 " this feels funky and everything seems to work fine without it
 " set selectmode=mouse
 
-" visualbell is bad because vim is frozen the whole time the bell is going.
-" it can cause 1/2 sec or more delays.
-" set visualbell         " no beep mess even if the os is set wrong
+set visualbell      " don't beep constantly, it's annoying.
+set t_vb=           " and don't flash the screen either.
 
 set guioptions-=T      " hide toolbar
 " set guioptions-=m    " hide menu bar

@@ -132,6 +132,7 @@ Available Keystrokes -- common keystrokes that are available for vimsy's use.
 ==============================================================================
 3. TODO                                                   *vimsy-todo*
 
+Leave sw=2 for Ruby files but make shiftwidth=4 softtabstop=4 for all others.
 Add http://www.vim.org/scripts/script.php?script_id=1147 to close buffer without also closing the window.
 Nerdcommenter looks overcomplex, maybe switch to tcommenter
 Remove fugitive, it's doesn't look like it's useful to an end-user
@@ -233,7 +234,8 @@ will be listed here.
 6. About                                               *vimsy-about*
 
 Vimsy was written by Scott Bronson, brons_vimsy@rinspin.com.
-It was written from scratch but it cribbed heavily from Akita's
+It was written from scratch but it cribbed heavily from
+http://vim.wikia.com/wiki/Example_vimrc and Akita's
 version of Scrooloose's vimfiles.
 
 Homepage:     http://github.com/bronson/vimsy
