@@ -64,8 +64,9 @@ These are listed in approximate order of significance.
 
 Features
 
-- Cucumber indentation and syntax highlighting.
 - Highlights erroneous trailing whitspace
+- Cucumber indentation and syntax highlighting.
+- CoffeeScript syntax highlighting
 
 
 
@@ -110,9 +111,10 @@ Hints
 
 Rails:
 gf -- if you're over a class or symbol, try gf.  It should take you.
-:A -- go to alternate file (usually test file)
+:A -- go to alternate file (usually to the test file)
   AS -- split, AV -- vertical split, AT -- tab, AD -- replace current buffer
 :R -- got to related file (model/schema, controller/template)
+  RS -- split, RV -- vertical split, RT -- tab, RD -- replace current buffer
 :Rmodel (name) -- go to the named model
   :Rcontroller, :Rview, :Rjavascript, :Rlayout, etc.
 :Rake (targets) -- run rake, open errors in quickfix window
@@ -150,6 +152,7 @@ How do I cancel bufexplorer and to back to the file I was editing without changi
 Also make bufexplorer support s and v to open new buffer horiz or vertically split.
 Map http://vim.wikia.com/wiki/VimTip165 as :bc (why does vim make this so hard??)
 What is omnifunc and how is it different from C-X C-U
+Add http://www.vim.org/scripts/script.php?script_id=31 and map the keys to be the same as railsmode.
 Why does C-/ work in the terminal but not gvim?
 Add :ver N and :hor N commands to set the vertical and horizontal size of the current window
 NT: How do I display the currently edited file in the nerd tree?
@@ -168,6 +171,7 @@ rubytest definitely needs to present its quickfix better.  (crib from recent rai
 Make ,w toggle through wrapping: nowrap, wrap by word, wrap by character.  Right now ,w only cycles nowrap and wrap by word.
 haml? http://www.vim.org/scripts/script.php?script_id=1433
 instead of railstest, http://www.vim.org/scripts/script.php?script_id=2869 ?
+I'd like Rails plugin to support :Routes/:Rroutes, :Rschema, and :Renvironment?
 show matching begin/else/end/etc when moving the cursor
 tComment looks much tighter than NERD_commenter.  Faster too?
 Better git binding?  display git branch and file status?
