@@ -70,7 +70,8 @@ nnoremap ` '
 " set selectmode=mouse
 
 set visualbell      " don't beep constantly, it's annoying.
-set t_vb=           " and don't flash the screen either.
+set t_vb=           " and don't flash the screen either (terminal anyway...
+" gvim will still flash though.  put "set t_vb=" in your ~/.gvimrc to stop that).
 
 set guioptions-=T      " hide toolbar
 " set guioptions-=m    " hide menu bar
