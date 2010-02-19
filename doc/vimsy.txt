@@ -3,10 +3,6 @@
               A nice vim-based development environment          *vimsy*
 
 
-- Hardly changes vim's default behavior, just adds to it.
-- Always strives for simplicity and consistency.
-
-
 
 ==============================================================================
 0. Table of Contents                                      *vimsy-contents*
@@ -134,7 +130,6 @@ Available Keystrokes -- common keystrokes that are available for vimsy's use.
 ==============================================================================
 3. TODO                                                   *vimsy-todo*
 
-Leave sw=2 for Ruby files but make shiftwidth=4 softtabstop=4 for all others.
 Add http://www.vim.org/scripts/script.php?script_id=1147 to close buffer without also closing the window.
 Nerdcommenter looks overcomplex, maybe switch to tcommenter
 Remove fugitive, it's doesn't look like it's useful to an end-user

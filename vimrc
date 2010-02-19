@@ -11,8 +11,11 @@ set linebreak   "wrap lines at convenient points
 " make Y consistent with C and D
 nnoremap Y y$
 
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
+" ruby code tends to use smaller tabs
+autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2
+
 set expandtab
 set autoindent
 set nostartofline     " don't jump to start of line as a side effect (i.e. <<)
