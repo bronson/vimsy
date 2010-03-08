@@ -151,6 +151,9 @@ vnoremap <leader>/ <ESC>:call NERDComment(1, "toggle")<CR>
 nnoremap <leader>C  :call NERDComment(0, "toggle")<CR>
 vnoremap <leader>C <ESC>:call NERDComment(1, "toggle")<CR>
 
+" add a space between the comment delimiter and text
+let NERDSpaceDelims=1
+
 " Make Control-Space perform completion
 inoremap <Nul> <C-x><C-o>
 inoremap <C-Space> <C-x><C-o>
