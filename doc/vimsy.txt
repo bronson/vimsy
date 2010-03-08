@@ -66,9 +66,10 @@ See |vimsy-rejected-plugins| for the plugins that didn't make the cut.
 Features
 
 - Highlights erroneous trailing whitspace
-- Cucumber indentation and syntax highlighting.
+- Cucumber indentation and syntax highlighting
 - CoffeeScript syntax highlighting
 - Control-/ to toggle commenting, |vimsy-control-/|
+- Control-W e to close a buffer without affecting the window layout
 
 
 =============================================================================
@@ -86,6 +87,7 @@ C-/ -- Also toggles comments, see |vimsy-control-/|.
 TlistToggle -- show/hide the tag list (updates every updatetime ms)
 % jumps between matching begin/if/while/do/rescue/end/etc.  (matchit)
 C-Space -- complete word (same as C-X C-O)
+C-W e -- closes a buffer but leaves the window open.
 
 Tasks:
 Create a file or directory: ,d (open nerdtree), put the cursor on the directory to contain the new file, and hit m.
@@ -161,7 +163,6 @@ Control-/    This is the one keybinding that all IDEs use to toggle comments.
 3. TODO                                                   *vimsy-todo*
 
 Using , as a map leader is probably a bad idea!  People who use , to repeat the last f or t command backward will be mighty surprised.
-Add http://www.vim.org/scripts/script.php?script_id=1147 to close buffer without also closing the window.
 Try switching to regular fuzzyfinder, without all the ruby.
 Add ack plugin or something to make searching easier.
 Add a color switcher and some decent color themes.
