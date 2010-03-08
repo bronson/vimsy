@@ -3,16 +3,19 @@
                 A nice vim-based development environment
 
 
-TODO: write a description.
+Vimsy is a collection of the best plugins for Vim.  It turns Vim
+into a fast, flexible, and outrageously capable code editor.
 
-See doc/vimsy.txt for more.
-Or, better yet, install vimsy and then :help vimsy
+See doc/vimsy.txt for more.  Or just run ':help vimsy'.
 
 
 INSTALL
 
-Prerequisites: Vim 7.2
-  Vimsy will probably work on older versions of Vim but who knows!
+In your root directory:
 
+    git clone git@github.com:bronson/vimsy.git .vim
+    ln -s .vim/vimrc .vimrc
 
-TODO: write install directions
+Vimsy is tested on Vim 7.2, although most features should work on
+older versions ov Vim.
+
