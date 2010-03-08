@@ -40,6 +40,9 @@ These are the plugins that give vimsy all its functionality.
 - NERD Commenter   2.2.2    30 Mar 2009       |NERDCommenterContents|
   Comment and uncomment lines in just about any language.
 
+- Vim Fugitive     1.0+     03 Mar 2010       |fugitive|
+  A great way to interact with Git from within Vim.
+
 - Endwise          1.0      13 Dec 2009
   Automatically closes blocks in Ruby and vimscript
 
@@ -159,7 +162,6 @@ Control-/    This is the one keybinding that all IDEs use to toggle comments.
 
 Using , as a map leader is probably a bad idea!  People who use , to repeat the last f or t command backward will be mighty surprised.
 Add http://www.vim.org/scripts/script.php?script_id=1147 to close buffer without also closing the window.
-Remove fugitive, it's doesn't look like it's useful to an end-user
 Try switching to regular fuzzyfinder, without all the ruby.
 Add ack plugin or something to make searching easier.
 Add a color switcher and some decent color themes.
@@ -176,7 +178,7 @@ Rails vim -- turn off logfile tweaks.  Coloring makes opening large files painfu
 Also make bufexplorer support s and v to open new buffer horiz or vertically split.
 Map http://vim.wikia.com/wiki/VimTip165 as :bc (why does vim make this so hard??)
 What is omnifunc and how is it different from C-X C-U
-Add http://www.vim.org/scripts/script.php?script_id=31 and map the keys to be the same as railsmode.
+Add a.vim (alternate) http://www.vim.org/scripts/script.php?script_id=31 and map the keys to be the same as railsmode.
 Add :ver N and :hor N commands to set the vertical and horizontal size of the current window
 NT: How do I display the currently edited file in the nerd tree?
    i.e. I'm editing a file, I hit a key combo, and the cursor is placed on that file in the tree.
@@ -185,9 +187,8 @@ NT: control-J should open buf explorer, C-K should do fuzzy file finder.
 Also make bufexplorer to use h for help.
 NT: Make a keystroke to fire off a grep/ack from that directory (or parent dir of curr file)
 NT: Add c/n to nerdtree for one-step file creation
-Make ,* use ack instead of the slow-as-molasses vimgrep.
+Make ,* use grep or ack instead of the slow-as-molasses vimgrep.
 Add http://github.com/adamlogic/ack.vim/commit/850e83088e0a623390446ea88fc8740857777f25 ?
-Write a proper help file.  :help simvim should pull up our metadocs.
 rubytest should save the file before running the tests.
 rubytest should not scan for valid tests if running with T.  Just run the file.
 rubytest definitely needs to present its quickfix better.  (crib from recent rails.vim?)
@@ -196,9 +197,8 @@ haml? http://www.vim.org/scripts/script.php?script_id=1433
 instead of railstest, http://www.vim.org/scripts/script.php?script_id=2869 ?
 I'd like Rails plugin to support :Routes/:Rroutes, :Rschema, and :Renvironment?
 show matching begin/else/end/etc when moving the cursor
-Better git binding?  display git branch and file status?
-  http://www.vim.org/scripts/script.php?script_id=2861
-snippets?  would I use them?
+Display git branch and file status?  http://www.vim.org/scripts/script.php?script_id=2258
+snippets?  would I use them?  Doesn't matter, others definitely will!  Use snipmate.
 folding?   never been happy with folding in the past.  http://eigenclass.org/hiki.rb?simplefold+plugin+0.4.0
 vividchalk: http://www.vim.org/scripts/script.php?script_id=1891
 sethbc-fuzzy_file_finder can use ff 2.22.3.  is it worth updating?
