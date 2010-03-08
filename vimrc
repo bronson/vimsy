@@ -28,6 +28,7 @@ set sidescroll=1      " continuous horizontal scroll rather than jumpy
 
 set laststatus=2      " always display status line even if only one window is visible.
 " set confirm         " prompt user what to do instead of just failing (i.e. unsaved files)
+set updatetime=1000   " reduce updatetime so current tag in taglist is highlighted faster
 
 " \ is a pinky stretch and usually in weird places.  , is better.
 let mapleader = ","
