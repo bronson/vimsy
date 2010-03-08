@@ -46,6 +46,9 @@ These are the plugins that give vimsy all its functionality.
 - Endwise          1.0      13 Dec 2009
   Automatically closes blocks in Ruby and vimscript
 
+- Surround         1.90     05 Mar 2010       |surround|
+  Easily wrap parens and tags around text.
+
 - Taglist                   24 May 2007       |taglist.txt|
   Easily list and navigate among the functions, vars, etc in a file.
 
@@ -232,9 +235,6 @@ allml        Looks like a bunch of obscure keybindings for editing XMLish
 
 camelcasemotion    How often do you need to move within a camelcase word?
              Maybe once every few weeks?
-
-surround     Screws up visual mode (hit v, select some text, then s).
-             That's some pretty core functionality to mess up!
 
 specky       Includes a bunch of non-rspec-related garbage.  It's hard
              enough to get vim scripts to reliably coexist as it is,

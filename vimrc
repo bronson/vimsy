@@ -184,6 +184,8 @@ command! -nargs=? -complete=file Spec call RunSpec(<q-args>)
 " Make ,s run Spec for ultra convenience
 map <leader>s :Spec<space>
 
+" tell surround not to break the visual s keystroke (:help vs)
+xmap  S    <Plug>Vsurround
 
 " ------- replace vim's grep with ack
 " embed ack since most distros haven't caught up to the --column option
