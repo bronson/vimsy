@@ -18,10 +18,9 @@
 
 ==============================================================================
 1. Installed Plugins                                      *vimsy-plugins*
+                                                          *vimsy-packages*
 
-These are the plugins that give vimsy all its functionality.  See
-|vimsy-rejected-plugins| for the plugins that didn't make the cut.
-These are listed in approximate order of significance.
+These are the plugins that give vimsy all its functionality.
 
 
 - NERD Tree        4.0.0    09 Oct 2009       |NERDTree-contents|
@@ -37,7 +36,7 @@ These are listed in approximate order of significance.
   Allows % to match if statements, html tags, just about anything.
 
 - Rails            4.0      04 Oct 2009       |rails-plugin-author|
-  Much brilliance for Rails developers by tpope.
+  Brilliance for Rails developers by the legendary tpope.
 
 - Endwise          1.0      13 Dec 2009
   Automatically closes blocks in Ruby and vimscript
@@ -57,6 +56,7 @@ These are listed in approximate order of significance.
 - RubyBlockConv             2005                    |vimsy-blockconv|
   Easily convert Ruby blocks between {} and do/end
 
+See |vimsy-rejected-plugins| for the plugins that didn't make the cut.
 
 Features
 
@@ -85,7 +85,7 @@ Tasks:
 Create a file or directory: ,d (open nerdtree), put the cursor on the directory to contain the new file, and hit m.
 Move or copy files: ,d (open nerdtree), put the cursor on the directory to contain the new file, and hit m.
 
-Vim Builtins: (worth mentioning)
+Vim Builtins: Here are some highlights.  Everything is listed in |index.txt|.
 C-^ -- edit previous file (file marked with # in the output of :ls), C-W C-^ -- split and switch
 :bd / C-W c -- close current buffer
 :wa -- write all buffers (Save All)
@@ -100,6 +100,12 @@ C-O / C-I -- go to older / newer cursor position (see |jump-motions|)
 Tabs: :tabnew, :tabnext (gt), :tabprev (gT), :close
 When using gvim, :q might accidentally quit your whole session.
   Use C-W C-C or :clo to close a window.
+[m ]m -- move to the previous or next method/function
+[[ ][ -- move to previous or next outermost { } brace (ruby: class or module)
+[( ]( -- move to previous or next paren ( )
+gd gD -- go to definition of variable under cursor (d searches function, D searches file)
+gq -- reformat comment (visually select first, or hit
+      gq]/ to reformat to the end of the current comment block)
 
 Hints
 - When using gvim, :q might accidentally quit your whole session.
@@ -120,6 +126,7 @@ gf -- if you're over a class or symbol, try gf.  It should take you.
 C-X C-U -- complete current word from Rails keywords
 
 
+
 Available Keystrokes -- common keystrokes that are available for vimsy's use.
 ^H -- just use h
 ^N -- just use j (ex-emacs users might want this left alone)
@@ -130,11 +137,12 @@ Available Keystrokes -- common keystrokes that are available for vimsy's use.
 ==============================================================================
 3. TODO                                                   *vimsy-todo*
 
+Using , as a map leader is probably a bad idea!  People who use , to repeat the last f or t command backward will be mighty surprised.
 Add http://www.vim.org/scripts/script.php?script_id=1147 to close buffer without also closing the window.
 Nerdcommenter looks overcomplex, maybe switch to tcommenter
 Remove fugitive, it's doesn't look like it's useful to an end-user
-Try switching to fuzzyfinder
-Restore grep to its non-ack style, add ack keybindings or something
+Try switching to regular fuzzyfinder, without all the ruby.
+Add ack plugin or something to make searching easier.
 Add a color switcher and some decent color themes.
 
 Organize this todo list by package and concept!
@@ -143,12 +151,17 @@ How to I make HTML tags auto-close?  Or can I make completion close tags?
 Can I join forces with http://github.com/mitechie/pyvim ?
 Integrate http://github.com/astashov/vim-ruby-debugger (how does one debug regular ruby apps, or generators?)
 Move the swapfiles somewhere else, it's a pain to .gitignore them.
+Figure out a keypress to toggle :set paste! on and off.  I do it a lot.
 How do I cancel bufexplorer and to back to the file I was editing without changing the previous file (Control-6)?  Hitting esc doesn't work.
+Rails vim -- turn off logfile tweaks.  Coloring makes opening large files painful, plus it breaks 1G, 500G, etc to navigate in the file.
 Also make bufexplorer support s and v to open new buffer horiz or vertically split.
 Map http://vim.wikia.com/wiki/VimTip165 as :bc (why does vim make this so hard??)
 What is omnifunc and how is it different from C-X C-U
 Add http://www.vim.org/scripts/script.php?script_id=31 and map the keys to be the same as railsmode.
 Why does C-/ work in the terminal but not gvim?
+  It DOES work in gvim, just not in vim-gtk and vim-gnome.
+  Therefore, I should include this mapping AND file a bug on vim-gtk.
+  Here's the bug: https://bugs.launchpad.net/ubuntu/+source/vim/+bug/534124
 Add :ver N and :hor N commands to set the vertical and horizontal size of the current window
 NT: How do I display the currently edited file in the nerd tree?
    i.e. I'm editing a file, I hit a key combo, and the cursor is placed on that file in the tree.
@@ -217,8 +230,9 @@ vim-rspec    relies on Ruby+hpricot/xsltproc parsing HTML?  Seems rather
 
 Control-/    This is the one keybinding that all IDEs use is Control-/ to
              toggle comments.  Shockingly, it works in the console but
-             apparently it's impossible to capture in gvim!  Oh well.
-             Until this is fixed in vim core, get used to using ,c.
+             apparently it's impossible to capture in gvim!  You have
+             strange internals, Vim.  So, until this limitation s fixed
+             in vim core, get used to using a different keybinding.  :(
 
 
 ==============================================================================

@@ -16,8 +16,9 @@ set softtabstop=4
 " ruby code tends to use smaller tabs
 autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2
 
-set expandtab
-set autoindent
+set expandtab         " use spaces instead of tabstops
+set smarttab          " use shiftwidth when hitting tab instead of sts (?)
+set autoindent        " try to put the right amount of space at the beginning of a new line
 set nostartofline     " don't jump to start of line as a side effect (i.e. <<)
 set showmatch         " briefly jump to matching }] when typing
 
