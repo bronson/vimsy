@@ -461,8 +461,11 @@ vimsy-about	vimsy.txt	/*vimsy-about*
 vimsy-blockconv	vimsy.txt	/*vimsy-blockconv*
 vimsy-changes	vimsy.txt	/*vimsy-changes*
 vimsy-contents	vimsy.txt	/*vimsy-contents*
+vimsy-control-/	vimsy.txt	/*vimsy-control-\/*
+vimsy-discussion	vimsy.txt	/*vimsy-discussion*
 vimsy-keystrokes	vimsy.txt	/*vimsy-keystrokes*
 vimsy-license	vimsy.txt	/*vimsy-license*
+vimsy-packages	vimsy.txt	/*vimsy-packages*
 vimsy-plugins	vimsy.txt	/*vimsy-plugins*
 vimsy-rejected-plugins	vimsy.txt	/*vimsy-rejected-plugins*
 vimsy-rejplugins	vimsy.txt	/*vimsy-rejplugins*

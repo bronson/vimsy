@@ -133,16 +133,21 @@ nnoremap <leader>d :NERDTreeToggle<cr>
 nnoremap <C-J> :BufExplorer<CR>
 " Use Control-K to bring up the fuzzy finder
 nnoremap <C-K> :FuzzyFinderTextMate<CR>
-" Use Control-/ to toggle comments (why the heck doesn't this work in gvim??)
+
+" Use Control-/ to toggle comments
 nnoremap <C-/> :call NERDComment(0, "toggle")<CR>
 vnoremap <C-/> <ESC>:call NERDComment(1, "toggle")<CR>
-" but that doesn't work in the terminal and, for some reason, this does:
+" but most vim implementations produce Control-_ instead of Control-/:
+" Mapping C-_ may surprise Hebrew and Farsi programmers, not sure.
 nnoremap <C-_> :call NERDComment(0, "toggle")<CR>
 vnoremap <C-_> <ESC>:call NERDComment(1, "toggle")<CR>
-" So make ,c toggle comments always.  Sigh
-map <leader>c  :call NERDComment(0, "toggle")<ESC>
-" Why on earth does ,c take forever to run but ,C goes instantly?
-map <leader>C  :call NERDComment(0, "toggle")<CR>
+" and vim-gtk and vim-gnome are broken (:help vimsy-control-/)
+" you can use <leader>/ to do the same things.
+nnoremap <leader>/ :call NERDComment(0, "toggle")<CR>
+vnoremap <leader>/ <ESC>:call NERDComment(1, "toggle")<CR>
+" but maybe <leader>C is nicer to type?
+nnoremap <leader>C  :call NERDComment(0, "toggle")<CR>
+vnoremap <leader>C <ESC>:call NERDComment(1, "toggle")<CR>
 
 " Make Control-Space perform completion
 inoremap <Nul> <C-x><C-o>

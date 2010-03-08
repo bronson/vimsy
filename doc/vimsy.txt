@@ -15,7 +15,6 @@
 6. |vimsy-about|         Download new versions, licensing, etc.
 
 
-
 ==============================================================================
 1. Installed Plugins                                      *vimsy-plugins*
                                                           *vimsy-packages*
@@ -37,6 +36,9 @@ These are the plugins that give vimsy all its functionality.
 
 - Rails            4.0      04 Oct 2009       |rails-plugin-author|
   Brilliance for Rails developers by the legendary tpope.
+
+- NERD Commenter   2.2.2    30 Mar 2009       |NERDCommenterContents|
+  Comment and uncomment lines in just about any language.
 
 - Endwise          1.0      13 Dec 2009
   Automatically closes blocks in Ruby and vimscript
@@ -63,7 +65,7 @@ Features
 - Highlights erroneous trailing whitspace
 - Cucumber indentation and syntax highlighting.
 - CoffeeScript syntax highlighting
-
+- Control-/ to toggle commenting, |vimsy-control-/|
 
 
 =============================================================================
@@ -72,7 +74,8 @@ Features
 ,B  -- when you select a block in visual mode, ,B will convert between {} and do/end. *vimsy-blockconv*
 C-J -- bufexplorer (original C-J binding did the same thing as j)
 C-K -- fuzzy file finder (original C-K binding did the same thing as k)
-,c  -- Toggle the comments on the selected lines or current line
+,C  -- Toggle the comments on the selected lines or current line
+C-/ -- Also toggles comments, see |vimsy-control-/|.
 ,d  -- fire up the nerd tree
 ,t  -- run the test containing the cursor (like :.Rake but much faster)
 ,T  -- run all tests in the current file (like :Rake but much faster)
@@ -126,12 +129,29 @@ gf -- if you're over a class or symbol, try gf.  It should take you.
 C-X C-U -- complete current word from Rails keywords
 
 
-
 Available Keystrokes -- common keystrokes that are available for vimsy's use.
 ^H -- just use h
 ^N -- just use j (ex-emacs users might want this left alone)
 ^P -- just use k (ex-emacs users might want this left alone)
 
+
+==============================================================================
+3. DISCUSSION                                            *vimsy-discussion*
+
+Vimsy includes some controversial features.  If you see surprising
+behavior, this section may address it.  If you're surprised that you
+don't see an expected behavior, |vimsy-rejected-plugins| might say why.
+
+                                                        *vimsy-control-/*
+Control-/    This is the one keybinding that all IDEs use to toggle comments.
+             Vimsy support this, but there's a caveat: most terminals convert
+             Control-/ to Control-_.  Control-_ is already used to switch
+             RTL/LTR, languages so Hebrew and Farsi developers may find
+             vimsy's behavior surprising.  If so, this should be reverted.
+
+             Furthermore, A bug in vim-gtk and vim-gnome prevents them from
+             producing Control-/.  Use C-_ or ,C until that bug is fixed.
+             https://bugs.launchpad.net/ubuntu/+source/vim/+bug/534124
 
 
 ==============================================================================
@@ -139,7 +159,6 @@ Available Keystrokes -- common keystrokes that are available for vimsy's use.
 
 Using , as a map leader is probably a bad idea!  People who use , to repeat the last f or t command backward will be mighty surprised.
 Add http://www.vim.org/scripts/script.php?script_id=1147 to close buffer without also closing the window.
-Nerdcommenter looks overcomplex, maybe switch to tcommenter
 Remove fugitive, it's doesn't look like it's useful to an end-user
 Try switching to regular fuzzyfinder, without all the ruby.
 Add ack plugin or something to make searching easier.
@@ -158,10 +177,6 @@ Also make bufexplorer support s and v to open new buffer horiz or vertically spl
 Map http://vim.wikia.com/wiki/VimTip165 as :bc (why does vim make this so hard??)
 What is omnifunc and how is it different from C-X C-U
 Add http://www.vim.org/scripts/script.php?script_id=31 and map the keys to be the same as railsmode.
-Why does C-/ work in the terminal but not gvim?
-  It DOES work in gvim, just not in vim-gtk and vim-gnome.
-  Therefore, I should include this mapping AND file a bug on vim-gtk.
-  Here's the bug: https://bugs.launchpad.net/ubuntu/+source/vim/+bug/534124
 Add :ver N and :hor N commands to set the vertical and horizontal size of the current window
 NT: How do I display the currently edited file in the nerd tree?
    i.e. I'm editing a file, I hit a key combo, and the cursor is placed on that file in the tree.
@@ -181,7 +196,6 @@ haml? http://www.vim.org/scripts/script.php?script_id=1433
 instead of railstest, http://www.vim.org/scripts/script.php?script_id=2869 ?
 I'd like Rails plugin to support :Routes/:Rroutes, :Rschema, and :Renvironment?
 show matching begin/else/end/etc when moving the cursor
-tComment looks much tighter than NERD_commenter.  Faster too?
 Better git binding?  display git branch and file status?
   http://www.vim.org/scripts/script.php?script_id=2861
 snippets?  would I use them?
@@ -228,19 +242,12 @@ specky       Includes a bunch of non-rspec-related garbage.  It's hard
 vim-rspec    relies on Ruby+hpricot/xsltproc parsing HTML?  Seems rather
              overcomplex.  Glad I found a simpler alternative.
 
-Control-/    This is the one keybinding that all IDEs use is Control-/ to
-             toggle comments.  Shockingly, it works in the console but
-             apparently it's impossible to capture in gvim!  You have
-             strange internals, Vim.  So, until this limitation s fixed
-             in vim core, get used to using a different keybinding.  :(
-
 
 ==============================================================================
 5. Changes                                             *vimsy-changes*
 
 Once Vimsy stabilizes a little, all big, user-visible changes
 will be listed here.
-
 
 
 ==============================================================================
