@@ -128,6 +128,7 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 " http://got-ravings.blogspot.com/2009/02/vim-pr0n-jamis-buck-must-die.html
 " map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 nnoremap <leader>d :NERDTreeToggle<cr>
+nnoremap <leader>l :TlistToggle<cr>
 
 " Use Control-J to bring up the bufexplorer
 nnoremap <C-J> :BufExplorer<CR>
