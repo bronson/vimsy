@@ -1,3 +1,7 @@
+" vimsy's .vimrc
+"
+" Don't use abbreviations!  Spelling it out makes grepping easy.
+
 " not sure what these do...?
 set nocompatible  " tends to make things work better
 set showcmd     "show incomplete cmds down the bottom
@@ -29,6 +33,7 @@ set sidescroll=1      " continuous horizontal scroll rather than jumpy
 set laststatus=2      " always display status line even if only one window is visible.
 " set confirm         " prompt user what to do instead of just failing (i.e. unsaved files)
 set updatetime=1000   " reduce updatetime so current tag in taglist is highlighted faster
+set autoread          " suppress warnings when git,etc. changes files on disk.
 
 " \ is a pinky stretch and usually in weird places.  , is better.
 let mapleader = ","
@@ -191,8 +196,8 @@ map <leader>s :Spec<space>
 xmap  S    <Plug>Vsurround
 
 " ------- replace vim's grep with ack
-" embed ack since most distros haven't caught up to the --column option
-" disabled because this behavior is just too different from regular grep
+" Disabled by default because it's too different from stock vim behavior.
+" Embed ack since most distros haven't caught up to the --column option.
 
 " set grepprg=$HOME/.vim/bin/ack-standalone\ --column
 " set grepformat=%f:%l:%c:%m
