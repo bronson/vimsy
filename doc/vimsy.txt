@@ -21,12 +21,8 @@
 
 These are the plugins that give vimsy all its functionality.
 
-
 - NERD Tree        4.0.0    09 Oct 2009       |NERDTree-contents|
   Navigate a nice outline view of your filesystem
-
-- Textmate Fuzzyfinder  2.13  04 Oct 2008
-  Open any file in your project with just a few keystrokes
 
 - Bufexplorer      7.2.2    19 Nov 2008       |buffer-explorer|
   Quickly switch among your open buffers
@@ -43,17 +39,23 @@ These are the plugins that give vimsy all its functionality.
 - Vim Fugitive     1.0+     03 Mar 2010       |fugitive|
   A great way to interact with Git from within Vim.
 
-- Endwise          1.0      13 Dec 2009
-  Automatically closes blocks in Ruby and vimscript
-
 - Surround         1.90     05 Mar 2010       |surround|
   Easily wrap parens and tags around text.
+
+- Ragtag           2.0      08 Feb 2018       |ragtag|
+  Speed up editing HTML/XML/ERb/JSP etc. files.
 
 - Taglist                   24 May 2007       |taglist.txt|
   Easily list and navigate among the functions, vars, etc in a file.
 
+- Textmate Fuzzyfinder  2.13  04 Oct 2008
+  Open any file in your project with just a few keystrokes
+
 - IndexedSearch             21 Nov 2006
   Shows the number of hits when searching with /,?,*,etc.
+
+- Endwise          1.0      13 Dec 2009
+  Automatically closes blocks in Ruby and vimscript
 
 - RubyTest                  13 May 2009
   Quickly run Ruby Test::Unit tests, navigate failures in the quickfix window
@@ -150,22 +152,41 @@ Vimsy includes some controversial features.  If you see surprising
 behavior, this section may address it.  If you're surprised that you
 don't see an expected behavior, |vimsy-rejected-plugins| might say why.
 
-                                                        *vimsy-control-/*
-Control-/    This is the one keybinding that all IDEs use to toggle comments.
-             Vimsy support this, but there's a caveat: most terminals convert
-             Control-/ to Control-_.  Control-_ is already used to switch
-             RTL/LTR, languages so Hebrew and Farsi developers may find
-             vimsy's behavior surprising.  If so, this should be reverted.
 
-             Furthermore, A bug in vim-gtk and vim-gnome prevents them from
-             producing Control-/.  Use C-_ or ,C until that bug is fixed.
-             https://bugs.launchpad.net/ubuntu/+source/vim/+bug/534124
+Map Leader                                               *vimsy-map-leader*
+
+A lot of people recommend changing vim's map leader from "\" to ",".
+The claim is that "\" is hard to type and in different areas of different
+keyboards.  Most people rarely use "," anyway, so why not make things
+more convenient?
+
+Right now, Vimsy follows this advice.  The problem is, this breaks
+existing Vim behavior, not something that Vimsy ever cares to do.
+This will probably be reverted very soon.
+
+
+Control-/                                                *vimsy-control-/*
+
+This is the one keybinding that all IDEs use to toggle comments.  Vimsy
+supports this, but there's a caveat: most terminals convert Control-/ to
+Control-_.  Control-_ is already used to switch RTL/LTR, languages so
+Hebrew and Farsi developers may find vimsy's behavior surprising.  If
+so, this should be reverted.
+
+Furthermore, A bug in vim-gtk and vim-gnome prevents these versions of
+Vim from being able to produce a Control-/.  You can test this for
+yourself: hit colon to go to the command line, then hit control-V
+control-/.  If you see "^/" or "^_", your version of Vim can recognize
+Control-/.  If you see "/", then you're stuck and can only comment using
+Control-_ or ,C.
+         https://bugs.launchpad.net/ubuntu/+source/vim/+bug/534124
 
 
 ==============================================================================
 3. TODO                                                   *vimsy-todo*
 
 Using , as a map leader is probably a bad idea!  People who use , to repeat the last f or t command backward will be mighty surprised.
+Figure out some way of customizing Vimsy.  ~/.vimsyrc maybe?
 Try switching to regular fuzzyfinder, without all the ruby.
 Add ack plugin or something to make searching easier.
 Add a color switcher and some decent color themes.
@@ -223,16 +244,11 @@ Bug in ERb indentation:
   But, if you put semantic_form_for all on one line, it gets it right.
 
 
-
 ==============================================================================
 4. Rejected Plugins            *vimsy-rejplugins*  *vimsy-rejected-plugins*
 
 These are plugins that were considered but not used.  See
 |vimsy-plugins| for the list of currently installed plugins.
-
-
-allml        Looks like a bunch of obscure keybindings for editing XMLish
-             files -- a lot of memorization for a little benefit.
 
 camelcasemotion    How often do you need to move within a camelcase word?
              Maybe once every few weeks?
@@ -248,8 +264,7 @@ vim-rspec    relies on Ruby+hpricot/xsltproc parsing HTML?  Seems rather
 ==============================================================================
 5. Changes                                             *vimsy-changes*
 
-Once Vimsy stabilizes a little, all big, user-visible changes
-will be listed here.
+Once Vimsy stabilizes, user-visible changes will be listed here.
 
 
 ==============================================================================
