@@ -94,7 +94,7 @@ C-/ -- Also toggles comments, see |vimsy-control-/|.
 ,w  -- toggle line wrapping on and off
 % jumps between matching begin/if/while/do/rescue/end/etc.  (matchit)
 C-Space -- complete word (same as C-X C-O)
-C-W e -- closes a buffer but leaves the window open.
+C-W e -- closes a buffer but leaves the window open (C-W C-E works too).
 
 Tasks:
 Create a file or directory: ,d (open nerdtree), put the cursor on the directory to contain the new file, and hit m.
@@ -102,10 +102,9 @@ Move or copy files: ,d (open nerdtree), put the cursor on the directory to conta
 
 Vim Builtins: Here are some highlights.  Everything is listed in |index.txt|.
 C-^ -- edit previous file (file marked with # in the output of :ls), C-W C-^ -- split and switch
-:bd / C-W c -- close current buffer
 :wa -- write all buffers (Save All)
 :wqa -- write all buffers and quit
-C-W _ -- maximize current window. :on (:only) makes it even more maximal.
+C-W _ -- maximize current window. C-W o or :on (:only) makes it even more maximal.
 C-W T -- open this window in a new tab
 C-W KJHL -- move current window to the extreme border (J makes it full width at the bottom of the screen, etc)
 C-W rR -- rotate open windows clockwise / counterclockwise
@@ -113,18 +112,12 @@ H M L -- move cursor on screen to high, middle, low
 C-T / C-D -- (insert mode) insert tab / delete tab from beginning of line
 C-O / C-I -- go to older / newer cursor position (see |jump-motions|)
 Tabs: :tabnew, :tabnext (gt), :tabprev (gT), :close
-When using gvim, :q might accidentally quit your whole session.
-  Use C-W C-C or :clo to close a window.
 [m ]m -- move to the previous or next method/function
 [[ ][ -- move to previous or next outermost { } brace (ruby: class or module)
 [( ]( -- move to previous or next paren ( )
 gd gD -- go to definition of variable under cursor (d searches function, D searches file)
 gq -- reformat comment (visually select first, or hit
       gq]/ to reformat to the end of the current comment block)
-
-Hints
-- When using gvim, :q might accidentally quit your whole session.
-  Use C-W C-C or :clo to close a window.
 
 Rails:
 gf -- if you're over a class or symbol, try gf.  It should take you.
@@ -151,8 +144,8 @@ Available Keystrokes -- common keystrokes that are available for vimsy's use.
 3. DISCUSSION                                            *vimsy-discussion*
 
 Vimsy includes some controversial features.  If you see surprising
-behavior, this section may address it.  If you're surprised that you
-don't see an expected behavior, |vimsy-rejected-plugins| might say why.
+behavior, this section may address it.  (If you're surprised that you
+*don't* see an expected behavior, check |vimsy-rejected-plugins|).
 
 
 Map Leader                                               *vimsy-map-leader*
@@ -208,6 +201,7 @@ Add a.vim (alternate) http://www.vim.org/scripts/script.php?script_id=31 and map
 Add :ver N and :hor N commands to set the vertical and horizontal size of the current window
 NT: Should probably let ? be search backward, use h for help.
 NT: control-J should open buf explorer, C-K should do fuzzy file finder.
+NT: Make space behave the same as return when navigating the tree.
 Also make bufexplorer to use h for help.
 NT: Make a keystroke to fire off a grep/ack from that directory (or parent dir of curr file)
 NT: Add c/n to nerdtree for one-step file creation
@@ -249,10 +243,10 @@ These are plugins that were considered but not used.  See
 |vimsy-plugins| for the list of currently installed plugins.
 
 fuzzyfinder  Jamis Buck wrote fuzzyfinder-textmate, then abandoned it when
-             fuzzyfinder kept and breaking his modifications.  It's a sad
-             story, but not nearly as sad as trying to use plain fuzzyfinder!
-             Stock fuf is so laborious to use that I don't see the point
-             over plain old :find.
+             fuzzyfinder kept and breaking his changes.  It's a sad story,
+             but not nearly as sad as trying to use plain old fuzzyfinder!
+             Stock fuf is so laborious to use that I don't see why anyone
+             would use it over plain old :find.
 
 camelcasemotion    How often do you need to move within a camelcase word?
              Maybe once every few weeks?
