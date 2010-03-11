@@ -10,7 +10,11 @@ set showmode    "show current mode down the bottom
 set incsearch   "find the next match as we type the search 
 set hlsearch    "hilight searches by default
 set nowrap      "dont wrap lines
-set linebreak   "wrap lines at convenient points
+
+" I find linebreak more hassle than it's worth.  It makes it very hard to copy
+" n paste between vim windows due to the artificially inserted CRs, and it can
+" hide errors that look OK due to wrapping.
+" set linebreak   "wrap lines at convenient points
 
 " make Y consistent with C and D
 nnoremap Y y$
