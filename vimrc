@@ -107,19 +107,6 @@ set tags=.tags,tags;/
 map <leader>* :execute "noautocmd vimgrep /\\<" . expand("<cword>") . "\\>/gj **/*.*" <Bar> cw<CR> 5
 
 
-" Hm, xmllint kind of sucks.  And isn't there a reformat-entire-buffer command?
-" To reformat an XML buffer, hit :prettyxml
-function! DoPrettyXML()
-  1,$!xmllint --format --recover -
-endfunction
-command! PrettyXML call DoPrettyXML()
-" and HTML, less pedantic than XML
-function! DoPrettyHTML()
-  1,$!xmllint --format --recover --html -
-endfunction
-command! PrettyHTML call DoPrettyHTML()
-
-
 " This makes * and # work on visual mode too.
 " http://got-ravings.blogspot.com/2008/07/vim-pr0n-visual-search-mappings.html
 function! s:VSetSearch()
