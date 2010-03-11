@@ -92,6 +92,7 @@ C-/ -- Also toggles comments, see |vimsy-control-/|.
 ,t  -- run the test containing the cursor (like :.Rake but much faster)
 ,T  -- run all tests in the current file (like :Rake but much faster)
 ,w  -- toggle line wrapping on and off
+,*  -- grep the entire project for the identifier under the cursor
 % jumps between matching begin/if/while/do/rescue/end/etc.  (matchit)
 C-Space -- complete word (same as C-X C-O)
 C-W e -- closes a buffer but leaves the window open (C-W C-E works too).
@@ -206,7 +207,6 @@ Also make bufexplorer to use h for help.
 NT: Make a keystroke to fire off a grep/ack from that directory (or parent dir of curr file)
 NT: Add c/n to nerdtree for one-step file creation
 NT: Can I hit L on a dir or file to produce a :Glog there?
-Make ,* use grep or ack instead of the slow-as-molasses vimgrep.
 Add http://github.com/adamlogic/ack.vim/commit/850e83088e0a623390446ea88fc8740857777f25 ?
 rubytest should save the file before running the tests.
 rubytest should not scan for valid tests if running with T.  Just run the file.
@@ -244,9 +244,9 @@ These are plugins that were considered but not used.  See
 
 fuzzyfinder  Jamis Buck wrote fuzzyfinder-textmate, then abandoned it when
              fuzzyfinder kept and breaking his changes.  It's a sad story,
-             but not nearly as sad as trying to use plain old fuzzyfinder!
+             but not nearly as sad as trying to use the original fuzzyfinder!
              Stock fuf is so laborious to use that I don't see why anyone
-             would use it over plain old :find.
+             would use it over vim's :find built-in.
 
 camelcasemotion    How often do you need to move within a camelcase word?
              Maybe once every few weeks?
@@ -268,10 +268,10 @@ Once Vimsy stabilizes, user-visible changes will be listed here.
 ==============================================================================
 6. About                                               *vimsy-about*
 
-Vimsy was written by Scott Bronson, brons_vimsy@rinspin.com.
-It was written from scratch but it cribbed heavily from
-http://vim.wikia.com/wiki/Example_vimrc and Akita's
-version of Scrooloose's vimfiles.
+Vimsy was assembled by Scott Bronson, brons_vimsy@rinspin.com.
+Its vimrc was written from scratch but cribbed heavily from
+http://vim.wikia.com/wiki/Example_vimrc and Akita's version of
+Scrooloose's vimfiles.
 
 Homepage:     http://github.com/bronson/vimsy
 

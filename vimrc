@@ -106,7 +106,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set tags=.tags,tags;/
 
 " Make ,* search for the word under the cursor in all files
-map <leader>* :execute "noautocmd vimgrep /\\<" . expand("<cword>") . "\\>/gj **/*.*" <Bar> cw<CR> 5
+map <leader>* :execute "noautocmd grep -rw " . expand("<cword>") . " ."<CR>
 
 
 " This makes * and # work on visual mode too.
