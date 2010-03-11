@@ -75,6 +75,7 @@ Features
 - CoffeeScript syntax highlighting
 - Control-/ to toggle commenting, |vimsy-control-/|
 - Control-W e to close a buffer without affecting the window layout
+- Restores folds and cursor position when opening a file again
 
 
 =============================================================================

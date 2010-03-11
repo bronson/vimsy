@@ -182,10 +182,16 @@ map <leader>s :Spec<space>
 " tell surround not to break the visual s keystroke (:help vs)
 xmap  S    <Plug>Vsurround
 
+
 " ------- replace vim's grep with ack
 " Disabled by default because it's too different from stock vim behavior.
 " Embed ack since most distros haven't caught up to the --column option.
 
 " set grepprg=$HOME/.vim/bin/ack-standalone\ --column
 " set grepformat=%f:%l:%c:%m
+
+
+" Make vim restore cursorpos & folding each time it loads a document
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
 
