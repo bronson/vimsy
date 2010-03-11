@@ -191,6 +191,7 @@ Try switching to regular fuzzyfinder, without all the ruby.
 Add ack plugin or something to make searching easier.
 Add a color switcher and some decent color themes.
 
+Maybe set tw=72 for text files only?  That seems unintrusive and useful?
 Organize this todo list by package and concept!
 Add tag closing: http://pastey.net/132688-2fb8 or http://github.com/mitechie/pyvim/blob/master/vim/ftplugin/xml.vim
 How to I make HTML tags auto-close?  Or can I make completion close tags?
@@ -212,6 +213,7 @@ NT: control-J should open buf explorer, C-K should do fuzzy file finder.
 Also make bufexplorer to use h for help.
 NT: Make a keystroke to fire off a grep/ack from that directory (or parent dir of curr file)
 NT: Add c/n to nerdtree for one-step file creation
+NT: Can I hit L on a dir or file to produce a :Glog there?
 Make ,* use grep or ack instead of the slow-as-molasses vimgrep.
 Add http://github.com/adamlogic/ack.vim/commit/850e83088e0a623390446ea88fc8740857777f25 ?
 rubytest should save the file before running the tests.

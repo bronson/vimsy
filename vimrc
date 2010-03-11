@@ -164,7 +164,8 @@ inoremap <Nul> <C-x><C-o>
 inoremap <C-Space> <C-x><C-o>
 
 " Close buffer but not window.  See close-buffer.vim
-nmap <C-W>e <Plug>Kwbd
+nmap <C-W>e     <Plug>Kwbd
+nmap <C-W><C-E> <Plug>Kwbd
 
 " Make the quickfix window wrap no matter the setting of nowrap
 au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
