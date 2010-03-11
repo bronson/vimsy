@@ -1,6 +1,3 @@
-to rebuild help after installing a plugin (do this on every startup?)
-    : helptags ~/.vim/doc
-
 To print the name of the syntax highlighting under the cursor:
     :echo synIDattr(synID(line('.'),col('.'),1),'name')
 
