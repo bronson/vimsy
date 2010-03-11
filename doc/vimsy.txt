@@ -186,7 +186,6 @@ Control-_ or ,C.
 3. TODO                                                   *vimsy-todo*
 
 Using , as a map leader is probably a bad idea!  People who use , to repeat the last f or t command backward will be mighty surprised.
-Figure out some way of customizing Vimsy.  ~/.vimsyrc maybe?
 Try switching to regular fuzzyfinder, without all the ruby.
 Add ack plugin or something to make searching easier.
 Add a color switcher and some decent color themes.
