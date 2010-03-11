@@ -81,7 +81,6 @@ nnoremap ` '
 
 set visualbell      " don't beep constantly, it's annoying.
 set t_vb=           " and don't flash the screen either (terminal anyway...
-" gvim will still flash though.  put "set t_vb=" in your ~/.gvimrc to stop that).
 
 set guioptions-=T      " hide toolbar
 " set guioptions-=m    " hide menu bar
@@ -92,6 +91,9 @@ set guioptions-=T      " hide toolbar
 " adaryn is very close to the emacs I used a decade ago at OpenTV
 " nice: breeze, evening, navajo-night
 colorscheme evening
+
+" make status line include fugitive git info
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 
 " Not sure if these are a good idea...
@@ -131,21 +133,17 @@ vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
 
-" http://got-ravings.blogspot.com/2009/02/vim-pr0n-jamis-buck-must-die.html
-" map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 nnoremap <leader>d :NERDTreeToggle<cr>
 nnoremap <leader>l :TlistToggle<cr>
 
-" Use Control-J to bring up the bufexplorer
 nnoremap <C-J> :BufExplorer<CR>
-" Use Control-K to bring up the fuzzy finder
 nnoremap <C-K> :FuzzyFinderTextMate<CR>
 
 " Use Control-/ to toggle comments
 nnoremap <C-/> :call NERDComment(0, "toggle")<CR>
 vnoremap <C-/> <ESC>:call NERDComment(1, "toggle")<CR>
 " but most vim implementations produce Control-_ instead of Control-/:
-" Mapping C-_ may surprise Hebrew and Farsi programmers, not sure.
+" Mapping C-_ may surprise Hebrew and Farsi programmers...?
 nnoremap <C-_> :call NERDComment(0, "toggle")<CR>
 vnoremap <C-_> <ESC>:call NERDComment(1, "toggle")<CR>
 " and vim-gtk and vim-gnome are broken (:help vimsy-control-/)
