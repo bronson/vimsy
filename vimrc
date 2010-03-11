@@ -193,5 +193,5 @@ xmap  S    <Plug>Vsurround
 
 " Make vim restore cursorpos & folding each time it loads a document
 au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+au BufWinEnter *.* silent loadview
 
