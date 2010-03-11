@@ -24,7 +24,7 @@ These are the plugins that give vimsy all its functionality.
 - NERD Tree        4.1.0    01 Dec 2009       |NERDTree-contents|
   Navigate an outline view of the files in your filesystem
 
-- Bufexplorer      7.2.2    19 Nov 2008       |buffer-explorer|
+- Bufexplorer      7.2.6    12 Feb 2010       |buffer-explorer|
   Quickly switch among your open buffers
 
 - Matchit          1.13.2   25 Jan 2008       |matchit|
