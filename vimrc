@@ -19,6 +19,8 @@ set shiftwidth=4
 set softtabstop=4
 " ruby code tends to use smaller tabs
 autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2
+" ruby includes ! and ? in method names (array.empty?)
+autocmd FileType ruby setlocal iskeyword+=!,?
 
 set expandtab         " use spaces instead of tabstops
 set smarttab          " use shiftwidth when hitting tab instead of sts (?)
