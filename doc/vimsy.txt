@@ -21,8 +21,8 @@
 
 These are the plugins that give vimsy all its functionality.
 
-- NERD Tree        4.0.0    09 Oct 2009       |NERDTree-contents|
-  Navigate a nice outline view of your filesystem
+- NERD Tree        4.1.0    01 Dec 2009       |NERDTree-contents|
+  Navigate an outline view of the files in your filesystem
 
 - Bufexplorer      7.2.2    19 Nov 2008       |buffer-explorer|
   Quickly switch among your open buffers
@@ -86,6 +86,7 @@ C-K -- fuzzy file finder (original C-K binding did the same thing as k)
 ,C  -- Toggle the comments on the selected lines or current line
 C-/ -- Also toggles comments, see |vimsy-control-/|.
 ,d  -- toggle the nerd tree
+,D  -- show the current file in the nerd tree
 ,l  -- toggle the tag list
 ,t  -- run the test containing the cursor (like :.Rake but much faster)
 ,T  -- run all tests in the current file (like :Rake but much faster)
@@ -201,12 +202,9 @@ Figure out a keypress to toggle :set paste! on and off.  I do it a lot.
 How do I cancel bufexplorer and to back to the file I was editing without changing the previous file (Control-6)?  Hitting esc doesn't work.
 Rails vim -- turn off logfile tweaks.  Coloring makes opening large files painful, plus it breaks 1G, 500G, etc to navigate in the file.
 Also make bufexplorer support s and v to open new buffer horiz or vertically split.
-Map http://vim.wikia.com/wiki/VimTip165 as :bc (why does vim make this so hard??)
 What is omnifunc and how is it different from C-X C-U
 Add a.vim (alternate) http://www.vim.org/scripts/script.php?script_id=31 and map the keys to be the same as railsmode.
 Add :ver N and :hor N commands to set the vertical and horizontal size of the current window
-NT: How do I display the currently edited file in the nerd tree?
-   i.e. I'm editing a file, I hit a key combo, and the cursor is placed on that file in the tree.
 NT: Should probably let ? be search backward, use h for help.
 NT: control-J should open buf explorer, C-K should do fuzzy file finder.
 Also make bufexplorer to use h for help.

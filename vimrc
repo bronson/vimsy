@@ -121,6 +121,7 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
 
 nnoremap <leader>d :NERDTreeToggle<cr>
+nnoremap <leader>D :NERDTreeFind<cr>
 nnoremap <leader>l :TlistToggle<cr>
 
 nnoremap <C-J> :BufExplorer<CR>
