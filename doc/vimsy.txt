@@ -34,7 +34,10 @@ These are the plugins that give vimsy all its functionality.
   Brilliance for Rails developers by the legendary tpope.
 
 - Snipmate         0.83     13 Jul 2009       |snippets|
-  Insert Textmate-like snippets with a quick tap on the tab key.
+  Hit the tab key to nsert Textmate-like snippets.
+
+- Snipmate-snippets         18 Dec 2009
+  Includes Scrooloose's comprehensive snippet library
 
 - NERD Commenter   2.2.2    30 Mar 2009       |NERDCommenterContents|
   Comment and uncomment lines in just about any language.
@@ -76,6 +79,8 @@ See |vimsy-rejected-plugins| for the plugins that didn't make the cut.
 
 Features
 
+- Hit i.e. for<tab> to insert the snippet for a for loop.
+- In insert mode, hit Control-R <tab> to show a list of available snippets.
 - Highlights erroneous trailing whitspace
 - Cucumber indentation and syntax highlighting
 - CoffeeScript syntax highlighting
