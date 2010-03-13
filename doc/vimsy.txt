@@ -57,8 +57,8 @@ These are the plugins that give vimsy all its functionality.
 - Endwise          1.0      13 Dec 2009
   Automatically closes blocks in Ruby and vimscript
 
-- RubyTest                  13 May 2009
-  Quickly run Ruby Test::Unit tests, navigate failures in the quickfix window
+- RubyTest         1.0      11 Mar 2010
+  Quickly run Ruby tests, navigate failures in the quickfix window
 
 - RunSpec                   24 Jan 2009
   Quickly run Ruby RSpec tests, navigate failures in the quickfix window
@@ -181,6 +181,7 @@ Control-_ or ,C.
 ==============================================================================
 3. TODO                                                   *vimsy-todo*
 
+Do we still need RubySpec now that RubyTest does specs?
 Hitting Control-] on "empty?" complains E426: tag not found: empty\?  (must set autocmd FileType ruby setlocal iskeyword+=!,? for this to work)
 Using , as a map leader is probably a bad idea!  People who use , to repeat the last f or t command backward will be mighty surprised.
 Add ack plugin or something to make searching easier.

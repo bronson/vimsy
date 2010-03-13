@@ -11,6 +11,9 @@ let rubytest_loaded = 1
 if !exists("g:rubytest_in_quickfix")
   let g:rubytest_in_quickfix = 1
 endif
+if !exists("g:rubytest_spec_drb")
+  let g:rubytest_spec_drb = 0
+endif
 if !exists("g:rubytest_cmd_test")
   let g:rubytest_cmd_test = "ruby %p"
 endif
@@ -23,6 +26,12 @@ endif
 if !exists("g:rubytest_cmd_example")
   let g:rubytest_cmd_example = "spec -f specdoc %p -l %c"
 endif
+if !exists("g:rubytest_cmd_feature")
+  let g:rubytest_cmd_feature = "cucumber %p"
+endif
+if !exists("g:rubytest_cmd_story")
+  let g:rubytest_cmd_story = "cucumber %p -n '%c'"
+endif
 
 function s:FindCase(patterns)
   let ln = a:firstline
@@ -30,7 +39,7 @@ function s:FindCase(patterns)
     let line = getline(ln)
     for pattern in keys(a:patterns)
       if line =~ pattern
-        if s:pattern == '_spec.rb$'
+        if s:pattern == 'spec'
           return a:patterns[pattern](ln)
         else
           return a:patterns[pattern](line)
@@ -47,22 +56,6 @@ function s:EscapeBackSlash(str)
   return substitute(a:str, '\', '\\\\', 'g') 
 endfunction
 
-function s:RunCommand(cmd)
-  if g:rubytest_in_quickfix > 0
-    let s:oldefm = &efm
-    let &efm = s:efm . s:efm_backtrace . ',' . s:efm_ruby . ',' . s:oldefm . ',%-G%.%#'
-  
-    echo a:cmd
-    cex system(a:cmd)
-    cw
-    echo "testing finished"
-  
-    let &efm = s:oldefm
-  else
-    exe "!echo '" . a:cmd . "' && " . a:cmd
-  endif
-endfunction
-
 function s:RunTest()
   if s:test_scope == 1
     let cmd = g:rubytest_cmd_testcase
@@ -71,11 +64,16 @@ function s:RunTest()
   end
 
   let case = s:FindCase(s:test_case_patterns['test'])
-  if case != 'false'
+  if s:test_scope == 2 || case != 'false'
     let case = substitute(case, "'\\|\"", '.', 'g')
     let cmd = substitute(cmd, '%c', case, '')
-    let cmd = substitute(cmd, '%p', s:EscapeBackSlash(@%), '')
-    call s:RunCommand(cmd)
+    if @% =~ '^test'
+      let cmd = substitute(cmd, '%p', s:EscapeBackSlash(strpart(@%,5)), '')
+      exe "!echo '" . cmd . "' && cd test && " . cmd
+    else
+      let cmd = substitute(cmd, '%p', s:EscapeBackSlash(@%), '')
+      exe "!echo '" . cmd . "' && " . cmd
+    end
   else
     echo 'No test case found.'
   endif
@@ -88,19 +86,66 @@ function s:RunSpec()
     let cmd = g:rubytest_cmd_spec
   endif
 
+  if g:rubytest_spec_drb > 0
+    let cmd = cmd . " --drb"
+  endif
+
   let case = s:FindCase(s:test_case_patterns['spec'])
-  if case != 'false'
+  if s:test_scope == 2 || case != 'false'
     let cmd = substitute(cmd, '%c', case, '')
     let cmd = substitute(cmd, '%p', s:EscapeBackSlash(@%), '')
-    call s:RunCommand(cmd)
+    if g:rubytest_in_quickfix > 0
+      let s:oldefm = &efm
+      let &efm = s:efm . s:efm_backtrace . ',' . s:efm_ruby . ',' . s:oldefm . ',%-G%.%#'
+
+      cex system(cmd)
+      cw
+
+      let &efm = s:oldefm
+    else
+      exe "!echo '" . cmd . "' && " . cmd
+    endif
   else
     echo 'No spec found.'
   endif
 endfunction
 
+function s:RunFeature()
+  let s:old_in_quickfix = g:rubytest_in_quickfix
+  let g:rubytest_in_quickfix = 0
+
+  if s:test_scope == 1
+    let cmd = g:rubytest_cmd_story
+  elseif s:test_scope == 2
+    let cmd = g:rubytest_cmd_feature
+  endif
+
+  let case = s:FindCase(s:test_case_patterns['feature'])
+  if s:test_scope == 2 || case != 'false'
+    let cmd = substitute(cmd, '%c', case, '')
+    let cmd = substitute(cmd, '%p', s:EscapeBackSlash(@%), '')
+    if g:rubytest_in_quickfix > 0
+      let s:oldefm = &efm
+      let &efm = s:efm . s:efm_backtrace . ',' . s:efm_ruby . ',' . s:oldefm . ',%-G%.%#'
+
+      cex system(cmd)
+      cw
+
+      let &efm = s:oldefm
+    else
+      exe "!echo '" . cmd . "' && " . cmd
+    endif
+  else
+    echo 'No story found.'
+  endif
+
+  let g:rubytest_in_quickfix = s:old_in_quickfix
+endfunction
+
 let s:test_patterns = {}
-let s:test_patterns['_test.rb$'] = function('s:RunTest')
-let s:test_patterns['_spec.rb$'] = function('s:RunSpec')
+let s:test_patterns['test'] = function('s:RunTest')
+let s:test_patterns['spec'] = function('s:RunSpec')
+let s:test_patterns['\.feature$'] = function('s:RunFeature')
 
 function s:GetTestCaseName1(str)
   return split(a:str)[1]
@@ -126,9 +171,14 @@ function s:GetSpecLine(str)
   return a:str
 endfunction
 
+function s:GetStoryLine(str)
+  return join(split(split(a:str, "Scenario:")[1]))
+endfunction
+
 let s:test_case_patterns = {}
 let s:test_case_patterns['test'] = {'^\s*def test':function('s:GetTestCaseName1'), '^\s*test \s*"':function('s:GetTestCaseName2'), "^\\s*test \\s*'":function('s:GetTestCaseName4'), '^\s*should \s*"':function('s:GetTestCaseName3'), "^\\s*should \\s*'":function('s:GetTestCaseName5')}
 let s:test_case_patterns['spec'] = {'^\s*\(it\|example\) \s*':function('s:GetSpecLine')}
+let s:test_case_patterns['feature'] = {'^\s*Scenario:':function('s:GetStoryLine')}
 
 let s:save_cpo = &cpo
 set cpo&vim
@@ -150,9 +200,7 @@ function s:IsRubyTest()
 endfunction
 
 function s:Run(scope)
-  if &filetype != "ruby"
-    echo "This file doens't contain ruby source."
-  elseif !s:IsRubyTest()
+  if !s:IsRubyTest()
     echo "This file doesn't contain ruby test."
   else
     " test scope define what to test
