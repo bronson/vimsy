@@ -60,6 +60,9 @@ These are the plugins that give vimsy all its functionality.
 - RubyTest         1.0      11 Mar 2010
   Quickly run Ruby tests, navigate failures in the quickfix window
 
+- Alternate        2.18     07 Jun 2007         |alternate|
+  Switch between .c and .h files by hitting :A (or :AV, :AT, etc)
+
 - RunSpec                   24 Jan 2009
   Quickly run Ruby RSpec tests, navigate failures in the quickfix window
 
