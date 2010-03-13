@@ -33,6 +33,9 @@ These are the plugins that give vimsy all its functionality.
 - Rails            4.1      18 Dec 2009       |rails-plugin-author|
   Brilliance for Rails developers by the legendary tpope.
 
+- Snipmate         0.83     13 Jul 2009       |snippets|
+  Insert Textmate-like snippets with a quick tap on the tab key.
+
 - NERD Commenter   2.2.2    30 Mar 2009       |NERDCommenterContents|
   Comment and uncomment lines in just about any language.
 
@@ -222,7 +225,6 @@ I'd like Rails plugin to support :Routes/:Rroutes, :Rschema, and :Renvironment?
 show matching begin/else/end/etc when moving the cursor
 adding html textobjects seems rather useful: http://www.vim.org/scripts/script.php?script_id=3000
 Display git branch and file status?  http://www.vim.org/scripts/script.php?script_id=2258
-snippets?  would I use them?  Doesn't matter, others definitely will!  Use snipmate.
 folding?   never been happy with folding in the past.  http://eigenclass.org/hiki.rb?simplefold+plugin+0.4.0
 vividchalk: http://www.vim.org/scripts/script.php?script_id=1891
 get newest haml indent/syntax (2008 Sep 11) included in vim distro.  (just one regex change)
