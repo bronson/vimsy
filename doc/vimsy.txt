@@ -195,6 +195,7 @@ Control-_ or ,C.
 Do we still need RubySpec now that RubyTest does specs?
 Hitting Control-] on "empty?" complains E426: tag not found: empty\?  (must set autocmd FileType ruby setlocal iskeyword+=!,? for this to work)
 Using , as a map leader is probably a bad idea!  People who use , to repeat the last f or t command backward will be mighty surprised.
+  Also, it sucks when typing to have to wait for a timeout before the comma appears.  (is this true of \ too?)
 Add ack plugin or something to make searching easier.
 Add a color switcher and some decent color themes.
 

@@ -186,7 +186,7 @@ command! -nargs=? -complete=file Spec call RunSpec(<q-args>)
 map <leader>s :Spec<space>
 
 " tell surround not to break the visual s keystroke (:help vs)
-xmap  S    <Plug>Vsurround
+xmap S <Plug>Vsurround
 
 
 " ------- replace vim's grep with ack
@@ -201,3 +201,7 @@ xmap  S    <Plug>Vsurround
 au BufWinLeave * mkview
 au BufWinEnter *.* silent loadview
 
+" Store swapfiles in a single directory.
+" Upside: makes mass deleting swapfiles easy, doesn't clutter project dirs
+" Downside: you won't be notified if you start editing the same file as someone else.
+set directory=~/.vim/swap,~/tmp,/var/tmp/,tmp
