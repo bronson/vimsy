@@ -198,8 +198,9 @@ xmap S <Plug>Vsurround
 
 
 " Make vim restore cursorpos & folding each time it loads a document
-au BufWinLeave * mkview
-au BufWinEnter *.* silent loadview
+" No, just too unreliable.  It's always screwing up readonly and syntax highlighting.
+" au BufWinLeave * mkview
+" au BufWinEnter *.* silent loadview
 
 " Store swapfiles in a single directory.
 " Upside: makes mass deleting swapfiles easy, doesn't clutter project dirs
