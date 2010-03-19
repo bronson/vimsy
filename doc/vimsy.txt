@@ -30,7 +30,7 @@ These are the plugins that give vimsy all its functionality.
 - Matchit          1.13.2   25 Jan 2008       |matchit|
   Allows % to match if statements, html tags, just about anything.
 
-- Rails            4.1      18 Dec 2009       |rails-plugin-author|
+- Rails            4.2      13 Mar 2010       |rails.txt|
   Brilliance for Rails developers by the legendary tpope.
 
 - Snipmate         0.83     13 Jul 2009       |snippets|
