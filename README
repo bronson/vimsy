@@ -1,28 +1,30 @@
                                  Vimsy
 
-                A nice vim-based code stomping environment
+                A nice vim-based code-stomping environment
 
 
 Vimsy is a collection of the greatest plugins for Vim.  It turns Vim
-into a fast, flexible, and outrageously capable code editor.
+into a fast, flexible, and capable code editor.
 
-See doc/vimsy.txt for more.  Or just run ':help vimsy'.
 
 
 INSTALL
 
-In your root directory:
+Macintosh users:   install MacVim, http://code.google.com/p/macvim
+Windows users:     install gvim,   http://www.vim.org/download.php#pc
+Debian/Ubuntu:     apt-get install vim-gnome
+Fedora users:      yum install vim-enhanced
 
-    git clone git@github.com:bronson/vimsy.git .vim
-    ln -s .vim/vimrc .vimrc
+Then, in your home directory:
 
-If you already have your own .vimrc, you can include all of vimsy's
-functionality by adding a line like this:
+    git clone git://github.com/bronson/vimsy.git .vim
+    echo "source .vim/vimrc" >> .vimrc    # ">> _vimrc" on Windows
 
-    source ~/.vim/vimrc
+And you're done!
 
-This is also how to extend and customize Vimsy.
+Now run ':help vimsy' to start to learn about all the good stuff
+you have at your disposal.
 
-Vimsy is tested on Vim 7.2 on Mac/Linux.  Most features will still
-work on older versions of Vim and on Windows.
+Vimsy is tested on Vim 7.2 on Mac/Linux.  Vimsy should work reasonably
+well on any Vim 7 or higher.
 
