@@ -18,7 +18,11 @@ Fedora users:      yum install vim-enhanced
 Then, in your home directory:
 
     git clone git://github.com/bronson/vimsy.git .vim
-    echo "source .vim/vimrc" >> .vimrc    # ">> _vimrc" on Windows
+
+Finally, creaate a file called ".vimrc" in your home directory
+(it should be called _vimrc  on Windows), containing a single line:
+
+    source $HOME/.vim/vimrc
 
 And you're done!
 
