@@ -13,7 +13,7 @@ INSTALL
 Macintosh users:   install MacVim, http://code.google.com/p/macvim
 Windows users:     install gvim,   http://www.vim.org/download.php#pc
 Debian/Ubuntu:     apt-get install vim-gnome
-Fedora users:      yum install vim-enhanced
+Fedora users:      yum install vim gvim ctags
 
 Then, in your home directory:
 

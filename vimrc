@@ -1,20 +1,19 @@
 " vimsy's .vimrc
 "
-" Don't use abbreviations!  Spelling it out makes grepping easy.
+" Don't use abbreviations!  Spelling things out makes grepping easy.
 
-" not sure what these do...?
 set nocompatible  " tends to make things work better
-set showcmd     "show incomplete cmds down the bottom
-set showmode    "show current mode down the bottom
+set showcmd       " show incomplete cmds down the bottom
+set showmode      " show current mode down the bottom
 
-set incsearch   "find the next match as we type the search 
-set hlsearch    "hilight searches by default
-set nowrap      "dont wrap lines
+set incsearch     " find the next match as we type the search 
+set hlsearch      " hilight searches by default
+set nowrap        " by default, dont wrap lines (see <leader>w)
 
 " I find linebreak more hassle than it's worth.  It makes it very hard to copy
 " n paste between vim windows due to the artificially inserted CRs, and it can
-" hide errors that look OK due to wrapping.
-" set linebreak   "wrap lines at convenient points
+" hide errors that the soft wrapping makes look correct.
+" set linebreak   " wrap lines at convenient points
 
 " make Y consistent with C and D
 nnoremap Y y$
@@ -40,10 +39,6 @@ set laststatus=2      " always display status line even if only one window is vi
 " set confirm         " prompt user what to do instead of just failing (i.e. unsaved files)
 set updatetime=1000   " reduce updatetime so current tag in taglist is highlighted faster
 set autoread          " suppress warnings when git,etc. changes files on disk.
-
-" \ is a pinky stretch and usually in weird places.  , is better.
-let mapleader = ","
-
 
 
 " Highlight EOL whitespace, http://vim.wikia.com/wiki/Highlight_unwanted_spaces
@@ -109,7 +104,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 " search for a tags file recursively from cwd to /
 set tags=.tags,tags;/
 
-" Make ,* search for the word under the cursor in all files
+" Add a binding to search for the word under the cursor in all files
 map <leader>* :execute "noautocmd grep -rw " . expand("<cword>") . " ."<CR>
 
 
@@ -161,7 +156,7 @@ nmap <C-W><C-E> <Plug>Kwbd
 
 " Make the quickfix window wrap no matter the setting of nowrap
 au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
-" Make ,w toggle wrapping on and off
+" Add a binding to toggle wrapping on and off
 map <leader>w :set nowrap!<CR><CR>
 
 " ------   rSpec stuff
