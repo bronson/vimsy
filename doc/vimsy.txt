@@ -32,7 +32,7 @@ Here are some highlights:
   - |snipmate|      TAB   The tab key to inserts Textmate-like snippets
   - |matchit|       %     Use % to bounce betwee html tags, if/else/end, begin/end, etc
   - |surround|      ysiw" Quickly surround text objects with quotes and HTML tags
-  - |endwise|             When you open a block, it automatically inserts the close
+  - |endwise|             Automatically close blocks in ruby, vb, or vimscript
   - |indexedsearch| /     Shows "Match 4 of 52" when searching with /, ?, *, etc
 
 
@@ -126,9 +126,9 @@ behavior, this section may address it.  (If you're surprised that you
 Map Leader                                               *vimsy-mapleader*
 
 A lot of tutorials recommend changing vim's |mapleader| from "\" to ",".
-We don't do this because hanging the mapleader would violate vimsy's goal
-of least surprise.  Luckily it's trivial to do this on your own: just
-drop this into your ~/.vimrc before including vimsy's stuff:
+Vimsy doesn't do this because changing the mapleader would cause too
+much surprise.  If you want "," to be your mapleader, drop this into
+your ~/.vimrc before including vimsy:
 
     let mapleader = ","
     source $HOME/.vim/vimrc
@@ -138,78 +138,62 @@ Control-/                                                *vimsy-control-/*
 
 This is the one keybinding that all IDEs use to toggle comments.  Vimsy
 supports this, but there's a caveat: most terminals convert Control-/ to
-Control-_, so we must bind to Control-_.  Since Control-_ is already used
-to switch RTL/LTR, Hebrew and Farsi developers may find vimsy's behavior
-surprising.
+Control-_, so we also bind toggle-comment to Control-_.  However, Control-_
+is already used to switch RTL/LTR so Hebrew and Farsi developers may find
+this a little surprising.
 
 Furthermore, vim-gtk, vim-gnome, and MacVim are unable to produce Control-/.
 You can test this for yourself:
   - hit i to enter insert mode, then hit control-V control-/.
   - if you see "^/" or "^_", your version of Vim can recognize Control-/.
-  - if you see "/", then you can't use Control-/.  You must toggle
-    commenting with Control-_ or <leader>C.
+  - if you see "/", then Control-/ is broken.  You must toggle commenting
+    with Control-_ or <leader>C.
 
-    https://bugs.launchpad.net/ubuntu/+source/vim/+bug/534124
+Ubuntu bug: https://bugs.launchpad.net/ubuntu/+source/vim/+bug/534124
 
 
 ==============================================================================
 3. TODO                                                   *vimsy-todo*
 
-Do we still need RubySpec now that RubyTest does specs?
+split vim-update-bundles out of vimsy.
+What about testing?  We need quickfix support for RSpec and Test::Unit.
+  Do we still need RubySpec now that RubyTest does specs?
+  rubytest should save the file before running the tests.
+  rubytest should not scan for valid tests if running with T.  Just run the file.
+  rubytest definitely needs to present its quickfix better.  (crib from recent rails.vim?)
+  instead of railstest, http://www.vim.org/scripts/script.php?script_id=2869 ?
+  is it possible to extract rails.vim's rSpec functionality and use it instead of current rSpec stuff?
 Add ack plugin or something to make searching easier.
-Add a color switcher and some decent color themes.
-
-Maybe set tw=72 for text files only?  That seems unintrusive and useful?
-Organize this todo list by package and concept!
-Add tag closing: http://pastey.net/132688-2fb8 or http://github.com/mitechie/pyvim/blob/master/vim/ftplugin/xml.vim
-How to I make HTML tags auto-close?  Or can I make completion close tags?
-Can I join forces with http://github.com/mitechie/pyvim ?
-Integrate http://github.com/astashov/vim-ruby-debugger (how does one debug regular ruby apps, or generators?)
-Move the swapfiles somewhere else, it's a pain to .gitignore them.
-Remove nerdtree in favor of built-in netrw, but not without removing features!
-  Can we remove the horrible banner?  Maybe not: http://www.mail-archive.com/vim_use@googlegroups.com/msg06925.html
+  Add http://github.com/adamlogic/ack.vim/commit/850e83088e0a623390446ea88fc8740857777f25 ?
 Figure out a keypress to toggle :set paste! on and off.  I do it a lot.
-How do I cancel bufexplorer and to back to the file I was editing without changing the previous file (Control-6)?  Hitting esc doesn't work.
+Make ESC cancel bufexplorer and return to the previous file being edited, without affecting Control-6.
 Rails vim -- turn off logfile tweaks.  Coloring makes opening large files painful, plus it breaks 1G, 500G, etc to navigate in the file.
-Also make bufexplorer support s and v to open new buffer horiz or vertically split.
-What is omnifunc and how is it different from C-X C-U
+Also make bufexplorer support s and v to open new buffer horiz or vertically split. (already built-in?)
 Add a.vim (alternate) http://www.vim.org/scripts/script.php?script_id=31 and map the keys to be the same as railsmode.
-test |vimsy-control-/| with winvim and maybe motif vim.
-Add :ver N and :hor N commands to set the vertical and horizontal size of the current window
-NT: Should probably let ? be search backward, use h for help.
-NT: control-J should open buf explorer
-NT: Make space behave the same as return when navigating the tree.
-Also make bufexplorer to use h for help.
-NT: Make a keystroke to fire off a grep/ack from that directory (or parent dir of curr file)
-NT: Add c/n to nerdtree for one-step file creation
-NT: Can I hit L on a dir or file to produce a :Glog there?
-Add http://github.com/adamlogic/ack.vim/commit/850e83088e0a623390446ea88fc8740857777f25 ?
-Add a way to tell what color is under the cursor?  :echo synIDattr(synID(line('.'),col('.'),1),'name')
-rubytest should save the file before running the tests.
-rubytest should not scan for valid tests if running with T.  Just run the file.
-rubytest definitely needs to present its quickfix better.  (crib from recent rails.vim?)
-Make \w toggle through wrapping: nowrap, wrap by word, wrap by character.  Right now ,w only cycles nowrap and wrap by word.
-haml? http://www.vim.org/scripts/script.php?script_id=1433
-instead of railstest, http://www.vim.org/scripts/script.php?script_id=2869 ?
-I'd like Rails plugin to support :Routes/:Rroutes, :Rschema, and :Renvironment?
-show matching begin/else/end/etc when moving the cursor
-adding html textobjects seems rather useful: http://www.vim.org/scripts/script.php?script_id=3000
-Display git branch and file status?  http://www.vim.org/scripts/script.php?script_id=2258
-folding?   never been happy with folding in the past.  http://eigenclass.org/hiki.rb?simplefold+plugin+0.4.0
-vividchalk: http://www.vim.org/scripts/script.php?script_id=1891
-get newest haml indent/syntax (2008 Sep 11) included in vim distro.  (just one regex change)
-is it possible to extract rails.vim's rSpec functionality and use it instead of current rSpec stuff?
-Is it possible to unit test this mess?  http://www.vim.org/scripts/script.php?script_id=2565
-ruby indentation screws up when I type end_date, it unindents prematurely.  It should wait for the next character before doing that.
+bufexplorer: use h and F1 for help and ? to search backward.
+nerdtree: use h and F1 for help and ? to search backward.
+nerdtree: when in nerdtree, control-J should switch to the previous buffer and open bufexplorer
+nerdtree: Make space behave the same as return when navigating the tree.
+nerdtree: Make a keystroke to fire off a grep/ack from the selected directory or parent dir of the selected file
+nerdtree: Add c/n to nerdtree for one-step file creation
 
-Bug in ERb indentation:
-  <% semantic_form_for(:rep, report,
-               :html => { :method => :get },
-               :url => { :action => :output }
-              ) do |form| %>
-    <%= form.input :type, :as => :hidden, :value => 'groovy' %>
-  If you auto-indent this, everything ends up too far to the right.
-  But, if you put semantic_form_for all on one line, it gets it right.
+
+Wishlist:
+Make \w toggle through wrapping: nowrap, wrap by word, wrap by character.  Right now ,w only cycles nowrap and wrap by word.
+Is it possible to test this whole vimsy mess?  http://www.vim.org/scripts/script.php?script_id=2565 ?
+show matching begin/else/end/etc when moving the cursor
+Add a color switcher and some decent color themes.
+Add :ver N and :hor N (:ht and :wd?) commands to set the vertical and horizontal size of the current window
+Is it possible to make folding completely hands-off?  Maybe http://eigenclass.org/hiki.rb?simplefold+plugin+0.4.0 ?
+Add a way to tell what color is under the cursor?  :echo synIDattr(synID(line('.'),col('.'),1),'name')
+ruby indentation screws up when I type end_date, it unindents prematurely.  http://github.com/vim-ruby/vim-ruby/issues/issue/9
+
+
+Never?:
+Make HTML tags auto-close?
+  Asked tpope on irc about adding it to endwise: "sounds impossible" to do it with minimal false positives.
+  maybe: http://pastey.net/132688-2fb8 or http://github.com/mitechie/pyvim/blob/master/vim/ftplugin/xml.vim
+  Or can I make completion close tags?  </TAB?  Too bad endwise doesn't auto-close HTML tags.
 
 
 ==============================================================================
@@ -217,9 +201,6 @@ Bug in ERb indentation:
 
 These are plugins that were considered but not used.  See
 |vimsy-plugins| for the list of currently installed plugins.
-
-camelcasemotion    How often do you need to move within a camelcase word?
-             Is it really worth learning custom move keys over f and b?
 
 fugitive     Even now, months later, the read and write commands still feel
              weird.  I give up and will now try to find something more gitish.
@@ -239,12 +220,16 @@ specky       Includes a bunch of non-rspec-related garbage.  It's hard
 vim-rspec    relies on Ruby+hpricot/xsltproc parsing HTML?  Seems rather
              overcomplex.  Glad I found a simpler alternative.
 
+camelcasemotion    How often do you need to move within a camelcase word?
+             Is it really worth learning custom move keys over f and b?
+
 
 ==============================================================================
-5. Changes                                             *vimsy-changes*
+5. Major Changes                                        *vimsy-changes*
 
 04 Aug 2010 - drop fugitive, it just feels too different.
-04 Aug 2010 - Switch wholesale to Pathogen.
+04 Aug 2010 - Switch wholesale to Pathogen and update-bundles.
+
 
 ==============================================================================
 6. About                                               *vimsy-about*
