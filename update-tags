@@ -1,5 +1,0 @@
-#!/bin/sh
-
-# Updates the helptags
-
-vi -c ":helptags ~/.vim/doc" -c :q

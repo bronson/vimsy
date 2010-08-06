@@ -4,7 +4,6 @@
 
 " Set up Pathogen, http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
 filetype off
-call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
 set nocompatible  " tends to make things work better
