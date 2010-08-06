@@ -2,11 +2,16 @@
 "
 " Don't use abbreviations!  Spelling things out makes grepping easy.
 
+" Set up Pathogen, http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
+filetype off
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+
 set nocompatible  " tends to make things work better
 set showcmd       " show incomplete cmds down the bottom
 set showmode      " show current mode down the bottom
 
-set incsearch     " find the next match as we type the search 
+set incsearch     " find the next match as we type the search
 set hlsearch      " hilight searches by default
 set nowrap        " by default, dont wrap lines (see <leader>w)
 
@@ -93,9 +98,6 @@ set guioptions-=T      " hide toolbar
 " nice: breeze, evening, navajo-night
 colorscheme evening
 
-" make status line include fugitive git info
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
 
 " Not sure if these are a good idea...
 " set formatoptions-=o "dont continue comments when pushing o/O
@@ -126,7 +128,6 @@ nnoremap <leader>D :NERDTreeFind<cr>
 nnoremap <leader>l :TlistToggle<cr>
 
 nnoremap <C-J> :BufExplorer<CR>
-nnoremap <C-K> :FuzzyFinderTextMate<CR>
 
 " Use Control-/ to toggle comments
 nnoremap <C-/> :call NERDComment(0, "toggle")<CR>

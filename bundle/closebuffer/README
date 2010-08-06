@@ -1,0 +1,12 @@
+This allows you to close a buffer in Vim without affecting the window
+it's in.  Normally when you close a buffer, its window closes too,
+forcing you to to redo the windows you have open.
+
+I suggest mapping it to Control-W Control-E (eradicate window):
+
+    nmap <C-W><C-E> <Plug>Kwbd
+    nmap <C-W>e     <Plug>Kwbd
+
+Slightly modified from http://vim.wikia.com/wiki/Deleting_a_buffer_without_closing_the_window
+
+Send comments and improvements to http://github.com/bronson

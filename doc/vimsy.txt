@@ -17,65 +17,27 @@
 
 ==============================================================================
 1. Installed Plugins                                      *vimsy-plugins*
-                                                          *vimsy-packages*
 
-These are the plugins that give vimsy all its functionality.
 
-- NERD Tree        4.1.0    01 Dec 2009       |NERDTree-contents|
-  Navigate an outline view of the files in your filesystem
+See |bundles| for a list of every bundle installed on this system.
 
-- Bufexplorer      7.2.6    12 Feb 2010       |buffer-explorer|
-  Quickly switch among your open buffers
 
-- Matchit          1.13.2   25 Jan 2008       |matchit|
-  Allows % to match if statements, html tags, just about anything.
+Here are some highlights:
 
-- Rails            4.2      13 Mar 2010       |rails.txt|
-  Brilliance for Rails developers by the legendary tpope.
+  - |NERDTree|      \d    Navigate an outline view of the files in your filesystem
+  - |NERDCommenter| ^/    Quickly comment and uncomment blocks of source code
+  - |bufexplorer|   ^J    Quickly switch among your open buffers
+  - |taglist|       \l    Quickly see and navigate among the tags in the curent file
+  - |rails|         :R    Brilliance for Rails developers by the legendary tpope
+  - |snipmate|      TAB   The tab key to inserts Textmate-like snippets
+  - |matchit|       %     Use % to bounce betwee html tags, if/else/end, begin/end, etc
+  - |surround|      ysiw" Quickly surround text objects with quotes and HTML tags
+  - |endwise|             When you open a block, it automatically inserts the close
+  - |indexedsearch| /     Shows "Match 4 of 52" when searching with /, ?, *, etc
 
-- Snipmate         0.83     13 Jul 2009       |snippets|
-  Hit the tab key to nsert Textmate-like snippets.
-
-- Snipmate-snippets         18 Dec 2009
-  Includes Scrooloose's comprehensive snippet library
-
-- NERD Commenter   2.2.2    30 Mar 2009       |NERDCommenterContents|
-  Comment and uncomment lines in just about any language.
-
-- Vim Fugitive     1.0+     03 Mar 2010       |fugitive|
-  A great way to interact with Git from within Vim.
-
-- Surround         1.90     05 Mar 2010       |surround|
-  Easily wrap parens and tags around text.
-
-- Ragtag           2.0      08 Feb 2018       |ragtag|
-  Speed up editing HTML/XML/ERb/JSP etc. files.
-
-- Taglist          4.5      21 Sep 2007       |taglist.txt|
-  Easily list and navigate among the functions, vars, etc in a file.
-
-- Textmate Fuzzyfinder  2.13  04 Oct 2008
-  Open any file in your project with just a few keystrokes
-
-- IndexedSearch             21 Nov 2006
-  Shows the number of hits when searching with /,?,*,etc.
-
-- Endwise          1.0      13 Dec 2009
-  Automatically closes blocks in Ruby and vimscript
-
-- RubyTest         1.0      11 Mar 2010
-  Quickly run Ruby tests, navigate failures in the quickfix window
-
-- Alternate        2.18     07 Jun 2007         |alternate|
-  Switch between .c and .h files by hitting :A (or :AV, :AT, etc)
-
-- RunSpec                   24 Jan 2009
-  Quickly run Ruby RSpec tests, navigate failures in the quickfix window
-
-- RubyBlockConv             2005                    |vimsy-blockconv|
-  Easily convert Ruby blocks between {} and do/end
 
 See |vimsy-rejected-plugins| for the plugins that didn't make the cut.
+
 
 Features
 
@@ -96,7 +58,6 @@ Note that we assume Vim's default mapleader of \.  |vimsy-mapleader|
 
 \B  -- when you select a block in visual mode, \B will convert between {} and do/end. *vimsy-blockconv*
 C-J -- bufexplorer (original C-J binding did the same thing as j)
-C-K -- fuzzy file finder (original C-K binding did the same thing as k)
 \C  -- Toggle the comments on the selected lines or current line
 C-/ -- Also toggles comments, see |vimsy-control-/|.
 \d  -- toggle the nerd tree
@@ -194,7 +155,6 @@ You can test this for yourself:
 ==============================================================================
 3. TODO                                                   *vimsy-todo*
 
-Convert to using pathogen.
 Do we still need RubySpec now that RubyTest does specs?
 Hitting Control-] on "empty?" complains E426: tag not found: empty\?  (must set autocmd FileType ruby setlocal iskeyword+=!,? for this to work)
 Add ack plugin or something to make searching easier.
@@ -218,13 +178,14 @@ Add a.vim (alternate) http://www.vim.org/scripts/script.php?script_id=31 and map
 test |vimsy-control-/| with winvim and maybe motif vim.
 Add :ver N and :hor N commands to set the vertical and horizontal size of the current window
 NT: Should probably let ? be search backward, use h for help.
-NT: control-J should open buf explorer, C-K should do fuzzy file finder.
+NT: control-J should open buf explorer
 NT: Make space behave the same as return when navigating the tree.
 Also make bufexplorer to use h for help.
 NT: Make a keystroke to fire off a grep/ack from that directory (or parent dir of curr file)
 NT: Add c/n to nerdtree for one-step file creation
 NT: Can I hit L on a dir or file to produce a :Glog there?
 Add http://github.com/adamlogic/ack.vim/commit/850e83088e0a623390446ea88fc8740857777f25 ?
+Add a way to tell what color is under the cursor?  :echo synIDattr(synID(line('.'),col('.'),1),'name')
 rubytest should save the file before running the tests.
 rubytest should not scan for valid tests if running with T.  Just run the file.
 rubytest definitely needs to present its quickfix better.  (crib from recent rails.vim?)
@@ -258,14 +219,19 @@ Bug in ERb indentation:
 These are plugins that were considered but not used.  See
 |vimsy-plugins| for the list of currently installed plugins.
 
-fuzzyfinder  Jamis Buck wrote fuzzyfinder-textmate, then abandoned it when
-             fuzzyfinder kept and breaking his changes.  It's a sad story,
-             but not nearly as sad as trying to use the original fuzzyfinder!
-             Stock fuf is so laborious to use that I don't see why anyone
-             would use it over vim's :find built-in.
-
 camelcasemotion    How often do you need to move within a camelcase word?
-             Maybe once every few weeks?
+             Is it really worth learning custom move keys over f and b?
+
+fugitive     Even now, months later, the read and write commands still feel
+             weird.  I give up and will now try to find something more gitish.
+
+original fuzzyfinder    So laborious to use that I don't see why anyone
+             would use it over vim's :find built-in.  It's horrible.
+
+fuzzyfinder-textmate    Jamis wrote this, then abandoned it when the
+             fuzzyfinder script kept breaking his changes.  Others have
+             tried to pick up the slack but it hasn't been satisfying.
+             Vimsy used ff-tm until 5 Aug 2010.
 
 specky       Includes a bunch of non-rspec-related garbage.  It's hard
              enough to get vim scripts to reliably coexist as it is,
@@ -278,8 +244,8 @@ vim-rspec    relies on Ruby+hpricot/xsltproc parsing HTML?  Seems rather
 ==============================================================================
 5. Changes                                             *vimsy-changes*
 
-Once Vimsy stabilizes, user-visible changes will be listed here.
-
+04 Aug 2010 - drop fugitive, it just feels too different.
+04 Aug 2010 - Switch wholesale to Pathogen.
 
 ==============================================================================
 6. About                                               *vimsy-about*

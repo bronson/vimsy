@@ -1,0 +1,46 @@
+*bundles.txt*                    Bundles                      Version 0.1
+
+These are the bundles installed on your system, along with their
+versions and release dates.
+
+
+Plugins
+-------
+
+  - |nerdtree|                     4.1.0-2-g88aaba2       2010-07-31
+  - |nerdcommenter|                2.2.2-11-g5c9359d      2010-08-01
+  - |bufexplorer|                  7.2.7                  2010-04-26
+  - |closebuffer|                  n/a                    2010-08-05
+  - |matchit|                      1.13.2                 2008-01-29
+  - |ruby|                         vim7.3-9-gfaef7e9      2010-08-03
+  - |ruby-debugger|                v0.1-9-g4d4a56d        2009-11-06
+  - |rails|                        v4.2-27-g6c6f2ad       2010-08-04
+  - |snipmate|                     n/a                    2010-04-08
+  - |snipmate-snippets|            n/a                    2010-06-12
+  - |surround|                     v1.90                  2010-03-05
+  - |taglist|                      6.0                    2007-09-21
+  - |indexedsearch|                070503                 2007-05-03
+  - |align|                        n/a                    2010-04-01
+  - |endwise|                      v1.0                   2009-12-13
+  - |repeat|                       v1.0                   2008-04-25
+  - |supertab|                     n/a                    2010-04-01
+
+
+Syntax Files
+------------
+
+  - |jquery|                       0.4                    2010-02-02
+  - |shoulda|                      n/a                    2010-04-01
+  - |git|                          v5.0-4-gbda9f09        2010-02-14
+  - |cucumber|                     n/a                    2010-08-02
+  - |haml|                         vim7.2-50-g55f14fd     2010-07-28
+  - |markdown|                     n/a                    2010-05-02
+  - |textile|                      0.2-2-g8fc6ddb         2008-11-03
+  - |coffee-script|                n/a                    2010-08-05
+
+
+Color Schemes
+-------------
+
+  - |vividchalk|                   v2.0                   2010-02-19
+
