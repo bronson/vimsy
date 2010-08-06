@@ -65,7 +65,7 @@ Mapleader
 |MAP-d|   \d    Toggle the nerd tree open and closed.
 |MAP-D|   \D    Show the current file in the nerd tree.
 |MAP-l|   \l    Toggle the taglist open and closed.
-|MAP-w|   \w    Switch whether lines are wrapped or not.
+|MAP-w|   \w    Switch through Vim's line wrapping modes.
 |MAP-/|   \/    Recursive grep for the identifier under the cursor.
 |MAP-*|   \*    Recursive grep for the identifier under the cursor.
 
@@ -105,7 +105,10 @@ Mapleader
 
 
                                                     *MAP-w*
-\w     Toggle line wrapping on and off.
+\w     Vim supports three line wrapping modes: unwrapped,
+       wrapped at the end of the line, and wrapped only at
+       sensible word boundaries.  \w toggles through all
+       three modes.
 
 
                                                     *MAP-star*
@@ -232,7 +235,6 @@ nerdtree: Add c/n to nerdtree for one-step file creation
 
 
 Wishlist:
-Make \w toggle through wrapping: nowrap, wrap by word, wrap by character.  Right now ,w only cycles nowrap and wrap by word.
 Is it possible to test this whole vimsy mess?  http://www.vim.org/scripts/script.php?script_id=2565 ?
 show matching begin/else/end/etc when moving the cursor
 Add a color switcher and some decent color themes.

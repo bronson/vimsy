@@ -178,6 +178,33 @@ command! -nargs=? -complete=file Spec call RunSpec(<q-args>)
 xmap S <Plug>Vsurround
 
 
+" -------
+
+" Make \w toggle through the three wrapping modes.
+
+:function ToggleWrap()
+: if (&wrap == 1)
+:   if (&linebreak == 0)
+:     set linebreak
+:   else
+:     set nowrap
+:   endif
+: else
+:   set wrap
+:   set nolinebreak
+: endif
+:endfunction
+
+map <leader>w :call ToggleWrap()<CR>
+
+" The Align plugin declares a TON of maps, few of which are useful.
+" Remove the ones which conflict with other uses (like \w for wrapping)
+    " unmap <leader>w=
+    " unmap <leader>m=
+" hm, that didn't work.  turn them all off.
+let g:loaded_AlignMapsPlugin = "v41"
+
+
 " ------- replace vim's grep with ack
 " Disabled by default because it's too different from stock vim behavior.
 " Embed ack since most distros haven't caught up to the --column option.
