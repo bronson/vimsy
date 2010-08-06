@@ -8,7 +8,7 @@
 0. Table of Contents                                      *vimsy-contents*
 
 1. |vimsy-plugins|       List of Plugins
-2. |vimsy-keystrokes|    How to use Vimsy's features.
+2. |vimsy-keys|          How to use Vimsy's features.
 3. |vimsy-todo|          A huge list of things to improve
 4. |vimsy-rejplugins|    Why good plugins might not be included
 5. |vimsy-changes|       List of user-visible changes
@@ -19,10 +19,9 @@
 1. Installed Plugins                                      *vimsy-plugins*
 
 
-See |bundles| for a list of every bundle installed on this system.
+Full list: |bundles|
 
-
-Here are some highlights:
+Some highlights:
 
   - |NERDTree|      \d    Navigate an outline view of the files in your filesystem
   - |NERDCommenter| ^/    Quickly comment and uncomment blocks of source code
@@ -35,40 +34,102 @@ Here are some highlights:
   - |endwise|             Automatically close blocks in ruby, vb, or vimscript
   - |indexedsearch| /     Shows "Match 4 of 52" when searching with /, ?, *, etc
 
-
 See |vimsy-rejected-plugins| for the plugins that didn't make the cut.
 
 
-Features
+==============================================================================
+2. Quick Feature List
 
-- Hit i.e. for<tab> to insert the snippet for a for loop.
-- In insert mode, hit Control-R <tab> to show a list of available snippets.
-- Highlights erroneous trailing whitspace
-- Cucumber indentation and syntax highlighting
-- CoffeeScript syntax highlighting
-- Control-/ to toggle commenting, |vimsy-control-/|
-- Control-W e to close a buffer without affecting the window layout
-- Restores folds and cursor position when opening a file again
+  - Hit for<tab> to insert the snippet for a for loop.  |snipmate|  Also, in
+    insert mode, hit Control-R <tab> to show a list of available snippets.
+  - % bounces between most control structures (if/else/end, etc). |matchit|
+  - Control-/ toggles commenting (except in gvim: |vimsy-control-/|)
+  - Control-W e to close a buffer without affecting the window layout
+  - Erroneous trailing whitspace is highlighted
+  - To turn off search highlighting (and redraw the screen), hit Control-L.
+  - Additional syntax highlighting: haml, sass, cucumber, markdown,
+    textile, git commits, shoulda, jquery.
+  - Restores folds and cursor position when opening a file again
 
 
-=============================================================================
-2. Keystrokes                                          *vimsy-keystrokes*
+==============================================================================
+3. Keystrokes                                                 *vimsy-keys*
 
-Note that we assume Vim's default mapleader of \.  |vimsy-mapleader|
+Vim's default mapleader is \, see |vimsy-mapleader| for more.
 
-\B  -- when you select a block in visual mode, \B will convert between {} and do/end. *vimsy-blockconv*
-C-J -- bufexplorer (original C-J binding did the same thing as j)
-\C  -- Toggle the comments on the selected lines or current line
-C-/ -- Also toggles comments, see |vimsy-control-/|.
-\d  -- toggle the nerd tree
-\D  -- show the current file in the nerd tree
-\l  -- toggle the tag list
-\t  -- run the test containing the cursor (like :.Rake but much faster)
-\T  -- run all tests in the current file (like :Rake but much faster)
-\w  -- toggle line wrapping on and off
-\*  -- grep the entire project for the identifier under the cursor
-% jumps between matching begin/if/while/do/rescue/end/etc.  (matchit)
-C-W e -- closes a buffer but leaves the window open (C-W C-E works too).
+
+Mapleader
+
+|MAP-B|   \B    Convert Ruby blocks between {} and do/end.
+|MAP-C|   \C    Toggle commenting on and off (see |CTRL-/|).
+|MAP-d|   \d    Toggle the nerd tree open and closed.
+|MAP-D|   \D    Show the current file in the nerd tree.
+|MAP-l|   \l    Toggle the taglist open and closed.
+|MAP-w|   \w    Switch whether lines are wrapped or not.
+|MAP-/|   \/    Recursive grep for the identifier under the cursor.
+|MAP-*|   \*    Recursive grep for the identifier under the cursor.
+
+
+                                                    *MAP-B*
+\B      When you select a block in visual mode, hitting \B converts
+        between {} and do/end.  Thanks to matchy, you can just put
+        your cursor on begin or end, then hit %.  |ruby-block-conv|
+
+
+                                                    *MAP-c*
+\c      Used by NERDCommenter, see |NERDComFunctionalitySummary|.
+
+
+                                                    *MAP-C*
+\C      Toggle the comments on the selected lines or current line.
+        This is only a workaround because Control-/ doesn't work in
+        all circumstances: |vimsy-control-/|.  We use capital C
+        because nerd-commenter is already using small c as its
+        map leader (for instance, <leader>c<space> also toggles
+        comments |NERDComToggleComment|).
+
+
+                                                    *MAP-d*
+\d     Toggle the nerd tree open and closed.
+
+
+                                                    *MAP-D*
+\D     Show the current file in the nerd tree.
+
+
+                                                    *MAP-l*
+\l     Toggle the tag list for the current file.  The taglist
+       shows all the tags in the current file, allowing you to
+       quickly navigate among them.
+
+
+                                                    *MAP-w*
+\w     Toggle line wrapping on and off.
+
+
+                                                    *MAP-star*
+\*     Grep the entire project for the identifier under the cursor
+
+
+|CTRL-J|        ^J    Open the buffer explorer
+|CTRL-W_e|      ^We   Close the buffer but not the window.
+|CTRL-W_CTRL-E| ^W^E  Close the buffer but not the window.
+|CTRL-/|        ^/    Toggle commenting on and off (see |MAP-C|).
+
+
+                                                    *CTRL-J*
+C-J    Opens the buffer explorer (original C-J binding did the same
+       thing as j).  TODO: this should probably change.
+
+
+                                         *CTRL-W_e* *CTRL-W_CTRL-E*
+C-We   Closes a buffer but leaves the window open (C-W C-E works too).
+
+
+                                                    *CTRL-/*
+C-/    Toggles comments.  If Control-/ doesn't work on your system
+       (see |vimsy-control-/|) then you can use |MAP-C|.
+
 
 Tasks:
 Create a file or directory: \d (open nerdtree), put the cursor on the directory to contain the new file, and hit m.
@@ -79,13 +140,11 @@ C-^ -- edit previous file (file marked with # in the output of :ls), C-W C-^ -- 
 :wa -- write all buffers (Save All)
 :wqa -- write all buffers and quit
 C-W _ -- maximize current window. C-W o or :on (:only) makes it even more maximal.
-C-W T -- open this window in a new tab
 C-W KJHL -- move current window to the extreme border (J makes it full width at the bottom of the screen, etc)
 C-W rR -- rotate open windows clockwise / counterclockwise
 H M L -- move cursor on screen to high, middle, low
 C-T / C-D -- (insert mode) insert tab / delete tab from beginning of line
 C-O / C-I -- go to older / newer cursor position (see |jump-motions|)
-Tabs: :tabnew, :tabnext (gt), :tabprev (gT), :close
 [m ]m -- move to the previous or next method/function
 [[ ][ -- move to previous or next outermost { } brace (ruby: class or module)
 [( ]( -- move to previous or next paren ( )
@@ -108,14 +167,8 @@ gf -- if you're over a class or symbol, try gf.  It should take you.
 C-X C-U -- complete current word from Rails keywords
 
 
-Available Keystrokes -- common keystrokes that are available for vimsy's use.
-^H -- just use h
-^N -- just use j (ex-emacs users might want this left alone)
-^P -- just use k (ex-emacs users might want this left alone)
-
-
 ==============================================================================
-3. DISCUSSION                                            *vimsy-discussion*
+4. DISCUSSION                                            *vimsy-discussion*
 
 Vimsy includes some controversial features.  If you see surprising
 behavior, this section may address it.  (If you're surprised that you
@@ -152,7 +205,7 @@ Ubuntu bug: https://bugs.launchpad.net/ubuntu/+source/vim/+bug/534124
 
 
 ==============================================================================
-3. TODO                                                   *vimsy-todo*
+5. TODO                                                   *vimsy-todo*
 
 split vim-update-bundles out of vimsy.
 What about testing?  We need quickfix support for RSpec and Test::Unit.
@@ -197,7 +250,7 @@ ruby indentation screws up when I type end_date, it unindents prematurely right 
 
 
 ==============================================================================
-4. Rejected Plugins            *vimsy-rejplugins*  *vimsy-rejected-plugins*
+6. Rejected Plugins            *vimsy-rejplugins*  *vimsy-rejected-plugins*
 
 These are plugins that were considered but not used.  See
 |vimsy-plugins| for the list of currently installed plugins.
@@ -225,14 +278,14 @@ camelcasemotion    How often do you need to move within a camelcase word?
 
 
 ==============================================================================
-5. Major Changes                                        *vimsy-changes*
+7. Major Changes                                        *vimsy-changes*
 
 04 Aug 2010 - drop fugitive, it just feels too different.
 04 Aug 2010 - Switch wholesale to Pathogen and update-bundles.
 
 
 ==============================================================================
-6. About                                               *vimsy-about*
+8. About                                               *vimsy-about*
 
 Vimsy was assembled by Scott Bronson, brons_vimsy@rinspin.com.
 Its vimrc was written from scratch but cribbed heavily from
