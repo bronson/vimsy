@@ -68,7 +68,6 @@ C-/ -- Also toggles comments, see |vimsy-control-/|.
 \w  -- toggle line wrapping on and off
 \*  -- grep the entire project for the identifier under the cursor
 % jumps between matching begin/if/while/do/rescue/end/etc.  (matchit)
-C-Space -- complete word (same as C-X C-O)
 C-W e -- closes a buffer but leaves the window open (C-W C-E works too).
 
 Tasks:

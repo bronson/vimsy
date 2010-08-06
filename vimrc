@@ -148,10 +148,6 @@ vnoremap <leader>C <ESC>:call NERDComment(1, "toggle")<CR>
 " add a space between the comment delimiter and text
 let NERDSpaceDelims=1
 
-" Make Control-Space perform completion
-inoremap <Nul> <C-x><C-o>
-inoremap <C-Space> <C-x><C-o>
-
 " Close buffer but not window.  See close-buffer.vim
 nmap <C-W>e     <Plug>Kwbd
 nmap <C-W><C-E> <Plug>Kwbd
