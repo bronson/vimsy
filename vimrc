@@ -2,7 +2,7 @@
 "
 " Don't use abbreviations!  Spelling things out makes grepping easy.
 
-" Set up Pathogen, http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
+" Let Pathogen bring in all the plugins
 filetype off
 call pathogen#runtime_append_all_bundles()
 

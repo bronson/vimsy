@@ -186,14 +186,15 @@ Add a color switcher and some decent color themes.
 Add :ver N and :hor N (:ht and :wd?) commands to set the vertical and horizontal size of the current window
 Is it possible to make folding completely hands-off?  Maybe http://eigenclass.org/hiki.rb?simplefold+plugin+0.4.0 ?
 Add a way to tell what color is under the cursor?  :echo synIDattr(synID(line('.'),col('.'),1),'name')
-ruby indentation screws up when I type end_date, it unindents prematurely.  http://github.com/vim-ruby/vim-ruby/issues/issue/9
 
 
 Never?:
-Make HTML tags auto-close?
+Make HTML/XML tags auto-close?
   Asked tpope on irc about adding it to endwise: "sounds impossible" to do it with minimal false positives.
-  maybe: http://pastey.net/132688-2fb8 or http://github.com/mitechie/pyvim/blob/master/vim/ftplugin/xml.vim
+  maybe: http://pastey.net/132688-2fb8 or http://github.com/mitechie/pyvim/blob/master/.vim/ftplugin/xml.vim
   Or can I make completion close tags?  </TAB?  Too bad endwise doesn't auto-close HTML tags.
+ruby indentation screws up when I type end_date, it unindents prematurely right after "end".
+  Can't be easily fixed, just keep typing then hit Control-F: http://github.com/vim-ruby/vim-ruby/issues/issue/9
 
 
 ==============================================================================
