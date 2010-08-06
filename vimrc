@@ -6,6 +6,8 @@
 filetype off
 call pathogen#runtime_append_all_bundles()
 
+runtime macros/matchit.vim  " enable vim's built-in matchit script (% bounces between tags, begin/end, etc)
+
 set nocompatible  " tends to make things work better
 set showcmd       " show incomplete cmds down the bottom
 set showmode      " show current mode down the bottom
