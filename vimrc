@@ -17,12 +17,12 @@ set hlsearch      " hilight searches by default
 set nowrap        " by default, dont wrap lines (see <leader>w)
 
 " I find linebreak more hassle than it's worth.  It makes it very hard to copy
-" n paste between vim windows due to the artificially inserted CRs, and it can
+" and paste between vim windows due to the artificially inserted CRs, and it can
 " hide errors that the soft wrapping makes look correct.
 " set linebreak   " wrap lines at convenient points
 
-" make Y consistent with C and D
-nnoremap Y y$
+" make Y yank to the end of the line (like C and D).  Use yy to yank the entire line.
+nmap Y y$
 
 set shiftwidth=4
 set softtabstop=4
@@ -57,7 +57,7 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 
 
 " Remove end of line white space.  TODO: change this to :FixWhitespace?
-noremap <leader>r ma:%s/\s\+$//e<CR>`a
+map <leader>r ma:%s/\s\+$//e<CR>`a
 
 
 " Map <C-L> also turns off search highlighting until the next search
@@ -120,30 +120,30 @@ function! s:VSetSearch()
   let @@ = temp
 endfunction
 
-vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
-vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
+vmap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
+vmap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
 
-nnoremap <leader>d :NERDTreeToggle<cr>
-nnoremap <leader>D :NERDTreeFind<cr>
-nnoremap <leader>l :TlistToggle<cr>
+nmap <leader>d :NERDTreeToggle<cr>
+nmap <leader>D :NERDTreeFind<cr>
+nmap <leader>l :TlistToggle<cr>
 
-nnoremap <C-J> :BufExplorer<CR>
+nmap <C-J> :BufExplorer<CR>
 
 " Use Control-/ to toggle comments
-nnoremap <C-/> :call NERDComment(0, "toggle")<CR>
-vnoremap <C-/> <ESC>:call NERDComment(1, "toggle")<CR>
+nmap <C-/> :call NERDComment(0, "toggle")<CR>
+vmap <C-/> <ESC>:call NERDComment(1, "toggle")<CR>
 " but most vim implementations produce Control-_ instead of Control-/:
 " Mapping C-_ may surprise Hebrew and Farsi programmers...?
-nnoremap <C-_> :call NERDComment(0, "toggle")<CR>
-vnoremap <C-_> <ESC>:call NERDComment(1, "toggle")<CR>
+nmap <C-_> :call NERDComment(0, "toggle")<CR>
+vmap <C-_> <ESC>:call NERDComment(1, "toggle")<CR>
 " and vim-gtk and vim-gnome are broken (:help vimsy-control-/)
 " you can use <leader>/ to do the same things.
-nnoremap <leader>/ :call NERDComment(0, "toggle")<CR>
-vnoremap <leader>/ <ESC>:call NERDComment(1, "toggle")<CR>
+nmap <leader>/ :call NERDComment(0, "toggle")<CR>
+vmap <leader>/ <ESC>:call NERDComment(1, "toggle")<CR>
 " but maybe <leader>C is nicer to type?
-nnoremap <leader>C  :call NERDComment(0, "toggle")<CR>
-vnoremap <leader>C <ESC>:call NERDComment(1, "toggle")<CR>
+nmap <leader>C  :call NERDComment(0, "toggle")<CR>
+vmap <leader>C <ESC>:call NERDComment(1, "toggle")<CR>
 
 " add a space between the comment delimiter and text
 let NERDSpaceDelims=1
@@ -154,8 +154,7 @@ nmap <C-W><C-E> <Plug>Kwbd
 
 " Make the quickfix window wrap no matter the setting of nowrap
 au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
-" Add a binding to toggle wrapping on and off
-map <leader>w :set nowrap!<CR><CR>
+
 
 " ------   rSpec stuff
 
