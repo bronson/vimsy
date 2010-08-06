@@ -71,9 +71,10 @@ Mapleader
 
 
                                                     *MAP-B*
-\B      When you select a block in visual mode, hitting \B converts
-        between {} and do/end.  Thanks to matchy, you can just put
-        your cursor on begin or end, then hit %.  |ruby-block-conv|
+\B      When you select a block in visual mode, hitting \B (capital
+        B) converts between {} and do/end.  Thanks to matchy, you can
+        just put your cursor on begin or end, then hit v%\B.
+        |ruby-block-conv|
 
 
                                                     *MAP-c*
@@ -238,6 +239,7 @@ Add a color switcher and some decent color themes.
 Add :ver N and :hor N (:ht and :wd?) commands to set the vertical and horizontal size of the current window
 Is it possible to make folding completely hands-off?  Maybe http://eigenclass.org/hiki.rb?simplefold+plugin+0.4.0 ?
 Add a way to tell what color is under the cursor?  :echo synIDattr(synID(line('.'),col('.'),1),'name')
+If you ruby-block-conv 'puts "#{var}"', it converts the variable interpolation in the string, not the surrounding block.
 
 
 Never?:
