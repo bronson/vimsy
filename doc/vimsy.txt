@@ -156,7 +156,6 @@ You can test this for yourself:
 3. TODO                                                   *vimsy-todo*
 
 Do we still need RubySpec now that RubyTest does specs?
-Hitting Control-] on "empty?" complains E426: tag not found: empty\?  (must set autocmd FileType ruby setlocal iskeyword+=!,? for this to work)
 Add ack plugin or something to make searching easier.
 Add a color switcher and some decent color themes.
 
