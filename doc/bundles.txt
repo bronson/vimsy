@@ -16,8 +16,9 @@ Plugins
   - |snipmate|                     n/a                    2010-04-08
   - |snipmate-snippets|            n/a                    2010-06-12
   - |surround|                     v1.90                  2010-03-05
-  - |taglist|                      6.0                    2007-09-21
+  - |taglist|                      n/a                    2007-09-21
   - |indexedsearch|                070503                 2007-05-03
+  - |ruby-block-conv|              0.1                    2005-11-14
   - |align|                        n/a                    2010-04-01
   - |endwise|                      v1.0                   2009-12-13
   - |repeat|                       v1.0                   2008-04-25
