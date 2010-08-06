@@ -12,7 +12,6 @@ Plugins
   - |bufexplorer|                  7.2.7                  2010-04-26
   - |closebuffer|                  n/a                    2010-08-05
   - |ruby|                         vim7.3-9-gfaef7e9      2010-08-03
-  - |ruby-debugger|                v0.1-9-g4d4a56d        2009-11-06
   - |rails|                        v4.2-27-g6c6f2ad       2010-08-04
   - |snipmate|                     n/a                    2010-04-08
   - |snipmate-snippets|            n/a                    2010-06-12
