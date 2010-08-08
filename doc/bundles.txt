@@ -1,7 +1,7 @@
 *bundles.txt*                    Bundles                      Version 0.1
 
 These are the bundles installed on your system, along with their
-versions and release dates.  Downloaded on 2010-08-08 11:18:31 -0700.
+versions and release dates.  Downloaded on 2010-08-08 16:07:31 -0700.
 
 A version number of 'n/a' means upstream hasn't tagged any releases.
 
@@ -25,6 +25,7 @@ Plugins
   - |endwise|                      v1.0                   2009-12-13
   - |repeat|                       v1.0                   2008-04-25
   - |supertab|                     n/a                    2010-04-01
+  - |Bisect|                       n/a                    2010-02-15
   - |scrollcolors|                 20060719               2006-07-18
 
 
