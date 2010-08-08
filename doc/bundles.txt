@@ -25,6 +25,7 @@ Plugins
   - |endwise|                      v1.0                   2009-12-13
   - |repeat|                       v1.0                   2008-04-25
   - |supertab|                     n/a                    2010-04-01
+  - |scrollcolors|                 20060719               2006-07-18
 
 
 Syntax Files
