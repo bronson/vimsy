@@ -72,13 +72,19 @@ highlight default link coffeeConstant Constant
 syntax match coffeePrototype /::/
 highlight default link coffeePrototype SpecialChar
 
+syntax region coffeeString start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=@coffeeInterpString
+syntax region coffeeString start=/'/ skip=/\\\\\|\\'/ end=/'/ contains=@coffeeSimpleString
+highlight default link coffeeString String
+
 " What can make up a variable name
 syntax cluster coffeeIdentifier contains=coffeeVar,coffeeObject,coffeeConstant,
 \                                        coffeePrototype
 
-syntax match coffeeAssignment /@\?\I\%(\i\|::\|\.\|\[.\+\]\)*\s*\%(::\@!\|[^ \t=<>!]\{,3}==\@!\)/
+syntax match coffeeAssignment /@\?\I\%(\i\|::\|\.\|\[.\+\]\)*\s*\%(::\@!\|[^ \t=<>!(]\{,3}==\@!\)/
 \                             contains=@coffeeIdentifier,coffeeAssignmentMod,
 \                                       coffeeAssignmentChar,coffeeBrackets
+syntax match coffeeAssignment /\%("\|'\).\+\%("\|'\)\s*:/ contains=coffeeString,
+\                                                                  coffeeAssignmentChar
 highlight default link coffeeAssignment Identifier
 
 syntax match coffeeFunction /->\|=>/
@@ -109,30 +115,23 @@ syntax region coffeeInterpolation matchgroup=coffeeInterpDelim
 \                                 contained contains=TOP
 highlight default link coffeeInterpDelim Delimiter
 
-syntax match coffeeInterpSimple /\#@\?\I\%(\i\|\.\)*/ contained
-highlight default link coffeeInterpSimple Identifier
-
 syntax match coffeeEscape /\\\d\d\d\|\\x\x\{2\}\|\\u\x\{4\}\|\\./ contained
 highlight default link coffeeEscape SpecialChar
 
 syntax cluster coffeeSimpleString contains=@Spell,coffeeEscape
-syntax cluster coffeeInterpString contains=@coffeeSimpleString,coffeeInterpSimple,
-\                                          coffeeInterpolation
+syntax cluster coffeeInterpString contains=@coffeeSimpleString,
+\                                           coffeeInterpolation
 
 syntax region coffeeRegExp start=/\// end=/\/[gimy]\{,4}/ oneline
 \                          contains=@coffeeInterpString
 highlight default link coffeeRegExp String
-
-syntax region coffeeString start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=@coffeeInterpString
-syntax region coffeeString start=/'/ skip=/\\\\\|\\'/ end=/'/ contains=@coffeeSimpleString
-highlight default link coffeeString String
 
 syntax region coffeeHeredoc start=/"""/ end=/"""/ contains=@coffeeInterpString
 syntax region coffeeHeredoc start=/'''/ end=/'''/ contains=@coffeeSimpleString
 highlight default link coffeeHeredoc String
 
 syntax region coffeeCurlies start=/{/ end=/}/ contains=TOP
-syntax region coffeeBrackets start=/\[/ end=/\]/ contains=ALLBUT,coffeeAssignment
+syntax region coffeeBrackets start=/\[/ end=/\]/ contains=TOP,coffeeAssignment
 syntax region coffeeParens start=/(/ end=/)/ contains=TOP
 
 " Displays an error for trailing whitespace

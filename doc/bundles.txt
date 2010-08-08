@@ -1,7 +1,7 @@
 *bundles.txt*                    Bundles                      Version 0.1
 
 These are the bundles installed on your system, along with their
-versions and release dates.  Downloaded on 2010-08-06 11:22:36 -0700.
+versions and release dates.  Downloaded on 2010-08-08 11:18:31 -0700.
 
 A version number of 'n/a' means upstream hasn't tagged any releases.
 
@@ -37,7 +37,7 @@ Syntax Files
   - |haml|                         vim7.2-50-g55f14fd     2010-07-28
   - |markdown|                     n/a                    2010-05-02
   - |textile|                      0.2-2-g8fc6ddb         2008-11-03
-  - |coffee-script|                n/a                    2010-08-06
+  - |coffee-script|                n/a                    2010-08-07
 
 
 Color Schemes
