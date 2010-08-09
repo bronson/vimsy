@@ -1,7 +1,7 @@
 *bundles.txt*                    Bundles                      Version 0.1
 
 These are the bundles installed on your system, along with their
-versions and release dates.  Downloaded on 2010-08-08 16:07:31 -0700.
+versions and release dates.  Downloaded on 2010-08-08 16:16:29 -0700.
 
 A version number of 'n/a' means upstream hasn't tagged any releases.
 
@@ -13,6 +13,7 @@ Plugins
   - |nerdcommenter|                2.2.2-11-g5c9359d      2010-08-01
   - |bufexplorer|                  7.2.7                  2010-04-26
   - |closebuffer|                  n/a                    2010-08-05
+  - |command-t|                    0.8b-33-g0370463       2010-08-01
   - |ruby|                         vim7.3-9-gfaef7e9      2010-08-03
   - |rails|                        v4.2-27-g6c6f2ad       2010-08-04
   - |snipmate|                     n/a                    2010-04-08

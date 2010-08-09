@@ -223,16 +223,17 @@ Add ack plugin or something to make searching easier.
   Add http://github.com/adamlogic/ack.vim/commit/850e83088e0a623390446ea88fc8740857777f25 ?
 Figure out a keypress to toggle :set paste! on and off.  I do it a lot.
 Make ESC cancel bufexplorer and return to the previous file being edited, without affecting Control-6.
+  This probably won't work in the terminal.  Also Control-C like command-t does.
 Rails vim -- turn off logfile tweaks.  Coloring makes opening large files painful, plus it breaks 1G, 500G, etc to navigate in the file.
 Also make bufexplorer support s and v to open new buffer horiz or vertically split. (already built-in?)
 Add a.vim (alternate) http://www.vim.org/scripts/script.php?script_id=31 and map the keys to be the same as railsmode.
 bufexplorer: use h and F1 for help and ? to search backward.
 nerdtree: use h and F1 for help and ? to search backward.
-nerdtree: when in nerdtree, control-J should switch to the previous buffer and open bufexplorer
+nerdtree: I should be able to open bufexplorer and command-t from within nerdtree.
 nerdtree: Make space behave the same as return when navigating the tree.
 nerdtree: Make a keystroke to fire off a grep/ack from the selected directory or parent dir of the selected file
 nerdtree: Add c/n to nerdtree for one-step file creation
-
+interesting plugin: http://github.com/chrisbra/histwin.vim
 
 Wishlist:
 Is it possible to test this whole vimsy mess?  http://www.vim.org/scripts/script.php?script_id=2565 ?
