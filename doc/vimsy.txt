@@ -8,11 +8,14 @@
 0. Table of Contents                                      *vimsy-contents*
 
 1. |vimsy-plugins|       List of Plugins
-2. |vimsy-keys|          How to use Vimsy's features.
-3. |vimsy-todo|          A huge list of things to improve
-4. |vimsy-rejplugins|    Why good plugins might not be included
-5. |vimsy-changes|       List of user-visible changes
-6. |vimsy-about|         Download new versions, licensing, etc.
+   |vimsy-keys|          How to use Vimsy's features.
+     |vimsy-normal|      All keys mapped in vim's normal mode
+     |vimsy-mapleader|   Normal mode keypresses started with the mapleader
+3. |vimsy-tasks|         A list of common things you might need to do
+4. |vimsy-discussion|    Discussion on some core features and bugs
+5. |vimsy-todo|          A huge list of things to improve
+6. |vimsy-rejplugins|    Why good plugins might not be included
+7. |vimsy-about|         Download new versions, licensing, etc.
 
 
 ==============================================================================
@@ -38,148 +41,39 @@ See |vimsy-rejected-plugins| for the plugins that didn't make the cut.
 
 
 ==============================================================================
-2. Quick Feature List
+2. Quick Feature List                                  *vimsy-features*
 
-  - Hit for<tab> to insert the snippet for a for loop.  |snipmate|  Also, in
-    insert mode, hit Control-R <tab> to show a list of available snippets.
-  - % bounces between most control structures (if/else/end, etc). |matchit|
-  - Control-/ toggles commenting (except in gvim: |vimsy-control-/|)
-  - Control-W e to close a buffer without affecting the window layout
+  - See |vimsy-keys-features| to see some useful new mappings.
   - Erroneous trailing whitspace is highlighted
-  - To turn off search highlighting (and redraw the screen), hit Control-L.
   - Additional syntax highlighting: haml, sass, cucumber, markdown,
     textile, git commits, shoulda, jquery.
   - Restores folds and cursor position when opening a file again
 
 
 ==============================================================================
-3. Keystrokes                                                 *vimsy-keys*
-
-Vim's default mapleader is \, see |vimsy-mapleader| for more.
-
-
-Mapleader
-
-|MAP-B|   \B    Convert Ruby blocks between {} and do/end.
-|MAP-C|   \C    Toggle commenting on and off (see |CTRL-/|).
-|MAP-d|   \d    Toggle the nerd tree open and closed.
-|MAP-D|   \D    Show the current file in the nerd tree.
-|MAP-l|   \l    Toggle the taglist open and closed.
-|MAP-w|   \w    Switch through Vim's line wrapping modes.
-|MAP-/|   \/    Recursive grep for the identifier under the cursor.
-|MAP-*|   \*    Recursive grep for the identifier under the cursor.
-
-
-                                                    *MAP-B*
-\B      When you select a block in visual mode, hitting \B (capital
-        B) converts between {} and do/end.  Thanks to matchy, you can
-        just put your cursor on begin or end, then hit v%\B.
-        |ruby-block-conv|
-
-
-                                                    *MAP-c*
-\c      Used by NERDCommenter, see |NERDComFunctionalitySummary|.
-
-
-                                                    *MAP-C*
-\C      Toggle the comments on the selected lines or current line.
-        This is only a workaround because Control-/ doesn't work in
-        all circumstances: |vimsy-control-/|.  We use capital C
-        because nerd-commenter is already using small c as its
-        map leader (for instance, <leader>c<space> also toggles
-        comments |NERDComToggleComment|).
-
-
-                                                    *MAP-d*
-\d     Toggle the nerd tree open and closed.
-
-
-                                                    *MAP-D*
-\D     Show the current file in the nerd tree.
-
-
-                                                    *MAP-l*
-\l     Toggle the tag list for the current file.  The taglist
-       shows all the tags in the current file, allowing you to
-       quickly navigate among them.
-
-
-                                                    *MAP-w*
-\w     Vim supports three line wrapping modes: unwrapped,
-       wrapped at the end of the line, and wrapped only at
-       sensible word boundaries.  \w toggles through all
-       three modes.
-
-
-                                                    *MAP-star*
-\*     Grep the entire project for the identifier under the cursor
-
-
-|CTRL-J|        ^J    Open the buffer explorer
-|CTRL-W_e|      ^We   Close the buffer but not the window.
-|CTRL-W_CTRL-E| ^W^E  Close the buffer but not the window.
-|CTRL-/|        ^/    Toggle commenting on and off (see |MAP-C|).
-
-
-                                                    *CTRL-J*
-C-J    Opens the buffer explorer (original C-J binding did the same
-       thing as j).  TODO: this should probably change.
-
-
-                                         *CTRL-W_e* *CTRL-W_CTRL-E*
-C-We   Closes a buffer but leaves the window open (C-W C-E works too).
-
-
-                                                    *CTRL-/*
-C-/    Toggles comments.  If Control-/ doesn't work on your system
-       (see |vimsy-control-/|) then you can use |MAP-C|.
-
+3. Tasks                                                 *vimsy-tasks*
 
 Tasks:
-Create a file or directory: \d (open nerdtree), put the cursor on the directory to contain the new file, and hit m.
-Move or copy files: \d (open nerdtree), put the cursor on the directory to contain the new file, and hit m.
 
-Vim Builtins: Here are some highlights.  Everything is listed in |index.txt|.
-C-^ -- edit previous file (file marked with # in the output of :ls), C-W C-^ -- split and switch
-:wa -- write all buffers (Save All)
-:wqa -- write all buffers and quit
-C-W _ -- maximize current window. C-W o or :on (:only) makes it even more maximal.
-C-W KJHL -- move current window to the extreme border (J makes it full width at the bottom of the screen, etc)
-C-W rR -- rotate open windows clockwise / counterclockwise
-H M L -- move cursor on screen to high, middle, low
-C-T / C-D -- (insert mode) insert tab / delete tab from beginning of line
-C-O / C-I -- go to older / newer cursor position (see |jump-motions|)
-[m ]m -- move to the previous or next method/function
-[[ ][ -- move to previous or next outermost { } brace (ruby: class or module)
-[( ]( -- move to previous or next paren ( )
-gd gD -- go to definition of variable under cursor (d searches function, D searches file)
-gq -- reformat comment (visually select first, or hit
-      gq]/ to reformat to the end of the current comment block)
+Create a file or directory
+  - \d (open nerdtree),
+  - put the cursor on the directory to contain the new file
+  - hit m, then follow the menu.  TODO: make it a single keystroke
 
-Rails:
-gf -- if you're over a class or symbol, try gf.  It should take you.
-:A -- go to alternate file (usually to the test file)
-  AS -- split, AV -- vertical split, AT -- tab, AD -- replace current buffer
-:R -- got to related file (model/schema, controller/template)
-  RS -- split, RV -- vertical split, RT -- tab, RD -- replace current buffer
-:Rmodel (name) -- go to the named model
-  :Rcontroller, :Rview, :Rjavascript, :Rlayout, etc.
-:Rake (targets) -- run rake, open errors in quickfix window
-  with no targets, tries to figure out from current file
-:Rextract -- extract a partial (in your view, use v to select the code to extract, hit :Rextract NAME (name of your partial), and out it comes
-:Rtree -- open nerdtree view of the Rails project (any diff from \d?)
-C-X C-U -- complete current word from Rails keywords
+Move or copy files
+  - \d (open nerdtree)
+  - put the cursor on the directory to contain the new file
+  - hit m, then follow the menu.
+
 
 
 ==============================================================================
 4. DISCUSSION                                            *vimsy-discussion*
 
-Vimsy includes some controversial features.  If you see surprising
-behavior, this section may address it.  (If you're surprised that you
-*don't* see an expected behavior, check |vimsy-rejected-plugins|).
+See also |vimsy-rejected-plugins|.
 
 
-Map Leader                                               *vimsy-mapleader*
+Map Leader                                     *vimsy-mapleader-discussion*
 
 A lot of tutorials recommend changing vim's |mapleader| from "\" to ",".
 Vimsy doesn't do this because changing the mapleader would cause too
@@ -284,14 +178,7 @@ camelcasemotion    How often do you need to move within a camelcase word?
 
 
 ==============================================================================
-7. Major Changes                                        *vimsy-changes*
-
-04 Aug 2010 - drop fugitive, it just feels too different.
-04 Aug 2010 - Switch wholesale to Pathogen and update-bundles.
-
-
-==============================================================================
-8. About                                               *vimsy-about*
+7. About                                               *vimsy-about*
 
 Vimsy was assembled by Scott Bronson, brons_vimsy@rinspin.com.
 Its vimrc was written from scratch but cribbed heavily from

@@ -1,0 +1,333 @@
+*vimsy-keys.txt*                  Vimsy Keys
+
+
+This summarizes Vim's keybindings, noting Vimsy extensions where appropriate.
+
+Vimsy doesn't map the F1-F12 or the keypad.  They're meant for your own
+customizations.
+
+
+==============================================================================
+0. Table of Contents                                      *vimsy-keys-contents*
+
+  1.     |vimsy-keys-highlights|  -- quick intro to mappings provided by Vimsy
+  2.     |vimsy-keys-summary|     -- summary of all mappings available in Vim
+  2.1.   |vimsy-normal|           -- keys available in normal (non-insert) mode
+  2.1.1.    |vimsy-normal-ctrl|   -- normal mode mappings with the control key
+  2.1.2.    |vimsy-mapleader|     -- normal mode mappings initiated with the mapleader
+  2.2    |vimsy-insert|           -- some keys available in Vim's insert mode
+  2.3    |vimsy-bracket-motion|   -- quick summary of Vim's bracket navigation
+  2.4    |vimsy-rails-summary|    -- overview of rails.vim keys and features
+  2.     |vimsy-mapleader-discussion| -- longer description of mapleader keys
+
+
+==============================================================================
+1. Summaries                                        *vimsy-keys-features*
+
+  - Hit for<tab> to insert the snippet for a for loop.  |snipmate|  Also, in
+    insert mode, hit Control-R <tab> to show a list of available snippets.
+  - % bounces between most control structures (if/else/end, etc). |matchit|
+  - Control-/ toggles commenting (except in gvim: |vimsy-control-/|)
+  - Control-W e closes the buffer without affecting the window layout
+  - Control-L to turn off search highlighting (and redraw the screen)
+  - Control-K and Control-J quickly move the cursor vertically.  See |bisect|.
+
+
+==============================================================================
+2. Summaries                                        *vimsy-keys-summary*
+
+
+                                                          *vimsy-normal*
+
+These are all the keys available in Vim's normal mode.  Most of this
+list comes from Vim's |normal-index|.
+
+A            |A| enter insertion mode at end of line
+a            |a| enter insertion mode after character
+B            |B| move move back to beginning of WORD (whitespace-delimited chars)
+b            |b| move back back to beginning of word.  See |B|, |e|, |w|.
+C            |C| delete from cursor to end of line then enter insertion mode
+c            |c| delete char then enter insertion mode, "change"
+D            |D| delete from cursor to end of line
+d            |d| delete range
+E            |E| move forward to end of WORD (whitespace-delimited chars)
+e            |e| move forward to end of word.  See |E|, |b|, |w|.
+F            |F| move to the previous given character, see |f|, |T|, |;| and |,|
+f            |f| move to the next given character, see |F|, |t|, |;| and |,|
+G            |G| move to the numbered line
+g            |g| do-everything command.  See |g|.
+H            |H| move high.  See also |M| and |L|
+h            |h| move left, same as |<BS>| and |<Left>|
+I            |I| enter insert mode at the first non-blank char in the line
+i            |i| enter insert mode
+J            |J| join lines
+j            |j| move down, same as |<Down>|
+K            |K| look up the keyword under the cursor
+k            |k| move up, same as |<Up>|
+L            |L| move low, see also |H| and |M|
+l            |l| move right, same as |<Space>| and |<Right>|
+M            |M| move middle, see also |H| and |L|.
+m            |m| set mark at cursor position.  See |'| and |`|.
+N            |N| repeat the last |/| or |?| in the opposite direction
+n            |n| repeat the last |/| or |?|
+O            |O| open a line above
+o            |o| open a line before
+P            |P| paste before
+p            |p| paste after
+Q            |Q| switch to ex mode.  UNUSED?
+q            |q| record typed characters into register.  See |@|
+R            |R| replace mode: replace characters until you hit esc.
+r            |r| replace a single character, return to normal mode.
+S            |S| substitute to the end of the line
+s            |s| substitute the character, delete it and enter insert mode.
+T            |T| move to after the previous given character, see |t|, |F|, |;| and |,|
+t            |t| move to after the next given character, see |T|, |f|, |;| and |,|
+U            |U| undo line, restore line to state when cursor was moved onto it.
+u            |u| undo.  see |^R|
+V            |V| start visual mode linewise, see also |v| and |^V|
+v            |v| start visual mode, see also |V| and |^V|
+W            |W| move forward WORDS (whitespace-delimited chars)
+w            |w| move forward words.  See also |e| and |b|
+X            |X| delete chars to the left of the cursor, same as |<BS>| in insert mode.
+x            |x| delete chars to the right of the cursor, same as |<Del>|
+Y            |Y| yank line (vimsy: yank to end of line, yy yanks line)
+y            |y| yank
+Z            |Z| first half of |ZZ| or |ZQ| save command
+z            |z| folding, see |z|
+0            |0| move to the first character in the line.  See |^| and home.
+1-9              supply a numeric argument for the next vim command.
+, comma      |,| repeat last |f|F|t|T| in opp. dir. Some use as |vimsy-mapleader|
+. dot        |.| repeat simple changes
+: colon      |:| enter command-line mode
+; semi       |;| repeat last |f|F|t|T|
+' quote      |'| move to the mark given by the next char typed.  See |m| and |`|
+" dquote     |"| use register for next |delete|, |yank|, or |put|
+/ fslash     |/| search forward for pattern
+| |bar|      |bar| move to the given column in the current line.
+\ |bslash|       default mapleader, |vimsy-mapleader|.  Might be changed to|,|.
+? wut        |?| search backward for pattern
+< lthan      |<| unindent lines one shiftwidth
+> gthan      |>| indent lines one shiftwidth
+( lparen     |(| move count sentences backward  RUBY: ?
+) rparen     |)| move count sentences forward   RUBY: ?
+[ lbracket       move to previous { } section, see |vimsy-bracket-motion|
+] rbracket       move to next { } section, see |vimsy-bracket-motion|
+{ lbrace         move to previous blank-line delimited section
+} rbrace         move to next blank-line delimited section
+! bang       |!| filter lines through shell command
+@ snail      |@| execute the contents of the given register
+# hash       |#| search backward for identifier under cursor. See |*|.
+$ dollar     |$| move to the end of the line
+% percent    |%| move to the matching { /* if for the next delim on the line.
+^ caret      |^| move to first non-blank character in line. See |0|.
+& ampersand  |&| repeat last substitution (:s//~/&)
+* splat      |*| search forward for identifier under cursor. See |#|.
+- dash/minus |-| move N lines backward, then to the first non-blank char.
+_ underscore |_| move N-1 lines forward, then to first non-blank char (WTF).
+= equals     |=| indent or |equalprg| the given lines
++ plus       |+| move down then to the first non-blank char, same as |<CR>|.
+` backquote  |`| move to the mark given by the next char typed.  See |m| and |'|.
+~ tilde      |~| switch case of character under cursor
+  backspace  |<BS>| move left, same as |h|, |^H|, and |<Left>|
+  enter      |<CR>| move downward to the first non-blank char, same as |+|.
+  space      |<Space>| move to the right, same as |l| and |<Right>|
+  tab        |<Tab>| UNUSED?  IS THIS SUPERTAB's FAULT?
+  insert     |<Insert>| go to insert mode, same as |i|
+  delete     |<Del>| delete chars to the right of the cursor, same as |x|.
+  home       |<Home>| move to the first char in the line
+  end        |<End>| move to end of line, same as |$|
+  up         |<Up>| move up, same as |k|
+  down       |<Down>| move down, same as |j|
+  left       |<Left>| move left, same as |h| and |<BS>|
+  right      |<Right>| move right, same as |l| and |<Space>|
+
+
+
+                                                     *vimsy-normal-ctrl*
+
+^A         |^A| increment the number or character under the cursor, see |^X|
+^B         |^B| move cursor scrolling window one page backward, see |^F|, |^U|
+^C         |^C| abort whatever vim is doing
+^D         |^D| move cursor scrolling window 1/2 page downward, see |^U|, |^F|
+^E         |^E| scroll window one line down, see |^Y|, |^D|, |^F|
+^F         |^F| move cursor scrolling window one page forward, see |^B|, |^D|
+^G         |^G| show status, same as :file
+^H         |^H| same as |<BS>|.  vimsy: |Bisect| move progressively left
+^I         |^I| same as |<TAB>|.  Move to newer pos in |jumplist|, see |^O| and |jump-motions|.
+^J         |^J| same as |j| and |<Down>|.  vimsy: |Bisect| move progressively lower
+^K         |^K| same as |k| and |<Up>|.  vimsy: |Bisect| move progressively higher
+^L         |^L| same as |l| and |<Right>|.  vimsy: |Bisect| move progressively right
+^M         |^M| same as |<CR>|, the enter key
+^N         |^N| same as |^J|.  See also |^P|.  vimsy: |Bisect| stop bisecting (TODO: bisect doesn't need this, revert it)
+^O         |^O| move to older cursor position in |jumplist|, see |^I| and |jump-motions|.
+^P         |^P| same as |^K|.  See also |^N|.  TODO: UNUSED?
+^Q         |^Q| escape next char, same as |^V| for terminals where ^V is problematic.
+^R         |^R| redo.  See also |u|.
+^S         |^S| unused but unusable since terminals don't pass it through.
+^T         |^T| jump backward in the |tagstack|
+^U         |^U| move cursor scrolling window 1/2 page upward, see |^D|, |^F|
+^V         |^V| escape the next character, see also |^Q|
+^W         |^W| window commands, see |CTRL-W|
+^X         |^X| decrement the number or character under the cursor, see |^A|
+^Y         |^Y| scroll window one line up, see |^E|, |^U|, |^B|
+^Z         |^Z| suspend vim, bring up a shell
+^\ C-|bslash|     reserved.  used various ways: |CTRL-\_CTRL-G|, |CTRL-\_CTRL-N|
+^[ C-lbracket     same as ESC, you might find it easier to type
+^] C-rbracket     |CTRL-]| jump to tag under the cursor, same as control-leftmouse
+^@ C-snail        UNUSED, and in the terminal it's the same as C-Space
+^^ C-caret        |CTRL-^| switch to alternate file (file marked # in :ls). C-W C-^ splits and switches.
+^_ C-underscore   |CTRL-_| comment lines.  There's a bug though, see |vimsy-control-/|.
+^  C-backspace    UNUSED
+^  C-S-backspace  UNUSED
+
+
+
+                                                   *vimsy-mapleader*
+
+These are keystrokes initiated by hitting the mapleader.  The mapleader
+is '\' by default.  See |vimsy-mapleader-discussion| for how to change
+this.  See |vimsy-mapleader-descriptions| for longer descriptions of
+each key.
+
+|MAP-B|   \B    Convert Ruby blocks between {} and do/end.
+|MAP-C|   \C    Toggle commenting on and off (see |CTRL-/|).
+|MAP-d|   \d    Toggle the nerd tree open and closed.
+|MAP-D|   \D    Show the current file in the nerd tree.
+|MAP-l|   \l    Toggle the taglist open and closed.
+|MAP-w|   \w    Switch through Vim's line wrapping modes.
+|MAP-/|   \/    Recursive grep for the identifier under the cursor.
+|MAP-*|   \*    Recursive grep for the identifier under the cursor.
+
+
+
+                                                   *vimsy-insert*
+
+Vimsy doesn't change insert mode at all.  See |ins-special-keys| and
+|ins-special-special|.
+
+Especially good keys are:
+ - indentation: |i_CTRL-T|, |i_CTRL-D|, |i_CTRL-F|
+ - completion: |i_CTRL-N| and |i_CTRL-P|
+ - inserting registers: |i_CTRL-R|
+
+
+
+                                              *vimsy-bracket-motion*
+
+The [ and ] keys enable navigation in most programming languages.
+This is all standard vim, just summarized here.  [m and ]m might
+be the most useful but |vimsy-taglist| might be just as good.
+
+[[           |[[| move to start of previous C function, { in first column
+[]           |[]| move to end of previous C function, } in first column
+[(           |[(| move to previous unmatched (
+[{           |[(| move to previous unmatched {
+[m           |[m| move to start of previous method
+[M           |[M| move to end of previous method
+[/           |[/| move to start of previous C comment
+[*           |[*| move to start of previous C comment
+[#           |[#| move to previous unmatched #if or #else
+
+]]           |]]| move to start of next C function, { in the first column
+][           |][| move to end of next C function, } in the first column
+])           |])| move to next unmatched )
+]}           |])| move to next unmatched }
+]m           |]m| move to start of next method
+]M           |]M| move to end of next method
+]#           |]#| move to next unmatched #else or #endif
+]/           |[/| move to end of next C comment
+]*           |[*| move to end of next C comment
+
+gd           go to definition in function of variable under cursor
+gD           go to definition in file of variable under cursor
+
+
+                                              *vimsy-rails-summary*
+
+gf -- if you're over a class or symbol, try gf
+:A -- go to alternate file (usually to the test file)
+  AS -- split, AV -- vertical split, AT -- tab, AD -- replace current buffer
+:R -- got to related file (model/schema, controller/template)
+  RS -- split, RV -- vertical split, RT -- tab, RD -- replace current buffer
+:Rmodel, :Rcontroller, :Rview, :Rjavascript, :Rlayout, :Rmigration, etc.
+:Rmigration 0 to open db/schema.rb.
+:Rinitializer with no arguments to open config/routes.rb
+:Rake (targets) -- run rake, open errors in quickfix window
+  with no targets, tries to figure out what to do from current file
+:Rextract -- extract a partial (in your view, use v to select the code to
+  extract, hit :Rextract NAME (name of your partial), and out it comes
+C-X C-U -- complete current word from Rails keywords (see |compl-function|).
+
+
+==============================================================================
+2. Descriptions                               *vimsy-mapleader-descriptions*
+
+
+Mapleader
+
+
+
+                                                    *MAP-B*
+\B      When you select a block in visual mode, hitting \B (capital
+        B) converts between {} and do/end.  Thanks to matchy, you can
+        just put your cursor on begin or end, then hit v%\B.
+        |ruby-block-conv|
+
+
+                                                    *MAP-c*
+\c      Used by NERDCommenter, see |NERDComFunctionalitySummary|.
+
+
+                                                    *MAP-C*
+\C      Toggle the comments on the selected lines or current line.
+        This is only a workaround because Control-/ doesn't work in
+        all circumstances: |vimsy-control-/|.  We use capital C
+        because nerd-commenter is already using small c as its
+        map leader (for instance, <leader>c<space> also toggles
+        comments |NERDComToggleComment|).
+
+
+                                                    *MAP-d*
+\d     Toggle the nerd tree open and closed.
+
+
+                                                    *MAP-D*
+\D     Show the current file in the nerd tree.
+
+
+                                                    *MAP-l*
+\l     Toggle the tag list for the current file.  The taglist
+       shows all the tags in the current file, allowing you to
+       quickly navigate among them.
+
+
+                                                    *MAP-w*
+\w     Vim supports three line wrapping modes: unwrapped,
+       wrapped at the end of the line, and wrapped only at
+       sensible word boundaries.  \w toggles through all
+       three modes.
+
+
+                                                    *MAP-star*
+\*     Grep the entire project for the identifier under the cursor
+
+
+|CTRL-J|        ^J    Open the buffer explorer
+|CTRL-W_e|      ^We   Close the buffer but not the window.
+|CTRL-W_CTRL-E| ^W^E  Close the buffer but not the window.
+|CTRL-/|        ^/    Toggle commenting on and off (see |MAP-C|).
+
+
+                                                    *CTRL-J*
+C-J    Opens the buffer explorer (original C-J binding did the same
+       thing as j).  TODO: this should probably change.
+
+
+                                         *CTRL-W_e* *CTRL-W_CTRL-E*
+C-We   Closes a buffer but leaves the window open (C-W C-E works too).
+
+
+                                                    *CTRL-/*
+C-/    Toggles comments.  If Control-/ doesn't work on your system
+       (see |vimsy-control-/|) then you can use |MAP-C|.
+
