@@ -3,7 +3,7 @@
 "here is a more exotic version of my original Kwbd script
 "delete the buffer; keep windows; create a scratch buffer if no buffers left
 
-function s:Kwbd(kwbdStage)
+function s:CloseBuffer(kwbdStage)
   if(a:kwbdStage == 1)
     if(!buflisted(winbufnr(0)))
       bd!
@@ -11,7 +11,7 @@ function s:Kwbd(kwbdStage)
     endif
     let s:kwbdBufNum = bufnr("%")
     let s:kwbdWinNum = winnr()
-    windo call s:Kwbd(2)
+    windo call s:CloseBuffer(2)
     execute s:kwbdWinNum . 'wincmd w'
     let s:buflistedLeft = 0
     let s:bufFinalJump = 0
@@ -60,9 +60,10 @@ function s:Kwbd(kwbdStage)
   endif
 endfunction
 
-command! Kwbd call <SID>Kwbd(1)
-nnoremap <silent> <Plug>Kwbd :<C-u>Kwbd<CR>
+command! CloseBuffer call <SID>CloseBuffer(1)
+nnoremap <silent> <Plug>CloseBuffer :<C-u>CloseBuffer<CR>
 
-" Create a mapping (e.g. in your .vimrc) like this:
-"nmap <C-W>! <Plug>Kwbd
+" Close buffer but not window.  See close-buffer.vim
+nmap <C-W>e     <Plug>CloseBuffer
+nmap <C-W><C-E> <Plug>CloseBuffer
 

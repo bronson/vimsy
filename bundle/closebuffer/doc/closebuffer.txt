@@ -1,6 +1,12 @@
-This allows you to close a buffer in Vim without affecting the window
-it's in.  Normally when you close a buffer, its window closes too,
+*closebuffer.txt*             Close Buffer
+
+
+This plugin allows you to close a buffer in Vim without affecting any
+windows.  Normally when you close a buffer, its window closes too,
 forcing you to re-layout all your windows.
+
+
+                                                *^W^E*  *CTRL-W_CTRL-E*
 
 If you hit ^W^E, the buffer closes and your windows remain untouched.
 

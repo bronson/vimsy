@@ -148,9 +148,6 @@ vmap <leader>C <ESC>:call NERDComment(1, "toggle")<CR>
 " add a space between the comment delimiter and text
 let NERDSpaceDelims=1
 
-" Close buffer but not window.  See close-buffer.vim
-nmap <C-W>e     <Plug>Kwbd
-nmap <C-W><C-E> <Plug>Kwbd
 
 " Make the quickfix window wrap no matter the setting of nowrap
 au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
