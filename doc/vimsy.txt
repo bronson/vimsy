@@ -248,8 +248,9 @@ If you ruby-block-conv 'puts "#{var}"', it converts the variable interpolation i
 Never?:
 Make HTML/XML tags auto-close?
   Asked tpope on irc about adding it to endwise: "sounds impossible" to do it with minimal false positives.
-  maybe: http://pastey.net/132688-2fb8 or http://github.com/mitechie/pyvim/blob/master/.vim/ftplugin/xml.vim
-  Or can I make completion close tags?  </TAB?  Too bad endwise doesn't auto-close HTML tags.
+  maybe: Michael Sanders HTML AutoCloseTag: http://www.vim.org/scripts/script.php?script_id=2591
+  or maybe: http://pastey.net/132688-2fb8 or http://github.com/mitechie/pyvim/blob/master/.vim/ftplugin/xml.vim
+  or can I make completion close tags?  </TAB?  Too bad endwise doesn't auto-close HTML tags.
 ruby indentation screws up when I type end_date, it unindents prematurely right after "end".
   Can't be easily fixed, just keep typing then hit Control-F: http://github.com/vim-ruby/vim-ruby/issues/issue/9
 
