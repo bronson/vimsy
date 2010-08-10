@@ -6,65 +6,30 @@
 filetype off
 call pathogen#runtime_append_all_bundles()
 
-runtime macros/matchit.vim  " enable vim's built-in matchit script (% bounces between tags, begin/end, etc)
+filetype indent plugin on
+syntax on
 
-set nocompatible  " tends to make things work better
-set showcmd       " show incomplete cmds down the bottom
-set showmode      " show current mode down the bottom
 
-set incsearch     " find the next match as we type the search
-set hlsearch      " hilight searches by default
-set nowrap        " by default, dont wrap lines (see <leader>w)
 
-" I find linebreak more hassle than it's worth.  It makes it very hard to copy
-" and paste between vim windows due to the artificially inserted CRs, and it can
-" hide errors that the soft wrapping makes look correct.
-" set linebreak   " wrap lines at convenient points
+" basics
 
-" make Y yank to the end of the line (like C and D).  Use yy to yank the entire line.
-nmap Y y$
+set nocompatible      " tends to make things work better
+set showcmd           " show incomplete cmds down the bottom
+set showmode          " show current mode down the bottom
 
-set shiftwidth=4
-set softtabstop=4
-" ruby code tends to use smaller tabs
-autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2
-" ruby includes ! and ? in method names (array.empty?)
-autocmd FileType ruby setlocal iskeyword+=!,?
-
-set expandtab         " use spaces instead of tabstops
-set smarttab          " use shiftwidth when hitting tab instead of sts (?)
-set autoindent        " try to put the right amount of space at the beginning of a new line
-set nostartofline     " don't jump to start of line as a side effect (i.e. <<)
+set incsearch         " find the next match as we type the search
+set hlsearch          " hilight searches by default
+set nowrap            " by default, dont wrap lines (see <leader>w)
 set showmatch         " briefly jump to matching }] when typing
+set nostartofline     " don't jump to start of line as a side effect (i.e. <<)
 
 set scrolloff=3       " lines to keep visible before and after cursor
 set sidescrolloff=7   " columns to keep visible before and after cursor
 set sidescroll=1      " continuous horizontal scroll rather than jumpy
 
 set laststatus=2      " always display status line even if only one window is visible.
-" set confirm         " prompt user what to do instead of just failing (i.e. unsaved files)
 set updatetime=1000   " reduce updatetime so current tag in taglist is highlighted faster
 set autoread          " suppress warnings when git,etc. changes files on disk.
-
-
-" Highlight EOL whitespace, http://vim.wikia.com/wiki/Highlight_unwanted_spaces
-highlight ExtraWhitespace ctermbg=darkred guibg=#382424
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-" the above flashes annoyingly while typing, be calmer in insert mode
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-
-
-" Remove end of line white space.  TODO: change this to :FixWhitespace?
-map <leader>r ma:%s/\s\+$//e<CR>`a
-
-
-" Map <C-L> also turns off search highlighting until the next search
-nnoremap <C-L> :nohl<CR><C-L>
-
-filetype indent plugin on
-syntax on
 
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
@@ -75,40 +40,82 @@ set history=1000               "store lots of :cmdline history
 
 set hidden " no need to save before hiding, http://items.sjbach.com/319/configuring-vim-right
 
+set visualbell      " don't beep constantly, it's annoying.
+set t_vb=           " and don't flash the screen either (terminal anyway...
+set guioptions-=T   " hide gvim's toolbar by default
+" set guifont=Inconsolata\ Medium\ 10
+" set guifont=* to bring up a font selector, set guifont? to see result
+
+" search for a tags file recursively from cwd to /
+set tags=.tags,tags;/
+
+" Store swapfiles in a single directory.
+set directory=~/.vim/swap,~/tmp,/var/tmp/,tmp
+
+
+
+" indenting, languages
+
+set expandtab         " use spaces instead of tabstops
+set smarttab          " use shiftwidth when hitting tab instead of sts (?)
+set autoindent        " try to put the right amount of space at the beginning of a new line
+set shiftwidth=2
+set softtabstop=2
+
+" autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2
+" ruby includes ! and ? in method names (array.empty?)
+autocmd FileType ruby setlocal iskeyword+=!,?
+
+
+
+" fixes
+
+" <C-L> redraws the screen and also turns off highlighting the current search
+nnoremap <C-L> :nohl<CR><C-L>
+
 " make ' jump to saved line & column rather than just line.
 " http://items.sjbach.com/319/configuring-vim-right
 nnoremap ' `
 nnoremap ` '
 
-" looks like this is not so good, it screws up the ability to cut and paste
-" set mouse=a            " make the mouse work in consoles
-" set ttymouse=xterm2    " console protocol to use
-" this feels funky and everything seems to work fine without it
-" set selectmode=mouse
+" make Y yank to the end of the line (like C and D).  Use yy to yank the entire line.
+" Upside: feels more natural.  Downside: not stock vi/vim.
+nmap Y y$
 
-set visualbell      " don't beep constantly, it's annoying.
-set t_vb=           " and don't flash the screen either (terminal anyway...
+" Add a binding to search for the word under the cursor in all files
+map <leader>* :execute "noautocmd grep -rw " . expand("<cword>") . " ."<CR>
 
-set guioptions-=T      " hide toolbar
-" set guioptions-=m    " hide menu bar
-" set guifont=Inconsolata\ Medium\ 10
-" set guifont=* to bring up a font selector, set guifont? to see result
+" Make the quickfix window wrap no matter the setting of nowrap
+au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
+
+
+
+" color schemes
+
 " desert is too low contrast
 " slate is great except comments are horrible
-" adaryn is very close to the emacs I used a decade ago at OpenTV
+" adaryn is very close to the solaris/emacs I used at OpenTV
 " nice: breeze, evening, navajo-night
 colorscheme evening
 
 
-" Not sure if these are a good idea...
-" set formatoptions-=o "dont continue comments when pushing o/O
-" let g:syntastic_enable_signs=1 "mark syntax errors with :signs
 
-" search for a tags file recursively from cwd to /
-set tags=.tags,tags;/
+" plugins
 
-" Add a binding to search for the word under the cursor in all files
-map <leader>* :execute "noautocmd grep -rw " . expand("<cword>") . " ."<CR>
+runtime macros/matchit.vim  " enable vim's built-in matchit script (make % bounce between tags, begin/end, etc)
+
+
+" Highlight EOL whitespace, http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+highlight ExtraWhitespace ctermbg=darkred guibg=#382424
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+" the above flashes annoyingly while typing, be calmer in insert mode
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+
+" Remove end of line white space.  TODO: change this to :FixWhitespace?
+map <leader>r ma:%s/\s\+$//e<CR>`a
+
 
 
 " This makes * and # work on visual mode too.
@@ -124,17 +131,19 @@ vmap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
 vmap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
 
+
+
 nmap <leader>d :NERDTreeToggle<cr>
 nmap <leader>D :NERDTreeFind<cr>
+
+
 nmap <leader>l :TlistToggle<cr>
 
-nmap <C-J> :BufExplorer<CR>
 
 " Use Control-/ to toggle comments
 nmap <C-/> :call NERDComment(0, "toggle")<CR>
 vmap <C-/> <ESC>:call NERDComment(1, "toggle")<CR>
 " but most vim implementations produce Control-_ instead of Control-/:
-" Mapping C-_ may surprise Hebrew and Farsi programmers...?
 nmap <C-_> :call NERDComment(0, "toggle")<CR>
 vmap <C-_> <ESC>:call NERDComment(1, "toggle")<CR>
 " and vim-gtk and vim-gnome are broken (:help vimsy-control-/)
@@ -147,10 +156,6 @@ vmap <leader>C <ESC>:call NERDComment(1, "toggle")<CR>
 
 " add a space between the comment delimiter and text
 let NERDSpaceDelims=1
-
-
-" Make the quickfix window wrap no matter the setting of nowrap
-au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
 
 
 " ------   rSpec stuff
@@ -178,6 +183,7 @@ xmap S <Plug>Vsurround
 " -------
 
 " Make \w toggle through the three wrapping modes.
+" TODO: turn this into a plugin
 
 :function ToggleWrap()
 : if (&wrap == 1)
@@ -209,13 +215,3 @@ let g:loaded_AlignMapsPlugin = "v41"
 " set grepprg=$HOME/.vim/bin/ack-standalone\ --column
 " set grepformat=%f:%l:%c:%m
 
-
-" Make vim restore cursorpos & folding each time it loads a document
-" No, just too unreliable.  It's always screwing up readonly and syntax highlighting.
-" au BufWinLeave * mkview
-" au BufWinEnter *.* silent loadview
-
-" Store swapfiles in a single directory.
-" Upside: makes mass deleting swapfiles easy, doesn't clutter project dirs
-" Downside: you won't be notified if you start editing the same file as someone else.
-set directory=~/.vim/swap,~/tmp,/var/tmp/,tmp
