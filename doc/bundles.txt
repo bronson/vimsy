@@ -1,7 +1,7 @@
 *bundles.txt*                    Bundles                      Version 0.1
 
 These are the bundles installed on your system, along with their
-versions and release dates.  Downloaded on 2010-08-10 14:12:38 -0700.
+versions and release dates.  Downloaded on 2010-08-10 15:01:37 -0700.
 
 A version number of 'n/a' means upstream hasn't tagged any releases.
 
@@ -14,8 +14,8 @@ Plugins
   - |bufexplorer|                  7.2.7                  2010-04-26
   - |closebuffer|                  0.2                    2010-08-10
   - |command-t|                    0.8b-33-g0370463       2010-08-01
-  - |ruby|                         vim7.3-9-gfaef7e9      2010-08-03
-  - |rails|                        v4.2-27-g6c6f2ad       2010-08-04
+  - |ruby|                         vim7.3-10-ge53a858     2010-08-10
+  - |rails|                        v4.2-28-g42bb069       2010-08-10
   - |snipmate|                     n/a                    2010-04-08
   - |snipmate-snippets|            n/a                    2010-06-12
   - |surround|                     v1.90                  2010-03-05
@@ -27,7 +27,7 @@ Plugins
   - |repeat|                       v1.0                   2008-04-25
   - |supertab|                     n/a                    2010-04-01
   - |Bisect|                       n/a                    2010-02-15
-  - |conque|                       n/a                    2010-08-02
+  - |conque|                       n/a                    2010-08-10
   - |scrollcolors|                 20060719               2006-07-18
 
 
@@ -37,11 +37,11 @@ Syntax Files
   - |jquery|                       0.4                    2010-02-02
   - |shoulda|                      n/a                    2010-04-01
   - |git|                          v5.0-4-gbda9f09        2010-02-14
-  - |cucumber|                     n/a                    2010-08-02
-  - |haml|                         vim7.2-50-g55f14fd     2010-07-28
+  - |cucumber|                     n/a                    2010-08-09
+  - |haml|                         vim7.2-52-g47c4dff     2010-08-09
   - |markdown|                     n/a                    2010-05-02
   - |textile|                      0.2-2-g8fc6ddb         2008-11-03
-  - |coffee-script|                n/a                    2010-08-07
+  - |coffee-script|                n/a                    2010-08-10
 
 
 Color Schemes
