@@ -179,8 +179,8 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 
-" Remove end of line white space.  TODO: change this to :FixWhitespace?
-map <leader>r ma:%s/\s\+$//e<CR>`a
+" Run :FixWhitespace to remove end of line white space.
+command! -range=% FixWhitespace silent! keepjumps <line1>,<line2>substitute/\s\+$//
 
 
 " ------   rSpec stuff
