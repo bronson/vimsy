@@ -105,7 +105,6 @@ Ubuntu bug: https://bugs.launchpad.net/ubuntu/+source/vim/+bug/534124
 ==============================================================================
 5. TODO                                                   *vimsy-todo*
 
-split vim-update-bundles out of vimsy.
 What about testing?  We need quickfix support for RSpec and Test::Unit.
   Do we still need RubySpec now that RubyTest does specs?
   rubytest should save the file before running the tests.
