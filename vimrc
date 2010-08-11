@@ -154,6 +154,7 @@ nmap <leader>l :TlistToggle<cr>
 " --- BUNDLE: git://github.com/rson/vim-conque.git
 " --- BUNDLE: git://github.com/bronson/vim-scrollcolors.git
 " --- BUNDLE: git://github.com/bronson/vim-visual-star-search.git
+" --- BUNDLE: git://github.com/bronson/vim-trailing-whitespace.git
 " Syntax Files:
 " --- BUNDLE: git://github.com/bronson/vim-jquery.git
 " --- BUNDLE: git://github.com/tsaleh/vim-shoulda.git
@@ -169,18 +170,6 @@ nmap <leader>l :TlistToggle<cr>
 " # dir layout doesn't work with pathogen, not sure if it's worth using anyway
 " # http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen#comment_348
 " # :BUNDLE git://github.com/astashov/vim-ruby-debugger.git
-
-
-" Highlight EOL whitespace, http://vim.wikia.com/wiki/Highlight_unwanted_spaces
-highlight ExtraWhitespace ctermbg=darkred guibg=#382424
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-" the above flashes annoyingly while typing, be calmer in insert mode
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-
-" Run :FixWhitespace to remove end of line white space.
-command! -range=% FixWhitespace silent! keepjumps <line1>,<line2>substitute/\s\+$//
 
 
 " ------   rSpec stuff
