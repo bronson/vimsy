@@ -147,6 +147,9 @@ nmap <leader>l :TlistToggle<cr>
 " --- BUNDLE: git://github.com/bronson/vim-indexedsearch.git
 " --- BUNDLE: git://github.com/bronson/vim-ruby-block-conv.git
 " --- BUNDLE: git://github.com/tsaleh/vim-align.git
+" The Align plugin declares a TON of maps, few of which are useful
+" and some of which conflict with other mappings (like \w and \m).
+let g:loaded_AlignMapsPlugin = "v41"
 " --- BUNDLE: git://github.com/tpope/vim-endwise.git
 " --- BUNDLE: git://github.com/tpope/vim-repeat.git
 " --- BUNDLE: git://github.com/tsaleh/vim-supertab.git
@@ -155,6 +158,8 @@ nmap <leader>l :TlistToggle<cr>
 " --- BUNDLE: git://github.com/bronson/vim-scrollcolors.git
 " --- BUNDLE: git://github.com/bronson/vim-visual-star-search.git
 " --- BUNDLE: git://github.com/bronson/vim-trailing-whitespace.git
+" --- BUNDLE: git://github.com/bronson/vim-toggle-wrap.git
+
 " Syntax Files:
 " --- BUNDLE: git://github.com/bronson/vim-jquery.git
 " --- BUNDLE: git://github.com/tsaleh/vim-shoulda.git
@@ -190,33 +195,6 @@ endfunction
 " have :Spec run rspecs (args with pathname completion, :Spec spec/views)
 command! -nargs=? -complete=file Spec call RunSpec(<q-args>)
 
-
-" -------
-
-" Make \w toggle through the three wrapping modes.
-" TODO: turn this into a plugin
-
-:function ToggleWrap()
-: if (&wrap == 1)
-:   if (&linebreak == 0)
-:     set linebreak
-:   else
-:     set nowrap
-:   endif
-: else
-:   set wrap
-:   set nolinebreak
-: endif
-:endfunction
-
-map <leader>w :call ToggleWrap()<CR>
-
-" The Align plugin declares a TON of maps, few of which are useful.
-" Remove the ones which conflict with other uses (like \w for wrapping)
-    " unmap <leader>w=
-    " unmap <leader>m=
-" hm, that didn't work.  turn them all off.
-let g:loaded_AlignMapsPlugin = "v41"
 
 
 " ------- replace vim's grep with ack
