@@ -146,12 +146,18 @@ nmap <leader>l :TlistToggle<cr>
 " --- BUNDLE: git://github.com/scrooloose/snipmate-snippets.git
 " --- BUNDLE: git://github.com/bronson/vim-indexedsearch.git
 " --- BUNDLE: git://github.com/bronson/vim-ruby-block-conv.git
+"
 " --- BUNDLE: git://github.com/tsaleh/vim-align.git
 " The Align plugin declares a TON of maps, few of which are useful
 " and some of which conflict with other mappings (like \w and \m).
 let g:loaded_AlignMapsPlugin = "v41"
+
 " --- BUNDLE: git://github.com/tpope/vim-endwise.git
 " --- BUNDLE: git://github.com/tpope/vim-repeat.git
+
+" --- BUNDLE: git://github.com/tpope/vim-fugitive.git
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
 " --- BUNDLE: git://github.com/tsaleh/vim-supertab.git
 " --- BUNDLE: git://github.com/mikezackles/Bisect.git
 " --- BUNDLE: git://github.com/rson/vim-conque.git

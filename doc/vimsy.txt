@@ -154,9 +154,6 @@ ruby indentation screws up when I type end_date, it unindents prematurely right 
 These are plugins that were considered but not used.  See
 |vimsy-plugins| for the list of currently installed plugins.
 
-fugitive     Even now, months later, the read and write commands still feel
-             weird.  I give up and will now try to find something more gitish.
-
 original fuzzyfinder    So laborious to use that I don't see why anyone
              would use it over vim's :find built-in.  It's horrible.
 
