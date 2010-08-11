@@ -1,4 +1,4 @@
-*.swp
+swap/*
 .netrwhist
 view
 bundle
