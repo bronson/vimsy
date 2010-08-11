@@ -172,35 +172,7 @@ let g:loaded_AlignMapsPlugin = "v41"
 " Color Schemes:
 " --- BUNDLE: git://github.com/tpope/vim-vividchalk.git
 "
-" # dir layout doesn't work with pathogen, not sure if it's worth using anyway
+" # vim-ruby-debugger's directory layout doesn't work with pathogen.
 " # http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen#comment_348
 " # :BUNDLE git://github.com/astashov/vim-ruby-debugger.git
-
-
-" ------   rSpec stuff
-
-" Run rspec using a formatter meant for quickfix display
-" Uses ~/.vim/ruby/vim_spec_formatter.rb to populate the quickfix window
-" Slightly modified from https://wincent.com/blog/running-rspec-specs-from-inside-vim
-function! RunSpec(command)
-  if a:command == ''
-    let dir = 'spec'
-  else
-    let dir = a:command
-  endif
-  cexpr system("spec -r ~/.vim/ruby/vim_spec_formatter.rb -f Spec::Runner::Formatter::VimSpecFormatter " . dir)"a:command)
-  cw
-endfunction
-
-" have :Spec run rspecs (args with pathname completion, :Spec spec/views)
-command! -nargs=? -complete=file Spec call RunSpec(<q-args>)
-
-
-
-" ------- replace vim's grep with ack
-" Disabled by default because it's too different from stock vim behavior.
-" Embed ack since most distros haven't caught up to the --column option.
-
-" set grepprg=$HOME/.vim/bin/ack-standalone\ --column
-" set grepformat=%f:%l:%c:%m
 
