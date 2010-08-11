@@ -1,25 +1,20 @@
 *bundles.txt*                    Bundles                      Version 0.1
 
 These are the bundles installed on your system, along with their
-versions and release dates.  Downloaded on 2010-08-10 15:30:00 -0700.
+versions and release dates.  Downloaded on 2010-08-10 17:59:40 -0700.
 
 A version number of 'n/a' means upstream hasn't tagged any releases.
-
-
-Plugins
--------
-
   - |nerdtree|                     4.1.0-2-g88aaba2       2010-07-31
   - |nerdcommenter|                2.2.2-11-g5c9359d      2010-08-01
+  - |surround|                     v1.90                  2010-03-05
+  - |taglist|                      n/a                    2007-09-21
   - |bufexplorer|                  7.2.7                  2010-04-26
-  - |closebuffer|                  0.2                    2010-08-10
   - |command-t|                    0.8b-33-g0370463       2010-08-01
+  - |closebuffer|                  0.2                    2010-08-10
   - |ruby|                         vim7.3-10-ge53a858     2010-08-10
   - |rails|                        v4.2-28-g42bb069       2010-08-10
   - |snipmate|                     n/a                    2010-04-08
   - |snipmate-snippets|            n/a                    2010-06-12
-  - |surround|                     v1.90                  2010-03-05
-  - |taglist|                      n/a                    2007-09-21
   - |indexedsearch|                070503                 2007-05-03
   - |ruby-block-conv|              0.1                    2005-11-14
   - |align|                        n/a                    2010-04-01
@@ -29,11 +24,6 @@ Plugins
   - |Bisect|                       n/a                    2010-02-15
   - |conque|                       n/a                    2010-08-10
   - |scrollcolors|                 20060719               2006-07-18
-
-
-Syntax Files
-------------
-
   - |jquery|                       0.4                    2010-02-02
   - |shoulda|                      n/a                    2010-04-01
   - |git|                          v5.0-4-gbda9f09        2010-02-14
@@ -42,10 +32,5 @@ Syntax Files
   - |markdown|                     n/a                    2010-05-02
   - |textile|                      0.2-2-g8fc6ddb         2008-11-03
   - |coffee-script|                n/a                    2010-08-10
-
-
-Color Schemes
--------------
-
   - |vividchalk|                   v2.0                   2010-02-19
 

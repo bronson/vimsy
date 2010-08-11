@@ -19,16 +19,15 @@ Then, in your home directory:
 
     git clone git://github.com/bronson/vimsy.git .vim
 
-Finally, creaate a file called ".vimrc" in your home directory
-(it should be called _vimrc  on Windows), containing a single line:
+Finally, creaate a symbolic link to .vim/vimrc:
 
-    source $HOME/.vim/vimrc
+    ln -s .vim/vimrc .vimrc
 
 And you're done!
 
 Now run ':help vimsy' to start to learn about all the good stuff
 you have at your disposal.
 
-Vimsy is tested on Vim 7.2 on Mac/Linux.  Vimsy should work reasonably
+Vimsy is tested on Vim 7.2 on Mac/Linux.  It should work reasonably
 well on any Vim 7 or higher.
 

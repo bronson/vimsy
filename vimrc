@@ -99,10 +99,75 @@ au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
 colorscheme evening
 
 
-
-" plugins
+" Plugins:
 
 runtime macros/matchit.vim  " enable vim's built-in matchit script (make % bounce between tags, begin/end, etc)
+
+
+" --- BUNDLE: git://github.com/scrooloose/nerdtree.git
+nmap <leader>d :NERDTreeToggle<cr>
+nmap <leader>D :NERDTreeFind<cr>
+
+
+" --- BUNDLE: git://github.com/scrooloose/nerdcommenter.git
+
+" add a space between the comment delimiter and text
+let NERDSpaceDelims=1
+
+" Use Control-/ to toggle comments
+nmap <C-/> :call NERDComment(0, "toggle")<CR>
+vmap <C-/> <ESC>:call NERDComment(1, "toggle")<CR>
+" but most vim implementations produce Control-_ instead of Control-/:
+nmap <C-_> :call NERDComment(0, "toggle")<CR>
+vmap <C-_> <ESC>:call NERDComment(1, "toggle")<CR>
+" and vim-gtk and vim-gnome are broken (:help vimsy-control-/)
+" you can use <leader>/ to do the same things.
+nmap <leader>/ :call NERDComment(0, "toggle")<CR>
+vmap <leader>/ <ESC>:call NERDComment(1, "toggle")<CR>
+" but maybe <leader>C is nicer to type?
+nmap <leader>C  :call NERDComment(0, "toggle")<CR>
+vmap <leader>C <ESC>:call NERDComment(1, "toggle")<CR>
+
+
+" --- BUNDLE: git://github.com/tpope/vim-surround.git
+" tell surround not to break the visual s keystroke (:help vs)
+xmap S <Plug>Vsurround
+
+
+" --- BUNDLE: git://github.com/bronson/vim-taglist.git
+nmap <leader>l :TlistToggle<cr>
+
+" --- BUNDLE: git://github.com/bronson/vim-bufexplorer.git
+" --- BUNDLE: git://git.wincent.com/command-t.git
+" --- BUNDLE: git://github.com/bronson/vim-closebuffer.git
+" --- BUNDLE: git://github.com/vim-ruby/vim-ruby.git
+" --- BUNDLE: git://github.com/tpope/vim-rails.git
+" --- BUNDLE: git://github.com/msanders/snipmate.vim.git
+" --- BUNDLE: git://github.com/scrooloose/snipmate-snippets.git
+" --- BUNDLE: git://github.com/bronson/vim-indexedsearch.git
+" --- BUNDLE: git://github.com/bronson/vim-ruby-block-conv.git
+" --- BUNDLE: git://github.com/tsaleh/vim-align.git
+" --- BUNDLE: git://github.com/tpope/vim-endwise.git
+" --- BUNDLE: git://github.com/tpope/vim-repeat.git
+" --- BUNDLE: git://github.com/tsaleh/vim-supertab.git
+" --- BUNDLE: git://github.com/mikezackles/Bisect.git
+" --- BUNDLE: git://github.com/rson/vim-conque.git
+" --- BUNDLE: git://github.com/bronson/vim-scrollcolors.git
+" Syntax Files:
+" --- BUNDLE: git://github.com/bronson/vim-jquery.git
+" --- BUNDLE: git://github.com/tsaleh/vim-shoulda.git
+" --- BUNDLE: git://github.com/tpope/vim-git.git
+" --- BUNDLE: git://github.com/tpope/vim-cucumber.git
+" --- BUNDLE: git://github.com/tpope/vim-haml.git
+" --- BUNDLE: git://github.com/tpope/vim-markdown.git
+" --- BUNDLE: git://github.com/timcharper/textile.vim.git
+" --- BUNDLE: git://github.com/kchmck/vim-coffee-script.git
+" Color Schemes:
+" --- BUNDLE: git://github.com/tpope/vim-vividchalk.git
+"
+" # dir layout doesn't work with pathogen, not sure if it's worth using anyway
+" # http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen#comment_348
+" # :BUNDLE git://github.com/astashov/vim-ruby-debugger.git
 
 
 " Highlight EOL whitespace, http://vim.wikia.com/wiki/Highlight_unwanted_spaces
@@ -131,33 +196,6 @@ vmap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
 vmap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
 
-
-
-nmap <leader>d :NERDTreeToggle<cr>
-nmap <leader>D :NERDTreeFind<cr>
-
-
-nmap <leader>l :TlistToggle<cr>
-
-
-" Use Control-/ to toggle comments
-nmap <C-/> :call NERDComment(0, "toggle")<CR>
-vmap <C-/> <ESC>:call NERDComment(1, "toggle")<CR>
-" but most vim implementations produce Control-_ instead of Control-/:
-nmap <C-_> :call NERDComment(0, "toggle")<CR>
-vmap <C-_> <ESC>:call NERDComment(1, "toggle")<CR>
-" and vim-gtk and vim-gnome are broken (:help vimsy-control-/)
-" you can use <leader>/ to do the same things.
-nmap <leader>/ :call NERDComment(0, "toggle")<CR>
-vmap <leader>/ <ESC>:call NERDComment(1, "toggle")<CR>
-" but maybe <leader>C is nicer to type?
-nmap <leader>C  :call NERDComment(0, "toggle")<CR>
-vmap <leader>C <ESC>:call NERDComment(1, "toggle")<CR>
-
-" add a space between the comment delimiter and text
-let NERDSpaceDelims=1
-
-
 " ------   rSpec stuff
 
 " Run rspec using a formatter meant for quickfix display
@@ -175,9 +213,6 @@ endfunction
 
 " have :Spec run rspecs (args with pathname completion, :Spec spec/views)
 command! -nargs=? -complete=file Spec call RunSpec(<q-args>)
-
-" tell surround not to break the visual s keystroke (:help vs)
-xmap S <Plug>Vsurround
 
 
 " -------
