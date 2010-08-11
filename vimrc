@@ -153,6 +153,7 @@ nmap <leader>l :TlistToggle<cr>
 " --- BUNDLE: git://github.com/mikezackles/Bisect.git
 " --- BUNDLE: git://github.com/rson/vim-conque.git
 " --- BUNDLE: git://github.com/bronson/vim-scrollcolors.git
+" --- BUNDLE: git://github.com/bronson/vim-visual-star-search.git
 " Syntax Files:
 " --- BUNDLE: git://github.com/bronson/vim-jquery.git
 " --- BUNDLE: git://github.com/tsaleh/vim-shoulda.git
@@ -180,20 +181,6 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 
 " Remove end of line white space.  TODO: change this to :FixWhitespace?
 map <leader>r ma:%s/\s\+$//e<CR>`a
-
-
-
-" This makes * and # work on visual mode too.
-" http://got-ravings.blogspot.com/2008/07/vim-pr0n-visual-search-mappings.html
-function! s:VSetSearch()
-  let temp = @@
-  norm! gvy
-  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-  let @@ = temp
-endfunction
-
-vmap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
-vmap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
 
 " ------   rSpec stuff

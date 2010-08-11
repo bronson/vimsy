@@ -1,7 +1,7 @@
 *bundles.txt*                    Bundles                      Version 0.1
 
 These are the bundles installed on your system, along with their
-versions and release dates.  Downloaded on 2010-08-10 17:59:40 -0700.
+versions and release dates.  Downloaded on 2010-08-11 11:03:32 -0700.
 
 A version number of 'n/a' means upstream hasn't tagged any releases.
   - |nerdtree|                     4.1.0-2-g88aaba2       2010-07-31
@@ -24,6 +24,7 @@ A version number of 'n/a' means upstream hasn't tagged any releases.
   - |Bisect|                       n/a                    2010-02-15
   - |conque|                       n/a                    2010-08-10
   - |scrollcolors|                 20060719               2006-07-18
+  - |visual-star-search|           0.1                    2010-08-11
   - |jquery|                       0.4                    2010-02-02
   - |shoulda|                      n/a                    2010-04-01
   - |git|                          v5.0-4-gbda9f09        2010-02-14
