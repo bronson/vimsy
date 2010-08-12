@@ -33,10 +33,10 @@ Some highlights:
   - |taglist|       \l    View and navigate the tags in the curent file
   - |rails|         :R    Brilliance for Rails developers by the legendary tpope
   - |snipmate|      TAB   The tab key to inserts Textmate-like snippets
-  - |matchit|       %     Use % to bounce betwee html tags, if/else/end, begin/end, etc
   - |surround|      ysiw" Quickly surround text objects with quotes and HTML tags
   - |endwise|             Automatically close blocks in ruby, vb, or vimscript
-  - |indexedsearch| /     Shows "Match 4 of 52" when searching with /, ?, *, etc
+  - |indexedsearch| /     Shows "Match 4 of 52" when searching with /, ?, *, etc.
+  - matchit and python_match: % bounces between html tags, if/else/end, begin/end, etc.
 
 See |vimsy-rejected-plugins| for the plugins that didn't make the cut.
 
@@ -122,6 +122,7 @@ Rails vim -- turn off logfile tweaks.  Coloring makes opening large files painfu
 Also make bufexplorer support s and v to open new buffer horiz or vertically split. (already built-in?)
 Add a.vim (alternate) http://www.vim.org/scripts/script.php?script_id=31 and map the keys to be the same as railsmode.
 bufexplorer: use h and F1 for help and ? to search backward.
+split python_match into its own bundle.  time to mirror vim scripts!
 nerdtree: use h and F1 for help and ? to search backward.
 nerdtree: I should be able to open bufexplorer and command-t from within nerdtree.
 nerdtree: Make space behave the same as return when navigating the tree.
