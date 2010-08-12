@@ -106,6 +106,7 @@ Ubuntu bug: https://bugs.launchpad.net/ubuntu/+source/vim/+bug/534124
 ==============================================================================
 5. TODO                                                   *vimsy-todo*
 
+add a.vim.
 What about testing?  We need quickfix support for RSpec and Test::Unit.
   Do we still need RubySpec now that RubyTest does specs?
   rubytest should save the file before running the tests.
@@ -113,7 +114,7 @@ What about testing?  We need quickfix support for RSpec and Test::Unit.
   rubytest definitely needs to present its quickfix better.  (crib from recent rails.vim?)
   instead of railstest, http://www.vim.org/scripts/script.php?script_id=2869 ?
   is it possible to extract rails.vim's rSpec functionality and use it instead of current rSpec stuff?
-Add ack plugin or something to make searching easier.
+Add ack plugin or something to make searching easier.  Not fond of ack but gotta do something!
   Add http://github.com/adamlogic/ack.vim/commit/850e83088e0a623390446ea88fc8740857777f25 ?
 Figure out a keypress to toggle :set paste! on and off.  I do it a lot.
 Make ESC cancel bufexplorer and return to the previous file being edited, without affecting Control-6.
@@ -129,6 +130,15 @@ nerdtree: Make space behave the same as return when navigating the tree.
 nerdtree: Make a keystroke to fire off a grep/ack from the selected directory or parent dir of the selected file
 nerdtree: Add c/n to nerdtree for one-step file creation
 interesting plugin: http://github.com/chrisbra/histwin.vim
+More auto-closing, should probably pick one: http://github.com/Townk/vim-autoclose http://github.com/Raimondi/delimitMate
+What about vim-pastie or vim-gist?
+What about tpope's speed dating?  Seems to be very little downside.  Maybe disabled by default?
+What about yankring?
+What about sparkup or zencoding?
+What about the rename plugin?  And can it call fugitive's Gmove function if called in a git repo?
+Python: pyflakes-vim, indentation at http://www.vim.org/scripts/script.php?script_id=974
+C/C++: a.vim of course!  and cscope http://cscope.sourceforge.net/cscope_vim_tutorial.html
+OCaml: omlet  Clojure: vimclojure  VB.NET: vbnet.vim
 
 Wishlist:
 Is it possible to test this whole vimsy mess?  http://www.vim.org/scripts/script.php?script_id=2565 ?
@@ -138,7 +148,7 @@ Add :ver N and :hor N (:ht and :wd?) commands to set the vertical and horizontal
 Is it possible to make folding completely hands-off?  Maybe http://eigenclass.org/hiki.rb?simplefold+plugin+0.4.0 ?
 Add a way to tell what color is under the cursor?  :echo synIDattr(synID(line('.'),col('.'),1),'name')
 If you ruby-block-conv 'puts "#{var}"', it converts the variable interpolation in the string, not the surrounding block.
-
+Ruby: keep an eye on rfactor, might be useful one day?
 
 Never?:
 Make HTML/XML tags auto-close?
@@ -156,7 +166,10 @@ ruby indentation screws up when I type end_date, it unindents prematurely right 
 These are plugins that were considered but not used.  See
 |vimsy-plugins| for the list of currently installed plugins.
 
-original fuzzyfinder    So laborious to use that I don't see why anyone
+camelcasemotion    How often do you need to move within a camelcase word?
+             Is it really worth learning custom move keys over f and b?
+
+fuzzyfinder (original)   So laborious to use that I don't see why anyone
              would use it over vim's :find built-in.
 
 fuzzyfinder-textmate    Jamis wrote this, then abandoned it when the
@@ -165,15 +178,24 @@ fuzzyfinder-textmate    Jamis wrote this, then abandoned it when the
              Vimsy used ff-tm until 5 Aug 2010, when it switched to
              |command-t|.
 
+lh-cpp       Tries to do too much.  Bracket insertion handled by autoclose,
+             snippets handled by snipmate, rest seems missable.  Except
+             syntax highlighting bad C++ practices, that seems worth
+             extracting into its own plugin.
+
+lusty-explorer Requires more keypresses and more thinking than command-t.
+
+lusty-juggler Strange that it tries cram all open buffers into the status
+             line.  bufexplorer feels nicer and more useful.
+             
+rsense       requires java?!
+
 specky       Includes a bunch of non-rspec-related garbage.  It's hard
              enough to get vim scripts to reliably coexist as it is,
              there's no need to bring along unrelated stuff!
 
 vim-rspec    relies on Ruby+hpricot/xsltproc parsing HTML?  Seems rather
              overcomplex.  Glad I found a simpler alternative.
-
-camelcasemotion    How often do you need to move within a camelcase word?
-             Is it really worth learning custom move keys over f and b?
 
 
 ==============================================================================
