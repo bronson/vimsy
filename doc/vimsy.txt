@@ -27,9 +27,10 @@ Full list: |bundles|
 Some highlights:
 
   - |NERDTree|      \d    Navigate an outline view of the files in your filesystem
-  - |NERDCommenter| ^/    Quickly comment and uncomment blocks of source code
-  - |bufexplorer|   ^J    Quickly switch among your open buffers
-  - |taglist|       \l    Quickly see and navigate among the tags in the curent file
+  - |NERDCommenter| ^/    Comment and uncomment blocks of source code
+  - |command-t|     \t    Quickly open files by typing a few letters
+  - |bufexplorer|   ^J    Switch between your open buffers
+  - |taglist|       \l    View and navigate the tags in the curent file
   - |rails|         :R    Brilliance for Rails developers by the legendary tpope
   - |snipmate|      TAB   The tab key to inserts Textmate-like snippets
   - |matchit|       %     Use % to bounce betwee html tags, if/else/end, begin/end, etc
@@ -155,12 +156,13 @@ These are plugins that were considered but not used.  See
 |vimsy-plugins| for the list of currently installed plugins.
 
 original fuzzyfinder    So laborious to use that I don't see why anyone
-             would use it over vim's :find built-in.  It's horrible.
+             would use it over vim's :find built-in.
 
 fuzzyfinder-textmate    Jamis wrote this, then abandoned it when the
-             fuzzyfinder script kept breaking his changes.  Others have
-             tried to pick up the slack but it hasn't been satisfying.
-             Vimsy used ff-tm until 5 Aug 2010.
+             fuzzyfinder script kept breaking his changes.
+               http://twitter.com/jamis/status/13735390978
+             Vimsy used ff-tm until 5 Aug 2010, when it switched to
+             |command-t|.
 
 specky       Includes a bunch of non-rspec-related garbage.  It's hard
              enough to get vim scripts to reliably coexist as it is,

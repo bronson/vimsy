@@ -7,7 +7,6 @@ Vimsy is a collection of the best Vim plugins.  It turns Vim into a fast,
 flexible, and seriously capable code editor.
 
 
-
 INSTALL
 
 Macintosh users:   install MacVim, http://code.google.com/p/macvim
@@ -15,21 +14,31 @@ Windows users:     install gvim,   http://www.vim.org/download.php#pc
 Debian/Ubuntu:     apt-get install vim-gnome
 Fedora users:      yum install vim gvim ctags
 
-Then, in your home directory:
+Vimsy is tested on Vim 7.2 on Mac/Linux.  It should work reasonably
+well on any Vim 7 or higher.
+
+
+Now, in your home directory:
 
     git clone git://github.com/bronson/vimsy.git .vim
     git clone git://github.com/bronson/vim-update-bundles.git
 
-create a symbolic link to .vim/vimrc:
+create a symbolic link to .vim/vimrc and then run the
+vim-update-bundles script:
 
     ln -s .vim/vimrc .vimrc
-    vim-update-bundles/vim-update-bundles   # run script with no args
+    vim-update-bundles/vim-update-bundles
 
 And you're done!
 
-Now run ':help vimsy' to start to learn about all the good stuff
-you have at your disposal.
 
-Vimsy is tested on Vim 7.2 on Mac/Linux.  It should work reasonably
-well on any Vim 7 or higher.
+Note that if you want to use command-t, you'll need to build its
+C extension manually.
+
+    $ cd ~/.vim/bundle/command-t
+    $ rake make
+
+
+Run ':help vimsy' and ':help bundles' to learn about the good
+stuff you have at your disposal.
 
