@@ -30,6 +30,7 @@ set sidescroll=1      " continuous horizontal scroll rather than jumpy
 set laststatus=2      " always display status line even if only one window is visible.
 set updatetime=1000   " reduce updatetime so current tag in taglist is highlighted faster
 set autoread          " suppress warnings when git,etc. changes files on disk.
+set nrformats=alpha,hex " C-A/C-X works on dec, hex, and chars (not octal so no leading 0 ambiguity)
 
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
