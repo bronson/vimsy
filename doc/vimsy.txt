@@ -138,7 +138,15 @@ What about sparkup or zencoding?
 What about the rename plugin?  And can it call fugitive's Gmove function if called in a git repo?
 Python: pyflakes-vim, indentation at http://www.vim.org/scripts/script.php?script_id=974
 C/C++: a.vim of course!  and cscope http://cscope.sourceforge.net/cscope_vim_tutorial.html
-OCaml: omlet  Clojure: vimclojure  VB.NET: vbnet.vim
+OCaml: omlet  Clojure: vimclojure  VB.NET: vbnet.vim  TeX: vim-latex
+Making Vim autodetect indent?
+  overview: http://vim.wikia.com/wiki/Set_indent_parameters_for_Python_files
+  vindect 2001-?: python http://code.fluffytapeworm.com/projects   looks kind of crusty.
+  Detect Indent vimscript 2005-2009: http://www.vim.org/scripts/script.php?script_id=1171 http://github.com/ciaranm/detectindent
+  Indent Finder: python http://www.vim.org/scripts/script.php?script_id=513 http://www.freehackers.org/Indent_Finder
+  YAIFA: vimscript http://www.vim.org/scripts/script.php?script_id=3096
+    vimscript and on gitup?  the battle is between Detect Indent and YAIFA.  I'll try YAIFA.
+  Indent Consistency Cop: http://www.vim.org/scripts/script.php?script_id=1690
 
 Wishlist:
 Is it possible to test this whole vimsy mess?  http://www.vim.org/scripts/script.php?script_id=2565 ?

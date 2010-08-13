@@ -167,6 +167,13 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 " --- BUNDLE: git://github.com/bronson/vim-trailing-whitespace.git
 " --- BUNDLE: git://github.com/bronson/vim-toggle-wrap.git
 
+" --- BUNDLE: git://github.com/Raimondi/YAIFA.git
+" verbosity=1 allows you to check YAIFA's results by running :messages
+let g:yaifa_verbosity = 0
+" yaifa's default produces a 2 second delay when loading huge files.  If you
+" can't figure it out in 2048 lines there's no need to churn thru 14000 more.
+let g:yaifa_max_lines = 2048
+
 " Syntax Files:
 " --- BUNDLE: git://github.com/bronson/vim-jquery.git
 " --- BUNDLE: git://github.com/tsaleh/vim-shoulda.git
