@@ -137,6 +137,8 @@ nmap <leader>l :TlistToggle<cr>
 
 " --- BUNDLE: git://github.com/bronson/vim-bufexplorer.git
 " --- BUNDLE: git://git.wincent.com/command-t.git
+let g:CommandTMatchWindowAtTop = 1
+
 " --- BUNDLE: git://github.com/bronson/vim-closebuffer.git
 " --- BUNDLE: git://github.com/vim-ruby/vim-ruby.git
 " --- BUNDLE: git://github.com/tpope/vim-rails.git
