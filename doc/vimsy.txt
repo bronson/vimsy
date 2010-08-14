@@ -34,8 +34,9 @@ Some highlights:
   - |rails|         :R    Brilliance for Rails developers by the legendary tpope
   - |snipmate|      TAB   The tab key to inserts Textmate-like snippets
   - |surround|      ysiw" Quickly surround text objects with quotes and HTML tags
-  - |endwise|             Automatically close blocks in ruby, vb, or vimscript
   - |indexedsearch| /     Shows "Match 4 of 52" when searching with /, ?, *, etc.
+  - |endwise|             Automatically close blocks in ruby, vb, or vimscript
+  - YAIFA                 Detect indent style when opening a file, don't convert it.
   - matchit and python_match: % bounces between html tags, if/else/end, begin/end, etc.
 
 See |vimsy-rejected-plugins| for the plugins that didn't make the cut.
