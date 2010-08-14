@@ -83,9 +83,6 @@ nnoremap ` '
 " Upside: feels more natural.  Downside: not stock vi/vim.
 nmap Y y$
 
-" Add a binding to search for the word under the cursor in all files
-map <leader>* :execute "noautocmd grep -rw " . expand("<cword>") . " ."<CR>
-
 " Make the quickfix window wrap no matter the setting of nowrap
 au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
 
