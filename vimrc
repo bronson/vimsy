@@ -39,7 +39,7 @@ set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set backspace=indent,eol,start "allow backspacing over everything in insert mode
 set history=1000               "store lots of :cmdline history
 
-set hidden " no need to save before hiding, http://items.sjbach.com/319/configuring-vim-right
+set hidden          " allow buffers to go into the background without needing to save
 
 set visualbell      " don't beep constantly, it's annoying.
 set t_vb=           " and don't flash the screen either (terminal anyway...
@@ -142,6 +142,7 @@ let g:CommandTMatchWindowAtTop = 1
 " --- BUNDLE: git://github.com/bronson/vim-closebuffer.git
 " --- BUNDLE: git://github.com/vim-ruby/vim-ruby.git
 " --- BUNDLE: git://github.com/tpope/vim-rails.git
+" --- BUNDLE: git://github.com/tpope/vim-rake.git
 " --- BUNDLE: git://github.com/msanders/snipmate.vim.git
 " --- BUNDLE: git://github.com/scrooloose/snipmate-snippets.git
 " --- BUNDLE: git://github.com/bronson/vim-indexedsearch.git

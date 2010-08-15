@@ -196,8 +196,23 @@ lusty-explorer Requires more keypresses and more thinking than command-t.
 
 lusty-juggler Strange that it tries cram all open buffers into the status
              line.  bufexplorer feels nicer and more useful.
-             
+
 rsense       requires java?!
+
+rake.vim     doesn't support .Rake to run a single test so it can't be
+             used for testing.  Might leave it installed to see if I
+             use the nav commands but my guess is that I won't...
+
+rails.vim    :Rake testing is pretty darn good but it only works in
+             Rails projects.  :(
+
+            my autowrite is NOT set???
+
+rubyspec?
+
+rubytest?
+
+ruby-single-test  Looking for something that will test files and dirs too.
 
 specky       Includes a bunch of non-rspec-related garbage.  It's hard
              enough to get vim scripts to reliably coexist as it is,
