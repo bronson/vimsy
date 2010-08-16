@@ -140,6 +140,8 @@ nmap <leader>l :TlistToggle<cr>
 nmap <silent> <C-Space> :CommandT<CR>
 nmap <silent> <C-@> :CommandT<CR>
 let g:CommandTCancelMap = ['<C-c>', '<Esc>', '<C-Space>', '<C-@>']
+let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<Up>', '<ESC>OA']
+let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<Down>', '<ESC>OB']
 let g:CommandTMatchWindowAtTop = 1
 
 " --- BUNDLE: git://github.com/bronson/vim-closebuffer.git
