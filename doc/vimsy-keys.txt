@@ -177,8 +177,7 @@ _ underscore |_| move N-1 lines forward, then to first non-blank char (WTF).
 ^@ C-snail        UNUSED, and in the terminal it's the same as C-Space
 ^^ C-caret        |CTRL-^| switch to alternate file (file marked # in :ls). C-W C-^ splits and switches.
 ^_ C-underscore   |CTRL-_| comment lines.  There's a bug though, see |vimsy-control-/|.
-^  C-backspace    UNUSED
-^  C-S-backspace  UNUSED
+^  C-backspace    unused, but BS and C-BS look the same when typed in the terminal.
 
 
 

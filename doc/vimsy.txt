@@ -28,10 +28,11 @@ Some highlights:
 
   - |NERDTree|      \d    Navigate an outline view of the files in your filesystem
   - |NERDCommenter| ^/    Comment and uncomment blocks of source code
-  - |command-t|     \t    Quickly open files by typing a few letters
+  - |command-t|     C-Space Quickly open files by typing a few letters
   - |bufexplorer|   ^J    Switch between your open buffers
   - |taglist|       \l    View and navigate the tags in the curent file
   - |rails|         :R    Brilliance for Rails developers by the legendary tpope
+  - |rubytest|      \t    Quickly run a single test (\t) or a file of tests (\T)
   - |snipmate|      TAB   The tab key to inserts Textmate-like snippets
   - |surround|      ysiw" Quickly surround text objects with quotes and HTML tags
   - |indexedsearch| /     Shows "Match 4 of 52" when searching with /, ?, *, etc.
@@ -199,20 +200,7 @@ lusty-juggler Strange that it tries cram all open buffers into the status
 
 rsense       requires java?!
 
-rake.vim     doesn't support .Rake to run a single test so it can't be
-             used for testing.  Might leave it installed to see if I
-             use the nav commands but my guess is that I won't...
-
-rails.vim    :Rake testing is pretty darn good but it only works in
-             Rails projects.  :(
-
-            my autowrite is NOT set???
-
-rubyspec?
-
-rubytest?
-
-ruby-single-test  Looking for something that will test files and dirs too.
+ruby-single-test  Want something that will test files and dirs too.
 
 specky       Includes a bunch of non-rspec-related garbage.  It's hard
              enough to get vim scripts to reliably coexist as it is,

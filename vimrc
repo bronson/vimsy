@@ -137,6 +137,9 @@ nmap <leader>l :TlistToggle<cr>
 
 " --- BUNDLE: git://github.com/bronson/vim-bufexplorer.git
 " --- BUNDLE: git://git.wincent.com/command-t.git
+nmap <silent> <C-Space> :CommandT<CR>
+nmap <silent> <C-@> :CommandT<CR>
+let g:CommandTCancelMap = ['<C-c>', '<Esc>', '<C-Space>', '<C-@>']
 let g:CommandTMatchWindowAtTop = 1
 
 " --- BUNDLE: git://github.com/bronson/vim-closebuffer.git
@@ -147,7 +150,9 @@ let g:CommandTMatchWindowAtTop = 1
 " --- BUNDLE: git://github.com/scrooloose/snipmate-snippets.git
 " --- BUNDLE: git://github.com/bronson/vim-indexedsearch.git
 " --- BUNDLE: git://github.com/bronson/vim-ruby-block-conv.git
-"
+" --- BUNDLE: git://github.com/janx/vim-rubytest.git
+let g:rubytest_in_quickfix = 1 
+
 " --- BUNDLE: git://github.com/tsaleh/vim-align.git
 " The Align plugin declares a TON of maps, few of which are useful
 " and some of which conflict with other mappings (like \w and \m).
