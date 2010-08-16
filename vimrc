@@ -136,7 +136,7 @@ xmap S <Plug>Vsurround
 nmap <leader>l :TlistToggle<cr>
 
 " --- BUNDLE: git://github.com/bronson/vim-bufexplorer.git
-" --- BUNDLE: git://git.wincent.com/command-t.git
+" --- BUNDLE: git://github.com/bronson/Command-T.git
 nmap <silent> <C-Space> :CommandT<CR>
 nmap <silent> <C-@> :CommandT<CR>
 let g:CommandTCancelMap = ['<C-c>', '<Esc>', '<C-Space>', '<C-@>']
