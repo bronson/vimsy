@@ -111,7 +111,6 @@ Ubuntu bug: https://bugs.launchpad.net/ubuntu/+source/vim/+bug/534124
 add a.vim.
 Add ack plugin or something to make searching easier.  Not fond of ack but gotta do something!
   Add http://github.com/adamlogic/ack.vim/commit/850e83088e0a623390446ea88fc8740857777f25 ?
-Figure out a keypress to toggle :set paste! on and off.  I do it a lot.
 Like the organizaiton in http://github.com/Frangossauro/startervim/blob/master/vimrc
 Make ESC cancel bufexplorer and return to the previous file being edited, without affecting Control-6.
   This probably won't work in the terminal.  Also Control-C like command-t does.

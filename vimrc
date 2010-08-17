@@ -74,6 +74,9 @@ autocmd FileType ruby setlocal iskeyword+=!,?
 " <C-L> redraws the screen and also turns off highlighting the current search
 nnoremap <C-L> :nohl<CR><C-L>
 
+" add a keybinding to toggle paste mode
+nnoremap <leader>p :set paste!<CR>:set paste?<CR>
+
 " make ' jump to saved line & column rather than just line.
 " http://items.sjbach.com/319/configuring-vim-right
 nnoremap ' `
