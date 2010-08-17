@@ -109,16 +109,10 @@ Ubuntu bug: https://bugs.launchpad.net/ubuntu/+source/vim/+bug/534124
 5. TODO                                                   *vimsy-todo*
 
 add a.vim.
-What about testing?  We need quickfix support for RSpec and Test::Unit.
-  Do we still need RubySpec now that RubyTest does specs?
-  rubytest should save the file before running the tests.
-  rubytest should not scan for valid tests if running with T.  Just run the file.
-  rubytest definitely needs to present its quickfix better.  (crib from recent rails.vim?)
-  instead of railstest, http://www.vim.org/scripts/script.php?script_id=2869 ?
-  is it possible to extract rails.vim's rSpec functionality and use it instead of current rSpec stuff?
 Add ack plugin or something to make searching easier.  Not fond of ack but gotta do something!
   Add http://github.com/adamlogic/ack.vim/commit/850e83088e0a623390446ea88fc8740857777f25 ?
 Figure out a keypress to toggle :set paste! on and off.  I do it a lot.
+Like the organizaiton in http://github.com/Frangossauro/startervim/blob/master/vimrc
 Make ESC cancel bufexplorer and return to the previous file being edited, without affecting Control-6.
   This probably won't work in the terminal.  Also Control-C like command-t does.
 Rails vim -- turn off logfile tweaks.  Coloring makes opening large files painful, plus it breaks 1G, 500G, etc to navigate in the file.
