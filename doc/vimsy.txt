@@ -96,6 +96,7 @@ is already used to switch RTL/LTR so Hebrew and Farsi developers may find
 this a little surprising.
 
 Furthermore, vim-gtk, vim-gnome, and MacVim are unable to produce Control-/.
+Motif and Athena Vim convert Control-/ to ^_.
 You can test this for yourself:
   - hit i to enter insert mode, then hit control-V control-/.
   - if you see "^/" or "^_", your version of Vim can recognize Control-/.
@@ -109,8 +110,11 @@ Ubuntu bug: https://bugs.launchpad.net/ubuntu/+source/vim/+bug/534124
 5. TODO                                                   *vimsy-todo*
 
 add a.vim.
+add http://www.vim.org/scripts//script.php?script_id=2699 and map to ,.  si, should replace a single arg
+what about C stuff?  http://github.com/vim-scripts/c.vim   and   http://github.com/MasterKey/OmniCppComplete ?
 Add ack plugin or something to make searching easier.  Not fond of ack but gotta do something!
   Add http://github.com/adamlogic/ack.vim/commit/850e83088e0a623390446ea88fc8740857777f25 ?
+does http://www.vim.org/scripts/script.php?script_id=1498 have a good color switcher?
 Like the organizaiton in http://github.com/Frangossauro/startervim/blob/master/vimrc
 Make ESC cancel bufexplorer and return to the previous file being edited, without affecting Control-6.
   This probably won't work in the terminal.  Also Control-C like command-t does.
@@ -119,6 +123,7 @@ Also make bufexplorer support s and v to open new buffer horiz or vertically spl
 Add a.vim (alternate) http://www.vim.org/scripts/script.php?script_id=31 and map the keys to be the same as railsmode.
 bufexplorer: use h and F1 for help and ? to search backward.
 split python_match into its own bundle.  time to mirror vim scripts!
+is easytags worth it?  sounds nice.  http://github.com/xolox/vim-easytags
 nerdtree: use h and F1 for help and ? to search backward.
 nerdtree: I should be able to open bufexplorer and command-t from within nerdtree.
 nerdtree: Make space behave the same as return when navigating the tree.
