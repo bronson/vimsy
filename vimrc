@@ -105,12 +105,12 @@ colorscheme evening
 runtime macros/matchit.vim  " enable vim's built-in matchit script (make % bounce between tags, begin/end, etc)
 
 
-" --- BUNDLE: git://github.com/scrooloose/nerdtree.git
+" BUNDLE: git://github.com/scrooloose/nerdtree.git
 nmap <leader>d :NERDTreeToggle<cr>
 nmap <leader>D :NERDTreeFind<cr>
 
 
-" --- BUNDLE: git://github.com/scrooloose/nerdcommenter.git
+" BUNDLE: git://github.com/scrooloose/nerdcommenter.git
 
 " add a space between the comment delimiter and text
 let NERDSpaceDelims=1
@@ -130,16 +130,16 @@ nmap <leader>C  :call NERDComment(0, "toggle")<CR>
 vmap <leader>C <ESC>:call NERDComment(1, "toggle")<CR>
 
 
-" --- BUNDLE: git://github.com/tpope/vim-surround.git
+" BUNDLE: git://github.com/tpope/vim-surround.git
 " tell surround not to break the visual s keystroke (:help vs)
 xmap S <Plug>Vsurround
 
 
-" --- BUNDLE: git://github.com/bronson/vim-taglist.git
+" # BUNDLE: http://github.com/vim-scripts/taglist.vim
 nmap <leader>l :TlistToggle<cr>
 
-" --- BUNDLE: git://github.com/bronson/vim-bufexplorer.git
-" --- BUNDLE: git://github.com/bronson/Command-T.git
+" BUNDLE: git://github.com/bronson/vim-bufexplorer.git
+" BUNDLE: git://github.com/bronson/Command-T.git
 nmap <silent> <C-Space> :CommandT<CR>
 nmap <silent> <C-@> :CommandT<CR>
 let g:CommandTCancelMap = ['<C-c>', '<Esc>', '<C-Space>', '<C-@>']
@@ -147,37 +147,37 @@ let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<Up>', '<ESC>OA']
 let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<Down>', '<ESC>OB']
 let g:CommandTMatchWindowAtTop = 1
 
-" --- BUNDLE: git://github.com/bronson/vim-closebuffer.git
-" --- BUNDLE: git://github.com/vim-ruby/vim-ruby.git
-" --- BUNDLE: git://github.com/tpope/vim-rails.git
-" --- BUNDLE: git://github.com/tpope/vim-rake.git
-" --- BUNDLE: git://github.com/msanders/snipmate.vim.git
-" --- BUNDLE: git://github.com/scrooloose/snipmate-snippets.git
-" --- BUNDLE: git://github.com/bronson/vim-indexedsearch.git
-" --- BUNDLE: git://github.com/bronson/vim-ruby-block-conv.git
-" --- BUNDLE: git://github.com/janx/vim-rubytest.git
+" BUNDLE: git://github.com/bronson/vim-closebuffer.git
+" BUNDLE: git://github.com/vim-ruby/vim-ruby.git
+" BUNDLE: git://github.com/tpope/vim-rails.git
+" BUNDLE: git://github.com/tpope/vim-rake.git
+" BUNDLE: git://github.com/msanders/snipmate.vim.git
+" BUNDLE: git://github.com/scrooloose/snipmate-snippets.git
+" BUNDLE: git://github.com/bronson/vim-indexedsearch.git
+" BUNDLE: git://github.com/bronson/vim-ruby-block-conv.git
+" BUNDLE: git://github.com/janx/vim-rubytest.git
 let g:rubytest_in_quickfix = 1 
 
-" --- BUNDLE: git://github.com/tsaleh/vim-align.git
+" BUNDLE: git://github.com/tsaleh/vim-align.git
 " The Align plugin declares a TON of maps, few of which are useful
 " and some of which conflict with other mappings (like \w and \m).
 let g:loaded_AlignMapsPlugin = "v41"
 
-" --- BUNDLE: git://github.com/tpope/vim-endwise.git
-" --- BUNDLE: git://github.com/tpope/vim-repeat.git
+" BUNDLE: git://github.com/tpope/vim-endwise.git
+" BUNDLE: git://github.com/tpope/vim-repeat.git
 
-" --- BUNDLE: git://github.com/tpope/vim-fugitive.git
+" BUNDLE: git://github.com/tpope/vim-fugitive.git
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
-" --- BUNDLE: git://github.com/tsaleh/vim-supertab.git
-" --- BUNDLE: git://github.com/mikezackles/Bisect.git
-" --- BUNDLE: git://github.com/rson/vim-conque.git
-" --- BUNDLE: git://github.com/bronson/vim-scrollcolors.git
-" --- BUNDLE: git://github.com/bronson/vim-visual-star-search.git
-" --- BUNDLE: git://github.com/bronson/vim-trailing-whitespace.git
-" --- BUNDLE: git://github.com/bronson/vim-toggle-wrap.git
+" BUNDLE: git://github.com/tsaleh/vim-supertab.git
+" BUNDLE: git://github.com/mikezackles/Bisect.git
+" BUNDLE: git://github.com/rson/vim-conque.git
+" BUNDLE: git://github.com/bronson/vim-scrollcolors.git
+" BUNDLE: git://github.com/bronson/vim-visual-star-search.git
+" BUNDLE: git://github.com/bronson/vim-trailing-whitespace.git
+" BUNDLE: git://github.com/bronson/vim-toggle-wrap.git
 
-" --- BUNDLE: git://github.com/Raimondi/YAIFA.git
+" BUNDLE: git://github.com/Raimondi/YAIFA.git
 " verbosity=1 allows you to check YAIFA's results by running :messages
 let g:yaifa_verbosity = 0
 " yaifa's default produces a 2 second delay when loading huge files.  If you
@@ -185,16 +185,16 @@ let g:yaifa_verbosity = 0
 let g:yaifa_max_lines = 2048
 
 " Syntax Files:
-" --- BUNDLE: git://github.com/bronson/vim-jquery.git
-" --- BUNDLE: git://github.com/tsaleh/vim-shoulda.git
-" --- BUNDLE: git://github.com/tpope/vim-git.git
-" --- BUNDLE: git://github.com/tpope/vim-cucumber.git
-" --- BUNDLE: git://github.com/tpope/vim-haml.git
-" --- BUNDLE: git://github.com/tpope/vim-markdown.git
-" --- BUNDLE: git://github.com/timcharper/textile.vim.git
-" --- BUNDLE: git://github.com/kchmck/vim-coffee-script.git
+" BUNDLE: git://github.com/bronson/vim-jquery.git
+" BUNDLE: git://github.com/tsaleh/vim-shoulda.git
+" BUNDLE: git://github.com/tpope/vim-git.git
+" BUNDLE: git://github.com/tpope/vim-cucumber.git
+" BUNDLE: git://github.com/tpope/vim-haml.git
+" BUNDLE: git://github.com/tpope/vim-markdown.git
+" BUNDLE: git://github.com/timcharper/textile.vim.git
+" BUNDLE: git://github.com/kchmck/vim-coffee-script.git
 " Color Schemes:
-" --- BUNDLE: git://github.com/tpope/vim-vividchalk.git
+" BUNDLE: git://github.com/tpope/vim-vividchalk.git
 "
 " # vim-ruby-debugger's directory layout doesn't work with pathogen.
 " # http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen#comment_348
