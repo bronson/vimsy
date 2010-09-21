@@ -140,6 +140,8 @@ nmap <leader>l :TlistToggle<cr>
 
 " BUNDLE: git://github.com/bronson/vim-bufexplorer.git
 " BUNDLE: git://github.com/bronson/Command-T.git
+" ensure we're on system ruby if rvm is installed, then build the C extension
+" BUNDLE-COMMAND: which rvm >/dev/null 2>&1 && rvm use system; rake make
 nmap <silent> <C-Space> :CommandT<CR>
 nmap <silent> <C-@> :CommandT<CR>
 let g:CommandTCancelMap = ['<C-c>', '<Esc>', '<C-Space>', '<C-@>']
