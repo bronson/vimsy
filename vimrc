@@ -156,7 +156,7 @@ let g:CommandTMatchWindowAtTop = 1
 " BUNDLE: git://github.com/vim-scripts/IndexedSearch.git
 " BUNDLE: git://github.com/bronson/vim-ruby-block-conv.git
 " BUNDLE: git://github.com/janx/vim-rubytest.git
-let g:rubytest_in_quickfix = 1 
+let g:rubytest_in_quickfix = 1
 
 " BUNDLE: git://github.com/tsaleh/vim-align.git
 " The Align plugin declares a TON of maps, few of which are useful
@@ -170,8 +170,6 @@ let g:loaded_AlignMapsPlugin = "v41"
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " BUNDLE: git://github.com/tsaleh/vim-supertab.git
-" BUNDLE: git://github.com/mikezackles/Bisect.git
-" # BUNDLE: git://github.com/rson/vim-conque.git
 " BUNDLE: git://github.com/bronson/vim-scrollcolors.git
 " BUNDLE: git://github.com/bronson/vim-visual-star-search.git
 " BUNDLE: git://github.com/bronson/vim-trailing-whitespace.git
@@ -200,3 +198,5 @@ let g:yaifa_max_lines = 2048
 " # http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen#comment_348
 " # :BUNDLE git://github.com/astashov/vim-ruby-debugger.git
 
+" neat idea but I don't use it
+" # BUNDLE: git://github.com/rson/vim-conque.git
