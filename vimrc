@@ -158,7 +158,10 @@ let g:CommandTMatchWindowAtTop = 1
 " BUNDLE: git://github.com/scrooloose/snipmate-snippets.git
 " BUNDLE: git://github.com/vim-scripts/IndexedSearch.git
 " BUNDLE: git://github.com/bronson/vim-ruby-block-conv.git
+
 " BUNDLE: git://github.com/janx/vim-rubytest.git
+" taglist currently uses \l. TODO: this will need to be resolved.
+map <unique> <Leader>. <Plug>RubyTestRunLast
 let g:rubytest_in_quickfix = 1
 
 " BUNDLE: git://github.com/tsaleh/vim-align.git
