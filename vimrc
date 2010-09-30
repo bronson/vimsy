@@ -140,7 +140,7 @@ nmap <leader>l :TlistToggle<cr>
 
 " BUNDLE: git://github.com/bronson/vim-bufexplorer.git
 
-" BUNDLE: git://github.com/bronson/Command-T.git
+" BUNDLE: git://git.wincent.com/command-t.git
 " ensure we compile with the system ruby if rvm is installed
 " BUNDLE-COMMAND: if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi
 nmap <silent> <C-Space> :CommandT<CR>
