@@ -90,6 +90,18 @@ nmap Y y$
 au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
 
 
+" Make Alt-Arrows switch between windows (like C-W h, etc)
+" nmap <silent> <A-Up> :wincmd k<CR>
+" nmap <silent> <A-Down> :wincmd j<CR>
+" nmap <silent> <A-Left> :wincmd h<CR>
+" nmap <silent> <A-Right> :wincmd l<CR>
+
+" Make Control-direction switch between windows (like C-W h, etc)
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-l> :wincmd l<CR>
+
 
 " color schemes
 
@@ -135,7 +147,7 @@ vmap <leader>C <ESC>:call NERDComment(1, "toggle")<CR>
 xmap S <Plug>Vsurround
 
 
-" # BUNDLE: http://github.com/vim-scripts/taglist.vim
+" BUNDLE: http://github.com/vim-scripts/taglist.vim.git
 nmap <leader>l :TlistToggle<cr>
 
 " BUNDLE: git://github.com/bronson/vim-bufexplorer.git
@@ -145,9 +157,9 @@ nmap <leader>l :TlistToggle<cr>
 " BUNDLE-COMMAND: if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi
 nmap <silent> <C-Space> :CommandT<CR>
 nmap <silent> <C-@> :CommandT<CR>
-let g:CommandTCancelMap = ['<C-c>', '<Esc>', '<C-Space>', '<C-@>']
-let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<Up>', '<ESC>OA']
-let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<Down>', '<ESC>OB']
+" let g:CommandTCancelMap = ['<C-c>', '<Esc>', '<C-Space>', '<C-@>']
+" let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<Up>', '<ESC>OA']
+" let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<Down>', '<ESC>OB']
 let g:CommandTMatchWindowAtTop = 1
 
 " BUNDLE: git://github.com/bronson/vim-closebuffer.git
@@ -187,6 +199,8 @@ let g:yaifa_verbosity = 0
 " yaifa's default produces a 2 second delay when loading huge files.  If you
 " can't figure it out in 2048 lines there's no need to churn thru 14000 more.
 let g:yaifa_max_lines = 2048
+
+" BUNDLE: http://github.com/vim-scripts/AutoTag.git
 
 " Syntax Files:
 " BUNDLE: git://github.com/bronson/vim-jquery.git
