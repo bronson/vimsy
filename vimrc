@@ -71,6 +71,10 @@ autocmd FileType ruby setlocal iskeyword+=!,?
 
 " fixes
 
+" Make the escape key bigger, keyboards move it all over.
+map <F1> <Esc>
+imap <F1> <Esc>
+
 " <C-L> redraws the screen and also turns off highlighting the current search
 nnoremap <C-L> :nohl<CR><C-L>
 
