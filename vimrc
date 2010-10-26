@@ -150,7 +150,7 @@ xmap S <Plug>Vsurround
 " BUNDLE: http://github.com/vim-scripts/taglist.vim.git
 nmap <leader>l :TlistToggle<cr>
 
-" BUNDLE: git://github.com/bronson/vim-bufexplorer.git
+" BUNDLE: http://github.com/vim-scripts/bufexplorer.zip.git
 
 " BUNDLE: git://git.wincent.com/command-t.git
 " ensure we compile with the system ruby if rvm is installed
@@ -203,7 +203,7 @@ let g:yaifa_max_lines = 2048
 " BUNDLE: http://github.com/vim-scripts/AutoTag.git
 
 " Syntax Files:
-" BUNDLE: git://github.com/bronson/vim-jquery.git
+" BUNDLE: git://github.com/vim-scripts/jQuery.git
 " BUNDLE: git://github.com/tsaleh/vim-shoulda.git
 " BUNDLE: git://github.com/tpope/vim-git.git
 " BUNDLE: git://github.com/tpope/vim-cucumber.git
