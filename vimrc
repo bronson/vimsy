@@ -166,6 +166,7 @@ let g:CommandTMatchWindowAtTop = 1
 " BUNDLE: git://github.com/vim-ruby/vim-ruby.git
 " BUNDLE: git://github.com/tpope/vim-rails.git
 " BUNDLE: git://github.com/tpope/vim-rake.git
+" BUNDLE: git://github.com/vim-scripts/a.vim.git
 " BUNDLE: git://github.com/msanders/snipmate.vim.git
 " BUNDLE: git://github.com/scrooloose/snipmate-snippets.git
 " BUNDLE: git://github.com/vim-scripts/IndexedSearch.git
