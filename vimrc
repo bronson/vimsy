@@ -94,6 +94,18 @@ nmap Y y$
 au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
 
 
+" Make Alt-Arrows switch between windows (like C-W h, etc)
+" nmap <silent> <A-Up> :wincmd k<CR>
+" nmap <silent> <A-Down> :wincmd j<CR>
+" nmap <silent> <A-Left> :wincmd h<CR>
+" nmap <silent> <A-Right> :wincmd l<CR>
+
+" Make Control-direction switch between windows (like C-W h, etc)
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-l> :wincmd l<CR>
+
 
 " color schemes
 
@@ -139,25 +151,26 @@ vmap <leader>C <ESC>:call NERDComment(1, "toggle")<CR>
 xmap S <Plug>Vsurround
 
 
-" # BUNDLE: http://github.com/vim-scripts/taglist.vim
+" BUNDLE: http://github.com/vim-scripts/taglist.vim.git
 nmap <leader>l :TlistToggle<cr>
 
-" BUNDLE: git://github.com/bronson/vim-bufexplorer.git
+" BUNDLE: http://github.com/vim-scripts/bufexplorer.zip.git
 
 " BUNDLE: git://git.wincent.com/command-t.git
 " ensure we compile with the system ruby if rvm is installed
 " BUNDLE-COMMAND: if which rvm >/dev/null 2>&1; then rvm system exec rake make; else rake make; fi
 nmap <silent> <C-Space> :CommandT<CR>
 nmap <silent> <C-@> :CommandT<CR>
-let g:CommandTCancelMap = ['<C-c>', '<Esc>', '<C-Space>', '<C-@>']
-let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<Up>', '<ESC>OA']
-let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<Down>', '<ESC>OB']
+" let g:CommandTCancelMap = ['<C-c>', '<Esc>', '<C-Space>', '<C-@>']
+" let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<Up>', '<ESC>OA']
+" let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<Down>', '<ESC>OB']
 let g:CommandTMatchWindowAtTop = 1
 
 " BUNDLE: git://github.com/bronson/vim-closebuffer.git
 " BUNDLE: git://github.com/vim-ruby/vim-ruby.git
 " BUNDLE: git://github.com/tpope/vim-rails.git
 " BUNDLE: git://github.com/tpope/vim-rake.git
+" BUNDLE: git://github.com/vim-scripts/a.vim.git
 " BUNDLE: git://github.com/msanders/snipmate.vim.git
 " BUNDLE: git://github.com/scrooloose/snipmate-snippets.git
 " BUNDLE: git://github.com/vim-scripts/IndexedSearch.git
@@ -180,7 +193,6 @@ let g:loaded_AlignMapsPlugin = "v41"
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " BUNDLE: git://github.com/tsaleh/vim-supertab.git
-" BUNDLE: git://github.com/bronson/vim-scrollcolors.git
 " BUNDLE: git://github.com/bronson/vim-visual-star-search.git
 " BUNDLE: git://github.com/bronson/vim-trailing-whitespace.git
 " BUNDLE: git://github.com/bronson/vim-toggle-wrap.git
@@ -192,8 +204,10 @@ let g:yaifa_verbosity = 0
 " can't figure it out in 2048 lines there's no need to churn thru 14000 more.
 let g:yaifa_max_lines = 2048
 
+" BUNDLE: http://github.com/vim-scripts/AutoTag.git
+
 " Syntax Files:
-" BUNDLE: git://github.com/bronson/vim-jquery.git
+" BUNDLE: git://github.com/vim-scripts/jQuery.git
 " BUNDLE: git://github.com/tsaleh/vim-shoulda.git
 " BUNDLE: git://github.com/tpope/vim-git.git
 " BUNDLE: git://github.com/tpope/vim-cucumber.git

@@ -109,7 +109,7 @@ Ubuntu bug: https://bugs.launchpad.net/ubuntu/+source/vim/+bug/534124
 ==============================================================================
 5. TODO                                                   *vimsy-todo*
 
-add a.vim.
+Make Control-P in insert mode enter paste mode, exit paste mode when you hit esc and return to command mode.
 add http://www.vim.org/scripts//script.php?script_id=2699 and map to ,.  si, should replace a single arg
 what about C stuff?  http://github.com/vim-scripts/c.vim   and   http://github.com/MasterKey/OmniCppComplete ?
 Add ack plugin or something to make searching easier.  Not fond of ack but gotta do something!
@@ -120,7 +120,6 @@ Make ESC cancel bufexplorer and return to the previous file being edited, withou
   This probably won't work in the terminal.  Also Control-C like command-t does.
 Rails vim -- turn off logfile tweaks.  Coloring makes opening large files painful, plus it breaks 1G, 500G, etc to navigate in the file.
 Also make bufexplorer support s and v to open new buffer horiz or vertically split. (already built-in?)
-Add a.vim (alternate) http://www.vim.org/scripts/script.php?script_id=31 and map the keys to be the same as railsmode.
 bufexplorer: use h and F1 for help and ? to search backward.
 split python_match into its own bundle.  time to mirror vim scripts!
 is easytags worth it?  sounds nice.  http://github.com/xolox/vim-easytags
