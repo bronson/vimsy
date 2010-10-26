@@ -189,7 +189,6 @@ let g:loaded_AlignMapsPlugin = "v41"
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " BUNDLE: git://github.com/tsaleh/vim-supertab.git
-" BUNDLE: git://github.com/bronson/vim-scrollcolors.git
 " BUNDLE: git://github.com/bronson/vim-visual-star-search.git
 " BUNDLE: git://github.com/bronson/vim-trailing-whitespace.git
 " BUNDLE: git://github.com/bronson/vim-toggle-wrap.git
