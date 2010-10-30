@@ -9,74 +9,15 @@ call pathogen#runtime_append_all_bundles()
 filetype indent plugin on
 syntax on
 
-
-
-" basics
-
-set nocompatible      " tends to make things work better
-set showcmd           " show incomplete cmds down the bottom
-set showmode          " show current mode down the bottom
-
-set incsearch         " find the next match as we type the search
-set hlsearch          " hilight searches by default
-set nowrap            " by default, dont wrap lines (see <leader>w)
-set showmatch         " briefly jump to matching }] when typing
-set nostartofline     " don't jump to start of line as a side effect (i.e. <<)
-
-set scrolloff=3       " lines to keep visible before and after cursor
-set sidescrolloff=7   " columns to keep visible before and after cursor
-set sidescroll=1      " continuous horizontal scroll rather than jumpy
-
-set laststatus=2      " always display status line even if only one window is visible.
-set updatetime=1000   " reduce updatetime so current tag in taglist is highlighted faster
-set autoread          " suppress warnings when git,etc. changes files on disk.
-set nrformats=alpha,hex " C-A/C-X works on dec, hex, and chars (not octal so no leading 0 ambiguity)
-
-set wildmode=list:longest   "make cmdline tab completion similar to bash
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-
-set backspace=indent,eol,start "allow backspacing over everything in insert mode
-set history=1000               "store lots of :cmdline history
-
-set hidden          " allow buffers to go into the background without needing to save
-
-set visualbell      " don't beep constantly, it's annoying.
-set t_vb=           " and don't flash the screen either (terminal anyway...
-set guioptions-=T   " hide gvim's toolbar by default
-" set guifont=Inconsolata\ Medium\ 10
-" set guifont=* to bring up a font selector, set guifont? to see result
-
-" search for a tags file recursively from cwd to /
-set tags=.tags,tags;/
+" Bundle: git://github.com/bronson/vim-common.git
 
 " Store swapfiles in a single directory.
 set directory=~/.vim/swap,~/tmp,/var/tmp/,tmp
 
-
-
-" indenting, languages
-
-set expandtab         " use spaces instead of tabstops
-set smarttab          " use shiftwidth when hitting tab instead of sts (?)
-set autoindent        " try to put the right amount of space at the beginning of a new line
-set shiftwidth=2
-set softtabstop=2
-
-" autocmd FileType ruby setlocal shiftwidth=2 softtabstop=2
-" ruby includes ! and ? in method names (array.empty?)
-autocmd FileType ruby setlocal iskeyword+=!,?
-
-
-
-" fixes
-
 " Make the escape key bigger, keyboards move it all over.
+" TODO: why doesn't this work?
 map <F1> <Esc>
 imap <F1> <Esc>
-
-" <C-L> redraws the screen and also turns off highlighting the current search
-nnoremap <C-L> :nohl<CR><C-L>
 
 " add a keybinding to toggle paste mode
 nnoremap <leader>p :set paste!<CR>:set paste?<CR>
@@ -93,12 +34,6 @@ nmap Y y$
 " Make the quickfix window wrap no matter the setting of nowrap
 au BufWinEnter * if &buftype == 'quickfix' | setl wrap | endif
 
-
-" Make Alt-Arrows switch between windows (like C-W h, etc)
-" nmap <silent> <A-Up> :wincmd k<CR>
-" nmap <silent> <A-Down> :wincmd j<CR>
-" nmap <silent> <A-Left> :wincmd h<CR>
-" nmap <silent> <A-Right> :wincmd l<CR>
 
 " Make Control-direction switch between windows (like C-W h, etc)
 nmap <silent> <C-k> :wincmd k<CR>
@@ -118,18 +53,13 @@ colorscheme evening
 
 " Plugins:
 
-runtime macros/matchit.vim  " enable vim's built-in matchit script (make % bounce between tags, begin/end, etc)
-
-
 " BUNDLE: git://github.com/scrooloose/nerdtree.git
 nmap <leader>d :NERDTreeToggle<cr>
 nmap <leader>D :NERDTreeFind<cr>
 
 
 " BUNDLE: git://github.com/scrooloose/nerdcommenter.git
-
-" add a space between the comment delimiter and text
-let NERDSpaceDelims=1
+let NERDSpaceDelims=1    " add a space between the comment delimiter and text
 
 " Use Control-/ to toggle comments
 nmap <C-/> :call NERDComment(0, "toggle")<CR>
