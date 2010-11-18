@@ -3,6 +3,7 @@
 " Don't use abbreviations!  Spelling things out makes grepping easy.
 
 " Let Pathogen bring in all the plugins
+filetype on
 filetype off
 call pathogen#runtime_append_all_bundles()
 
