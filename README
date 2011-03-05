@@ -1,3 +1,14 @@
+NOTE: this project is dead.  I think it's much nicer to list plugins in
+your .vimrc and fetch them using vim-update-bundles.
+
+Most of Vimsy's functionality is here, copy the bits that you like:
+   https://github.com/bronson/dotfiles/blob/master/.vimrc
+Also check out Janus: https://github.com/carlhuda/janus
+
+Here is Vimsy, frozen since November 2010...
+
+
+
                                  Vimsy
 
                 A nice vim-based code-stomping environment
